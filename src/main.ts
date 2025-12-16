@@ -85,4 +85,56 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
+
+  /**
+   * Search input form
+   */
+
+  const openBtn = document.getElementById("openMobileSearch");
+  const overlay = document.getElementById("mobileSearchOverlay");
+  const closeBtn = document.getElementById("closeMobileSearch");
+  const input = document.getElementById("mobileSearchInput");
+  const clearBtn = document.getElementById("mobileClearBtn");
+  const trashBtn = document.getElementById("trashButton");
+  const chipsWrap = document.getElementById("recentChips");
+
+  const open = () => {
+    overlay?.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => input?.focus(), 0);
+  };
+
+  const close = () => {
+    overlay?.classList.add("hidden");
+    document.body.style.overflow = "";
+    if (input) input.value = "";
+    clearBtn?.classList.add("hidden");
+  };
+
+  openBtn?.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+
+  // close if you click the dark background
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+
+  input?.addEventListener("input", () => {
+    if (!clearBtn || !input) return;
+    clearBtn.classList.toggle("hidden", input.value.trim().length === 0);
+  });
+
+  clearBtn?.addEventListener("click", () => {
+    if (!input) return;
+    input.value = "";
+    clearBtn.classList.add("hidden");
+    input.focus();
+  });
+
+  trashBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Remove all chips
+    chipsWrap?.replaceChildren();
+  });
 });

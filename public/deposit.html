@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center</title>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <main class="bg-background-1">
+      <section class="breadcrumb bg-inv-card-solid">
+        <div
+          class="max-w-[1430px] mx-auto px-6 py-4 flex items-center justify-between gap-4"
+        >
+          <p class="inline-flex gap-1 items-center">
+            <a
+              href="/"
+              class="text-inv-link text-base font-['Roboto'] leading-6 line-clamp-1"
+              >Help Center</a
+            >
+            <img src="breadcrumb-icon.svg" alt="breadcrumb icon" />
+            <span
+              class="text-inv-foreground-high text-base font-normal font-['Roboto'] leading-6 line-clamp-1"
+              >Breadcrumb</span
+            >
+          </p>
+
+          <!-- Desktop search pill -->
+          <div class="hidden md:flex items-center">
+            <div
+              class="flex h-10 w-[460px] items-center gap-2 rounded-full bg-white px-4 outline-1 outline-border-medium"
+            >
+              <img src="/search-icon-desktop.svg" alt="" class="h-5 w-5" />
+              <input
+                type="text"
+                placeholder="Search on this page"
+                class="w-full text-foreground-high text-base font-normal font-['Roboto'] leading-6 outline-none"
+              />
+            </div>
+          </div>
+
+          <!-- Mobile search icon button -->
+          <button
+            type="button"
+            id="openMobileSearch"
+            class="md:hidden h-10 w-10 grid place-items-center rounded-full"
+            aria-label="Open search"
+          >
+            <img src="/search-icon-circle.svg" alt="" class="h-8 w-8" />
+          </button>
+        </div>
+
+        <!-- Mobile overlay (keep it OUTSIDE the row so it can be full screen) -->
+        <div
+          id="mobileSearchOverlay"
+          class="fixed inset-0 z-[999] hidden bg-black/40"
+        >
+          <div class="bg-[#061E33] px-4 pb-5 pt-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4"
+              >
+                <img src="/search-normal.svg" alt="" class="h-5 w-5" />
+
+                <input
+                  id="mobileSearchInput"
+                  type="text"
+                  placeholder="Search"
+                  class="w-full bg-transparent text-base outline-none"
+                />
+
+                <!-- Clear (X) -->
+                <button
+                  type="button"
+                  id="mobileClearBtn"
+                  class="hidden"
+                  aria-label="Clear search"
+                >
+                  <img src="/search-close.svg" alt="" class="h-8 w-8" />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                id="closeMobileSearch"
+                class="text-inv-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
+              >
+                Cancel
+              </button>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p
+                class="text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
+              >
+                Your Recent Searches:
+              </p>
+
+              <button
+                type="button"
+                id="trashButton"
+                class="flex items-center gap-2"
+              >
+                <img src="/trash.svg" alt="" class="h-4 w-4" />
+                <span
+                  class="text-inv-link text-xs font-semibold font-['Nexa'] leading-4"
+                  >Clear All</span
+                >
+              </button>
+            </div>
+
+            <div
+              id="recentChips"
+              class="mt-4 flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+            >
+              <a
+                href="#"
+                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="/chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Bonus</span>
+                <img src="/chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Crypto Bonus</span>
+                <img src="/chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="/chip-close-icon.svg" alt="chip close" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
