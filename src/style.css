@@ -1,0 +1,116 @@
+@import url("https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css");
+@import url("https://sh.betuscdn.com/libs/css/fonts/nexa.css");
+@import url("https://sh.betuscdn.com/libs/css/fonts/roboto.css");
+
+@import "tailwindcss";
+@import "./theme.css";
+
+.chip {
+  @apply px-2 py-1 rounded-lg border border-inv-border-medium text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4;
+}
+
+/* Hide scrollbar cross-browser */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE / Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.heartbeat-dot {
+  animation: heartbeat 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.dropdown-terms:hover .dropdown-menu-terms {
+  display: block;
+}
+
+.overlay_agent {
+  position: absolute;
+  left: 25%;
+  bottom: 50%; /* final center point */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  z-index: 30;
+}
+
+/* Hover triggers animation */
+.live_agent_container:hover .overlay_agent {
+  animation: overlay_animation 1.2s ease-out forwards;
+}
+
+/* Desktop animation*/
+@keyframes overlay_animation {
+  from {
+    bottom: 50%;
+    opacity: 0;
+  }
+  to {
+    bottom: 90%;
+    opacity: 1;
+  }
+}
+
+/* Mobile animation */
+@media (max-width: 640px) {
+  @keyframes overlay_animation {
+    from {
+      bottom: 110%;
+      opacity: 0;
+    }
+    to {
+      bottom: 40%;
+      opacity: 1;
+    }
+  }
+}
+
+.trendingHelpSwiper .swiper-slide {
+  width: 351px !important;
+}
+
+.aboutCryptoSwiper .swiper-slide {
+  width: 460px !important;
+}
+
+@media (max-width: 640px) {
+  .trendingHelpSwiper .swiper-slide {
+    width: 283px !important;
+  }
+
+  .aboutCryptoSwiper .swiper-slide {
+    width: 288px !important;
+  }
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-navigation-icon {
+  display: none !important;
+}
