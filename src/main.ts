@@ -48,8 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ) as HTMLImageElement;
 
           if (!prevBtn) return;
-
-          // If NOT at beginning → make dark
           prevBtn.src = swiper.isBeginning
             ? prevBtn.dataset.light!
             : prevBtn.dataset.dark!;
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(swiperCrypto as HTMLElement, {
       modules: [Navigation, Pagination],
       slidesPerView: "auto",
-      spaceBetween: 0,
+      spaceBetween: 12,
       navigation: {
         nextEl: ".crypto-next-button",
         prevEl: ".crypto-prev-button",
@@ -72,6 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      on: {
+        slideChange(swiper) {
+          const prevBtn = document.querySelector(
+            ".crypto-prev-button"
+          ) as HTMLImageElement;
+
+          if (!prevBtn) return;
+          prevBtn.src = swiper.isBeginning
+            ? prevBtn.dataset.light!
+            : prevBtn.dataset.dark!;
+        },
       },
     });
   }
