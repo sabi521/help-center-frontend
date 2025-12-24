@@ -13,6 +13,9 @@
   </head>
   <body>
     <main class="bg-background-1">
+      <!--
+        Search Bar on top starts
+        -->
       <section class="breadcrumb bg-inv-card-solid">
         <div
           class="max-w-[1430px] mx-auto px-6 py-4 flex items-center justify-between gap-4"
@@ -56,10 +59,7 @@
         </div>
 
         <!-- Mobile overlay (keep it OUTSIDE the row so it can be full screen) -->
-        <div
-          id="mobileSearchOverlay"
-          class="fixed inset-0 z-[999] hidden bg-black/40"
-        >
+        <div id="mobileSearchOverlay" class="fixed inset-0 z-999 hidden">
           <div class="bg-[#061E33] px-4 pb-5 pt-3">
             <div class="flex items-center gap-3">
               <div
@@ -116,11 +116,11 @@
 
             <div
               id="recentChips"
-              class="mt-4 flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+              class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
             >
               <a
                 href="#"
-                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
               >
                 <span>Deposit bonus</span>
                 <img src="/chip-close-icon.svg" alt="chip close" />
@@ -128,7 +128,7 @@
 
               <a
                 href="#"
-                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
               >
                 <span>Bonus</span>
                 <img src="/chip-close-icon.svg" alt="chip close" />
@@ -136,7 +136,7 @@
 
               <a
                 href="#"
-                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
               >
                 <span>Crypto Bonus</span>
                 <img src="/chip-close-icon.svg" alt="chip close" />
@@ -144,7 +144,7 @@
 
               <a
                 href="#"
-                class="chip shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
               >
                 <span>Deposit bonus</span>
                 <img src="/chip-close-icon.svg" alt="chip close" />
@@ -152,6 +152,555 @@
             </div>
           </div>
         </div>
+      </section>
+      <!--
+        Search Bar on top ends
+        -->
+
+      <!--
+        Deposits & Payouts section starts
+        -->
+      <section class="deposit-layout-section mt-2 px-3 md:mt-10">
+        <div
+          class="self-stretch p-5 md:p-10 bg-inv-card-2 rounded-2xl max-w-[1430px] w-full mx-auto"
+        >
+          <div class="flex justify-center items-start gap-8">
+            <div
+              class="flex-1 inline-flex flex-col justify-start items-start gap-5 md:gap-8"
+            >
+              <div
+                class="self-stretch justify-start text-inv-foreground-high text-lg md:text-4xl font-extrabold font-['Nexa'] leading-5 md:leading-12"
+              >
+                Deposits & Payouts
+              </div>
+              <div
+                class="self-stretch justify-start text-inv-foreground-medium text-sm md:text-2xl font-normal font-['Roboto'] leading-5 md:leading-9"
+              >
+                Learn how to easily deposit and withdraw funds with secure, fast
+                payment methods.
+              </div>
+            </div>
+            <div
+              class="max-h-8 min-h-8 px-3 bg-inv-alpha-10 rounded-md flex justify-center items-center gap-2 overflow-hidden"
+            >
+              <div
+                class="text-center justify-center text-inv-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+              >
+                58 Articles
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 
+      Deposits & Payouts section ends 
+      -->
+
+      <!--
+      Features List section starts
+    -->
+      <section
+        class="features-list max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
+      >
+        <div
+          class="self-stretch inline-flex flex-col justify-center items-start"
+        >
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-center items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="/green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              Instant processing for most deposit methods
+            </div>
+          </div>
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-start items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="/green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              No hidden Fees
+            </div>
+          </div>
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-start items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="/green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              Wide range of payouts options
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+      Features List section Ends
+    -->
+
+      <!--
+    Deposit and payout methods section starts
+    -->
+
+      <section
+        class="deposit-payout-method max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
+      >
+        <!-- Quick Guide Navigation -->
+        <header class="navigation-deposit-methods w-full">
+          <nav
+            aria-label="Deposit and payout navigation"
+            class="inline-flex items-center gap-2 group"
+          >
+            <!-- ACTIVE TAB -->
+            <a
+              href="#steps"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent group-hover:border-transparent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                4 steps to Deposit
+              </span>
+            </a>
+
+            <!-- INACTIVE TAB -->
+            <a
+              href="#methods"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                Deposit Methods
+              </span>
+            </a>
+
+            <!-- INACTIVE TAB -->
+            <a
+              href="#payouts"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                Payouts
+              </span>
+            </a>
+          </nav>
+        </header>
+
+        <!-- Sub-section: Methods -->
+        <section id="steps">
+          <!--Quick Guide: 4 steps to Deposit block header -->
+
+          <header
+            class="flex justify-between items-center mt-4 mb-3.5 md:mt-6 md:mb-8"
+          >
+            <h3
+              class="flex-1 justify-center text-base-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Quick Guide: 4 steps to Deposit
+            </h3>
+
+            <div
+              class="hidden min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium md:flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <a
+                  href=""
+                  class="text-center justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >
+                  Read Full Article
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!--Quick Guide Blocks containers -->
+          <div
+            class="deposit-block relative flex flex-wrap flex-col md:flex-row gap-3.5 md:gap-3 justify-between"
+          >
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] md:h-[397px] w-full"
+            >
+              <div
+                class="w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  01
+                </div>
+              </div>
+              <div
+                class="flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 md:text-2xl md:leading-7"
+                >
+                  Choose Your Payment Method
+                </div>
+                <div
+                  class="self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Select from our wide range of secure payment options
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="/deposit-1.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="/blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:max-w-[348px] md:h-[397px] w-full"
+            >
+              <div
+                class="w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  02
+                </div>
+              </div>
+              <div
+                class="flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 md:text-2xl md:leading-7"
+                >
+                  Enter the Deposit Amount
+                </div>
+                <div
+                  class="self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Specify how much you want to deposit
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="/deposit-2.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="/blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:max-w-[348px] md:h-[397px] w-full"
+            >
+              <div
+                class="w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  03
+                </div>
+              </div>
+              <div
+                class="flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 md:text-2xl md:leading-7"
+                >
+                  Confirm the Payment Details
+                </div>
+                <div
+                  class="self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Review and confirm your payment information
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="/deposit-3.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="/blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:max-w-[348px] md:h-[397px] w-full"
+            >
+              <div
+                class="w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  04
+                </div>
+              </div>
+              <div
+                class="flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 md:text-2xl md:leading-7"
+                >
+                  Enjoy the Game
+                </div>
+                <div
+                  class="self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Start playing with your deposited funds
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="/deposit-4.svg" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!--Mobile read more button-->
+
+            <div
+              class="md:hidden min-w-20 max-w-[140px] mx-auto max-h-8 min-h-8 px-3 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-1.5 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <div
+                  class="text-center justify-start text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  Read Full Article
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sub-section: Payouts -->
+        <section id="methods">
+          <header class="mt-4 mb-3.5 md:mt-6 md:mb-8">
+            <h3
+              class="flex-1 justify-center text-base-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Deposit Methods
+            </h3>
+          </header>
+
+          <div
+            class="self-stretch p-6 bg-card-1 rounded-xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+          >
+            <div
+              class="self-stretch flex flex-col justify-start items-start gap-5"
+            >
+              <div
+                class="self-stretch inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >
+                  Cryptocurrency
+                </div>
+              </div>
+              <div
+                class="self-stretch max-h-16 justify-start text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+              >
+                Choose your cryptocurrency method and follow the guide to
+                deposit easily
+              </div>
+            </div>
+            <div
+              class="self-stretch flex flex-col justify-start items-start gap-2.5"
+            >
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="btc"
+                  class="w-8 h-8 relative bg-amber-500 rounded-[200px]"
+                >
+                  <div
+                    class="w-2.5 h-3 left-[11px] top-[9.50px] absolute bg-orange-100"
+                  ></div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Bitcoin
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="tether"
+                  class="w-8 h-8 relative bg-emerald-400 rounded-[200px]"
+                >
+                  <div
+                    class="w-7 h-6 left-[2px] top-[4.50px] absolute overflow-hidden"
+                  >
+                    <div
+                      class="w-7 h-6 left-[0.78px] top-0 absolute bg-emerald-400"
+                    ></div>
+                    <div
+                      class="w-4 h-4 left-[5.77px] top-[3.13px] absolute bg-white"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Tether
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="litecoin"
+                  class="w-8 h-8 relative rounded-[200px]"
+                >
+                  <div
+                    class="w-8 h-8 p-5 left-0 top-[0.50px] absolute bg-blue-800 rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5"
+                  >
+                    <div class="w-2.5 h-3 bg-white"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Litecoin
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="ethereum"
+                  class="w-8 h-8 relative rounded-[200px]"
+                >
+                  <div
+                    class="w-8 h-8 p-5 left-0 top-[0.50px] absolute bg-indigo-800 rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5"
+                  >
+                    <div class="w-2.5 h-4 bg-white"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Ethereum
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="bitcoincash"
+                  class="w-8 h-8 relative rounded-[200px]"
+                >
+                  <div
+                    class="w-7 h-7 p-5 left-[1.50px] top-[2px] absolute bg-emerald-500 rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5"
+                  >
+                    <div class="w-3 h-4 bg-white"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Bitcoincash
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="usdc"
+                  class="w-8 h-8 relative rounded-[200px]"
+                >
+                  <div
+                    class="w-8 h-8 left-[0.50px] top-0 absolute overflow-hidden"
+                  >
+                    <div
+                      class="w-8 h-8 left-0 top-[0.64px] absolute bg-blue-600"
+                    ></div>
+                    <div
+                      class="w-2 h-4 left-[11.11px] top-[8.45px] absolute bg-white"
+                    ></div>
+                    <div
+                      class="w-6 h-6 left-[3.84px] top-[5.12px] absolute bg-white"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using USDC
+                </div>
+              </div>
+              <div
+                data-icon="on"
+                data-state="Default"
+                class="self-stretch inline-flex justify-start items-center gap-1.5"
+              >
+                <div
+                  data-property-1="bitcoin_lightning"
+                  class="w-8 h-8 relative rounded-[200px]"
+                >
+                  <div
+                    class="w-8 h-8 left-0 top-0 absolute bg-white/0 overflow-hidden"
+                  >
+                    <div
+                      class="w-8 h-8 left-[0.80px] top-[0.80px] absolute bg-violet-600"
+                    ></div>
+                    <div
+                      class="w-3.5 h-5 left-[9.14px] top-[5.33px] absolute bg-white"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="flex-1 max-h-12 justify-start text-link text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Deposit using Bitcoin Lightning
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
     <!-- Swiper JS -->
