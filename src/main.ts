@@ -137,4 +137,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // Remove all chips
     chipsWrap?.replaceChildren();
   });
+
+  // Everything–Payout Articles Swiper (same behavior as your crypto one)
+  const swiperEverythingPayout = document.querySelector(
+    ".everythingPayoutSwiper"
+  );
+
+  if (swiperEverythingPayout) {
+    new Swiper(swiperEverythingPayout as HTMLElement, {
+      modules: [Navigation, Pagination],
+      slidesPerView: "auto",
+      spaceBetween: 12,
+      navigation: {
+        nextEl: ".everything-payout-next",
+        prevEl: ".everything-payout-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      on: {
+        slideChange(swiper) {
+          const prevBtn = document.querySelector(
+            ".everything-payout-prev"
+          ) as HTMLImageElement;
+
+          if (!prevBtn) return;
+
+          prevBtn.src = swiper.isBeginning
+            ? prevBtn.dataset.light!
+            : prevBtn.dataset.dark!;
+        },
+      },
+    });
+  }
 });
