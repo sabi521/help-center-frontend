@@ -2,9 +2,9 @@ import "./style.css";
 
 // Swiper core + styles
 import Swiper from "swiper";
-import "swiper/css";
+/* import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/pagination"; */
 
 // Swiper modules
 import { Navigation, Pagination } from "swiper/modules";
@@ -21,15 +21,14 @@ if (dropdownBtn && dropdownMenu) {
   });
 }
 
-/**
- * Trending Help Section Swiper
- *
- */
 document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Trending Help Section Swiper
+   */
   const swiperEl = document.querySelector(".trendingHelpSwiper");
 
   if (swiperEl) {
-    const swiper = new Swiper(swiperEl as HTMLElement, {
+    new Swiper(swiperEl as HTMLElement, {
       modules: [Navigation, Pagination],
       slidesPerView: "auto",
       spaceBetween: 12,
@@ -45,17 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
         slideChange(swiper) {
           const prevBtn = document.querySelector(
             ".custom-prev-button"
-          ) as HTMLImageElement;
+          ) as HTMLImageElement | null;
 
           if (!prevBtn) return;
+
           prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light!
-            : prevBtn.dataset.dark!;
+            ? prevBtn.dataset.light || prevBtn.src
+            : prevBtn.dataset.dark || prevBtn.src;
         },
       },
     });
   }
 
+  /**
+   * Crypto Swiper
+   */
   const swiperCrypto = document.querySelector(".aboutCryptoSwiper");
 
   if (swiperCrypto) {
@@ -75,12 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slideChange(swiper) {
           const prevBtn = document.querySelector(
             ".crypto-prev-button"
-          ) as HTMLImageElement;
+          ) as HTMLImageElement | null;
 
           if (!prevBtn) return;
+
           prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light!
-            : prevBtn.dataset.dark!;
+            ? prevBtn.dataset.light || prevBtn.src
+            : prevBtn.dataset.dark || prevBtn.src;
         },
       },
     });
@@ -89,11 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Search input form
    */
-
   const openBtn = document.getElementById("openMobileSearch");
   const overlay = document.getElementById("mobileSearchOverlay");
   const closeBtn = document.getElementById("closeMobileSearch");
-  const input = document.getElementById("mobileSearchInput");
+
+  const input = document.getElementById(
+    "mobileSearchInput"
+  ) as HTMLInputElement | null;
+
   const clearBtn = document.getElementById("mobileClearBtn");
   const trashBtn = document.getElementById("trashButton");
   const chipsWrap = document.getElementById("recentChips");
@@ -114,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
   openBtn?.addEventListener("click", open);
   closeBtn?.addEventListener("click", close);
 
-  // close if you click the dark background
   overlay?.addEventListener("click", (e) => {
     if (e.target === overlay) close();
   });
@@ -133,12 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   trashBtn?.addEventListener("click", (e) => {
     e.preventDefault();
-
-    // Remove all chips
     chipsWrap?.replaceChildren();
   });
 
-  // Everything–Payout Articles Swiper (same behavior as your crypto one)
+  /**
+   * Everything–Payout Articles Swiper
+   */
   const swiperEverythingPayout = document.querySelector(
     ".everythingPayoutSwiper"
   );
@@ -160,13 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slideChange(swiper) {
           const prevBtn = document.querySelector(
             ".everything-payout-prev"
-          ) as HTMLImageElement;
+          ) as HTMLImageElement | null;
 
           if (!prevBtn) return;
 
           prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light!
-            : prevBtn.dataset.dark!;
+            ? prevBtn.dataset.light || prevBtn.src
+            : prevBtn.dataset.dark || prevBtn.src;
         },
       },
     });

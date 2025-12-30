@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center</title>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <main class="bg-background-1 border-b-7 border-primary">
+      <!--
+        Search Bar on top starts
+        -->
+      <section class="breadcrumb bg-inv-card-solid">
+        <div
+          class="max-w-[1430px] mx-auto px-6 py-4 flex items-center justify-between gap-4"
+        >
+          <p class="inline-flex gap-1 items-center">
+            <a
+              href="/"
+              class="text-inv-link text-base font-['Roboto'] leading-6 line-clamp-1"
+              >Help Center</a
+            >
+            <img src="breadcrumb-icon.svg" alt="breadcrumb icon" />
+            <span
+              class="text-inv-foreground-high text-base font-normal font-['Roboto'] leading-6 line-clamp-1"
+              >Breadcrumb</span
+            >
+          </p>
+
+          <!-- Desktop search pill -->
+          <div class="hidden md:flex items-center">
+            <div
+              class="flex h-10 w-[460px] items-center gap-2 rounded-full bg-white px-4 outline-1 outline-border-medium"
+            >
+              <img src="search-icon-desktop.svg" alt="" class="h-5 w-5" />
+              <input
+                type="text"
+                placeholder="Search on this page"
+                class="w-full text-foreground-high text-base font-normal font-['Roboto'] leading-6 outline-none"
+              />
+            </div>
+          </div>
+
+          <!-- Mobile search icon button -->
+          <button
+            type="button"
+            id="openMobileSearch"
+            class="md:hidden h-10 w-10 grid place-items-center rounded-full"
+            aria-label="Open search"
+          >
+            <img src="search-icon-circle.svg" alt="" class="h-8 w-8" />
+          </button>
+        </div>
+
+        <!-- Mobile overlay  -->
+        <div id="mobileSearchOverlay" class="fixed inset-0 z-999 hidden">
+          <div class="bg-[#061E33] px-4 pb-5 pt-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4"
+              >
+                <img src="search-normal.svg" alt="" class="h-5 w-5" />
+
+                <input
+                  id="mobileSearchInput"
+                  type="text"
+                  placeholder="Search"
+                  class="w-full bg-transparent text-base outline-none"
+                />
+
+                <!-- Clear (X) -->
+                <button
+                  type="button"
+                  id="mobileClearBtn"
+                  class="hidden"
+                  aria-label="Clear search"
+                >
+                  <img src="search-close.svg" alt="" class="h-8 w-8" />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                id="closeMobileSearch"
+                class="text-inv-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
+              >
+                Cancel
+              </button>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p
+                class="text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
+              >
+                Your Recent Searches:
+              </p>
+
+              <button
+                type="button"
+                id="trashButton"
+                class="flex items-center gap-2"
+              >
+                <img src="trash.svg" alt="" class="h-4 w-4" />
+                <span
+                  class="text-inv-link text-xs font-semibold font-['Nexa'] leading-4"
+                  >Clear All</span
+                >
+              </button>
+            </div>
+
+            <div
+              id="recentChips"
+              class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+            >
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Crypto Bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+        Search Bar on top ends
+        -->
+
+      <!--
+        Deposits & Payouts section starts
+        -->
+      <section class="deposit-layout-section mt-2 px-3 md:mt-10">
+        <div
+          class="self-stretch p-5 md:p-10 bg-inv-card-2 rounded-2xl max-w-[1430px] w-full mx-auto"
+        >
+          <div class="flex justify-center items-start gap-8">
+            <div
+              class="flex-1 inline-flex flex-col justify-start items-start gap-5 md:gap-8"
+            >
+              <div
+                class="self-stretch justify-start text-inv-foreground-high text-lg md:text-4xl font-extrabold font-['Nexa'] leading-5 md:leading-12"
+              >
+                Deposits & Payouts
+              </div>
+              <div
+                class="self-stretch justify-start text-inv-foreground-medium text-sm md:text-2xl font-normal font-['Roboto'] leading-5 md:leading-9"
+              >
+                Learn how to easily deposit and withdraw funds with secure, fast
+                payment methods.
+              </div>
+            </div>
+            <div
+              class="max-h-8 min-h-8 px-3 bg-inv-alpha-10 rounded-md flex justify-center items-center gap-2 overflow-hidden"
+            >
+              <div
+                class="text-center justify-center text-inv-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+              >
+                58 Articles
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 
+      Deposits & Payouts section ends 
+      -->
+
+      <!--
+      Features List section starts
+    -->
+      <section
+        class="features-list max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
+      >
+        <div
+          class="self-stretch inline-flex flex-col justify-center items-start"
+        >
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-center items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              Instant processing for most deposit methods
+            </div>
+          </div>
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-start items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              No hidden Fees
+            </div>
+          </div>
+          <div
+            class="self-stretch px-1 md:px-5 py-1 md:py-4 inline-flex justify-start items-center gap-2 md:gap-3"
+          >
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img
+                class="w-5 h-5 left-0.5 top-[1.99px] absolute"
+                src="green-circle.svg"
+                alt="green circle icon"
+              />
+            </div>
+            <div
+              class="flex-1 justify-start text-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+            >
+              Wide range of payouts options
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+      Features List section Ends
+    -->
+
+      <!--
+    Deposit and payout methods section starts
+    -->
+      <section
+        class="deposit-payout-method max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
+      >
+        <!-- Quick Guide Navigation -->
+        <header class="navigation-deposit-methods w-full">
+          <nav
+            aria-label="Deposit and payout navigation"
+            class="inline-flex items-center gap-2 group"
+          >
+            <!-- ACTIVE TAB -->
+            <a
+              href="#steps"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent group-hover:border-transparent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                4 steps to Deposit
+              </span>
+            </a>
+
+            <!-- INACTIVE TAB -->
+            <a
+              href="#methods"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                Deposit Methods
+              </span>
+            </a>
+
+            <!-- INACTIVE TAB -->
+            <a
+              href="#payouts"
+              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+            >
+              <span
+                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              >
+                Payouts
+              </span>
+            </a>
+          </nav>
+        </header>
+
+        <!-- Sub-section: Methods -->
+        <section id="steps">
+          <!--Quick Guide: 4 steps to Deposit block header -->
+
+          <header
+            class="flex justify-between items-center mt-4 mb-3.5 md:mt-6 md:mb-8"
+          >
+            <h3
+              class="flex-1 justify-center text-base-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Quick Guide: 4 steps to Deposit
+            </h3>
+
+            <div
+              class="hidden min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium md:flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <a
+                  href=""
+                  class="text-center justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >
+                  Read Full Article
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!--Quick Guide Blocks containers -->
+          <div
+            class="deposit-block relative grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-3.5 md:gap-3"
+          >
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  01
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Choose Your Payment Method
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Select from our wide range of secure payment options
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="deposit-1.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  02
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Enter the Deposit Amount
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Specify how much you want to deposit
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="deposit-2.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  03
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Confirm the Payment Details
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Review and confirm your payment information
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="deposit-3.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  04
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Enjoy the Game
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Start playing with your deposited funds
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="deposit-4.svg" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!--Mobile read more button-->
+
+            <div
+              class="md:hidden min-w-20 max-w-[140px] mx-auto max-h-8 min-h-8 px-3 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-1.5 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <div
+                  class="text-center justify-start text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  Read Full Article
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sub-section: Deposit Methods -->
+        <section id="methods">
+          <header class="mt-4 mb-3.5 md:mt-6 md:mb-8">
+            <h3
+              class="flex-1 justify-center text-base-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Deposit Methods
+            </h3>
+          </header>
+
+          <div
+            class="deposit-methods-container grid grid-cols-1 md:grid-cols-2 gap-3"
+          >
+            <!-- cryptocurrency -->
+            <div
+              class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+            >
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-5"
+              >
+                <div
+                  class="self-stretch inline-flex justify-start items-center gap-3"
+                >
+                  <img
+                    class="w-8 h-8"
+                    src="cryptocurrency.svg"
+                    alt="Cryptocurrency icon"
+                  />
+                  <div
+                    class="flex-1 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Cryptocurrency
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch max-h-16 justify-start text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Choose your cryptocurrency method and follow the guide to
+                  deposit easily
+                </div>
+              </div>
+
+              <div
+                class="self-stretch flex flex-col md:flex-row justify-start md:justify-between items-start gap-2.5"
+              >
+                <!-- Left column -->
+                <div
+                  class="self-stretch w-full md:w-1/2 flex flex-col justify-start items-start gap-2.5"
+                >
+                  <a
+                    href="/deposit/bitcoin"
+                    title="Deposit using Bitcoin"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img src="bitcoin.svg" alt="bitcoin icon" class="w-8 h-8" />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Bitcoin
+                    </span>
+                  </a>
+
+                  <a
+                    href="/deposit/tether"
+                    title="Deposit using Tether (USDT)"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img src="tether.svg" alt="Tether icon" class="w-8 h-8" />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Tether
+                    </span>
+                  </a>
+
+                  <a
+                    href="/deposit/litecoin"
+                    title="Deposit using Litecoin"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img
+                      src="litecoin.svg"
+                      alt="Litecoin icon"
+                      class="w-8 h-8"
+                    />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Litecoin
+                    </span>
+                  </a>
+
+                  <a
+                    href="/deposit/ethereum"
+                    title="Deposit using Ethereum"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img
+                      src="ethereum.svg"
+                      alt="Ethereum icon"
+                      class="w-8 h-8"
+                    />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Ethereum
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Right column -->
+                <div
+                  class="desktop-block w-full md:w-1/2 self-stretch flex flex-col justify-start items-start gap-2.5"
+                >
+                  <a
+                    href="/deposit/bitcoin-cash"
+                    title="Deposit using Bitcoin Cash"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img
+                      src="bitcoinCash.svg"
+                      alt="Bitcoin Cash icon"
+                      class="w-8 h-8"
+                    />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Bitcoin Cash
+                    </span>
+                  </a>
+
+                  <a
+                    href="/deposit/usdc"
+                    title="Deposit using USDC"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img src="usdc.svg" alt="USDC icon" class="w-8 h-8" />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using USDC
+                    </span>
+                  </a>
+
+                  <a
+                    href="/deposit/bitcoin-lightning"
+                    title="Deposit using Bitcoin Lightning"
+                    class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current"
+                  >
+                    <img
+                      src="bitcoin-lighting.svg"
+                      alt="Bitcoin Lightning icon"
+                      class="w-8 h-8"
+                    />
+                    <span
+                      class="flex-1 max-h-12 text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Deposit using Bitcoin Lightning
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- credit card -->
+            <div
+              class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+            >
+              <!-- Header -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-5"
+              >
+                <div
+                  class="self-stretch inline-flex justify-start items-center gap-3"
+                >
+                  <img
+                    src="creditCard.svg"
+                    alt="credit card icon"
+                    class="w-8 h-8"
+                  />
+                  <div
+                    class="flex-1 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Credit Cards
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch max-h-16 justify-start text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Select your credit card method and follow the guide to pay
+                  securely.
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2.5"
+              >
+                <!-- Credit Cards -->
+                <a
+                  href="/deposit/credit-cards"
+                  title="How to deposit using Credit Cards"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img src="amex.svg" alt="amex icon" class="w-8 h-8" />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Credit Cards
+                  </span>
+                </a>
+
+                <!-- Agio -->
+                <a
+                  href="/deposit/agio"
+                  title="How to deposit using Agio"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img src="agio.svg" alt="agio icon" class="w-8 h-8" />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Agio
+                  </span>
+                </a>
+
+                <!-- Quick Buy -->
+                <a
+                  href="/deposit/quick-buy"
+                  title="How to deposit using Quick Buy"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img
+                    src="quickBuy.svg"
+                    alt="quick buy icon"
+                    class="w-8 h-8"
+                  />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Quick Buy
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Digital Wallets -->
+            <div
+              class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+            >
+              <!-- Header -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-5"
+              >
+                <div
+                  class="self-stretch inline-flex justify-start items-center gap-3"
+                >
+                  <img
+                    src="digitalWallet.svg"
+                    alt="digital wallets icon"
+                    class="w-8 h-8"
+                  />
+                  <div
+                    class="flex-1 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Digital Wallets
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch max-h-16 justify-start text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Choose a digital wallet and follow the guide to deposit.
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-3"
+              >
+                <!-- Zelle -->
+                <a
+                  href="/deposit/zelle"
+                  title="How to deposit using Zelle"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img src="zelle.svg" alt="zelle icon" class="w-8 h-8" />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Zelle
+                  </span>
+                </a>
+
+                <!-- PayPal -->
+                <a
+                  href="/deposit/paypal"
+                  title="How to deposit using PayPal"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img src="paypal.svg" alt="paypal icon" class="w-8 h-8" />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using PayPal
+                  </span>
+                </a>
+
+                <!-- Apple Pay -->
+                <a
+                  href="/deposit/apple-pay"
+                  title="How to deposit using Apple Pay"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img
+                    src="applePay.svg"
+                    alt="apple pay icon"
+                    class="w-8 h-8"
+                  />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Apple Pay
+                  </span>
+                </a>
+
+                <!-- Google Pay -->
+                <a
+                  href="/deposit/google-pay"
+                  title="How to deposit using Google Pay"
+                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link text-base font-normal font-['Roboto'] leading-6 hover:underline decoration-current"
+                >
+                  <img
+                    src="googlePay.svg"
+                    alt="google pay icon"
+                    class="w-8 h-8"
+                  />
+                  <span class="flex-1 max-h-12">
+                    How to deposit using Google Pay
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div
+              class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+            >
+              <!-- Header -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-5"
+              >
+                <div
+                  class="self-stretch inline-flex justify-start items-center gap-3"
+                >
+                  <img
+                    src="phoneCall.svg"
+                    alt="Contact us icon"
+                    class="w-8 h-8"
+                  />
+                  <div
+                    class="flex-1 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Contact Us
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Choose your preferred contact method and follow the steps for
+                  quick and easy deposit.
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <!-- Phone -->
+                <a
+                  href="tel:18885123887"
+                  aria-label="Call customer support"
+                  class="self-stretch min-w-24 max-h-10 min-h-10 px-3.5 bg-primary rounded-full inline-flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 hover:bg-primary/90"
+                >
+                  <img src="phone.svg" alt="Phone icon" class="w-5 h-5" />
+                  <span
+                    class="text-primary-foreground text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    1 (888) 512-3887
+                  </span>
+                </a>
+
+                <!-- Chat -->
+                <a
+                  href="/live-chat"
+                  aria-label="Chat with customer support"
+                  class="self-stretch min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline outline-1 outline-border-medium inline-flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 hover:bg-fill-medium/60"
+                >
+                  <img
+                    src="messageSquare.svg"
+                    alt="Chat icon"
+                    class="w-5 h-5"
+                  />
+                  <span
+                    class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Chat with us
+                  </span>
+                </a>
+
+                <!-- Email -->
+                <a
+                  href="mailto:support@yourdomain.com"
+                  aria-label="Email customer support"
+                  class="self-stretch min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline outline-1 outline-border-medium inline-flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 hover:bg-fill-medium/60"
+                >
+                  <img src="mail.svg" alt="Email icon" class="w-5 h-5" />
+                  <span
+                    class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Email Us
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sub-section: Payouts  -->
+        <section id="payouts">
+          <!--Quick Guide: 4 steps to Deposit block header -->
+
+          <header
+            class="flex justify-between items-center mt-4 mb-3.5 md:mt-6 md:mb-8"
+          >
+            <h3
+              class="flex-1 justify-center text-base-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              How to request a Payout
+            </h3>
+
+            <div
+              class="hidden min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium md:flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <a
+                  href=""
+                  class="text-center justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >
+                  Read Full Article
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!--Quick Guide Blocks containers -->
+          <div
+            class="deposit-block relative grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-3.5 md:gap-3"
+          >
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  01
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Choose Your Payment Method
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Select your preferred withdrawal method
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="paymentDeposit.svg" alt="" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  02
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Enter Payout Amount
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Specify how much you want to withdraw
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="payoutAmount.svg" alt="payout amount image" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  03
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Confirm your Payout Details
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Review and confirm your withdrawal information
+                </div>
+
+                <div class="hidden md:block">
+                  <img src="accountDetails.svg" alt="account details image" />
+                </div>
+              </div>
+              <img
+                src="blue-dotted-arrow.svg"
+                alt=""
+                class="md:hidden absolute left-0 -bottom-7 w-8 h-12 z-999 pointer-events-none"
+              />
+            </div>
+
+            <div
+              class="self-stretch px-5 py-3.5 relative bg-card-1 rounded-2xl inline-flex flex-row md:flex-col justify-start items-center md:items-start gap-2.5 max-w-full md:px-6 md:py-6 md:max-w-[348px] w-full"
+            >
+              <div
+                class="step-number-wrap w-10 h-10 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5 md:bg-transparent md:p-0 md:w-auto md:h-auto md:rounded-none"
+              >
+                <div
+                  class="step-number text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6 md:font-extrabold md:text-5xl md:leading-[57.60px]"
+                >
+                  04
+                </div>
+              </div>
+              <div
+                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
+                >
+                  Receive Your Earnings
+                </div>
+                <div
+                  class="step-desc self-stretch justify-center text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 md:h-15 md:text-xl md:leading-8 line-clamp-2"
+                >
+                  Get your funds through your chosen method
+                </div>
+
+                <div class="hidden md:block">
+                  <img
+                    src="receive-earnings.svg"
+                    alt="receive earnings image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!--Mobile read more button-->
+
+            <div
+              class="md:hidden min-w-20 max-w-[140px] mx-auto max-h-8 min-h-8 px-3 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-1.5 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <div
+                  class="text-center justify-start text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  Read Full Article
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!--
+    Deposit and payout methods section Ends
+    -->
+
+      <!--
+  Everything–Payout Articles Section Starts
+-->
+      <section
+        class="everything-payout-articles max-w-[1430px] mx-auto mt-4 md:mt-6 px-3"
+      >
+        <div
+          class="relative z-50 flex justify-between items-center mb-6 md:mb-8"
+        >
+          <h3
+            class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+          >
+            Everything–Payout Articles
+          </h3>
+
+          <div class="w-20 flex justify-between items-center">
+            <img
+              src="left-arrow-light.svg"
+              data-light="left-arrow-light.svg"
+              data-dark="left-arrow-dark.svg"
+              alt="left arrow"
+              class="everything-payout-prev h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src="right-arrow-dark.svg"
+              alt="right arrow"
+              class="everything-payout-next h-8 w-8 cursor-pointer"
+            />
+          </div>
+        </div>
+
+        <div class="swiper-container">
+          <div class="swiper everythingPayoutSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
+                <a href="#" class="block w-full">
+                  <div
+                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
+                  >
+                    <div
+                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                    >
+                      <div
+                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
+                      >
+                        Payout
+                      </div>
+                    </div>
+
+                    <div
+                      class="inline-flex justify-start items-start gap-3 w-full"
+                    >
+                      <h3
+                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                      >
+                        How to Request a Payout
+                      </h3>
+                      <div
+                        class="inline-flex flex-col justify-center items-center"
+                      >
+                        <div class="w-5 h-5 relative">
+                          <div
+                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
+                          >
+                            <img src="ArrowRight.svg" alt="right arrow" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
+                    >
+                      Learn the steps to request a payout quickly and safely.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
+                <a href="#" class="block w-full">
+                  <div
+                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
+                  >
+                    <div
+                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                    >
+                      <div
+                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
+                      >
+                        Payout
+                      </div>
+                    </div>
+
+                    <div
+                      class="inline-flex justify-start items-start gap-3 w-full"
+                    >
+                      <h3
+                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                      >
+                        Using Bitcoin for Payouts: Everything you need
+                      </h3>
+                      <div
+                        class="inline-flex flex-col justify-center items-center"
+                      >
+                        <div class="w-5 h-5 relative">
+                          <div
+                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
+                          >
+                            <img src="ArrowRight.svg" alt="right arrow" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
+                    >
+                      How to withdraw using Bitcoin and what to expect.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
+                <a href="#" class="block w-full">
+                  <div
+                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
+                  >
+                    <div
+                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                    >
+                      <div
+                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
+                      >
+                        Crypto Help
+                      </div>
+                    </div>
+
+                    <div
+                      class="inline-flex justify-start items-start gap-3 w-full"
+                    >
+                      <h3
+                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                      >
+                        Deposit Funds or Withdraw Winnings
+                      </h3>
+                      <div
+                        class="inline-flex flex-col justify-center items-center"
+                      >
+                        <div class="w-5 h-5 relative">
+                          <div
+                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
+                          >
+                            <img src="ArrowRight.svg" alt="right arrow" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
+                    >
+                      Quick guide to deposits and withdrawals using crypto.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
+                <a href="#" class="block w-full">
+                  <div
+                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
+                  >
+                    <div
+                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                    >
+                      <div
+                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
+                      >
+                        Crypto Help
+                      </div>
+                    </div>
+
+                    <div
+                      class="inline-flex justify-start items-start gap-3 w-full"
+                    >
+                      <h3
+                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                      >
+                        Min and Max Withdrawal Limits
+                      </h3>
+                      <div
+                        class="inline-flex flex-col justify-center items-center"
+                      >
+                        <div class="w-5 h-5 relative">
+                          <div
+                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
+                          >
+                            <img src="ArrowRight.svg" alt="right arrow" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
+                    >
+                      Understand minimums, maximums, and processing rules.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- END swiper-wrapper -->
+          </div>
+          <!-- END swiper -->
+        </div>
+      </section>
+      <!--
+  Everything–Payout Articles Section Ends
+-->
+
+      <!--
+Reach out to Live agent section Starts
+-->
+      <section
+        class="live_agent_section mt-4 md:mt-10 w-full bg-inv-card-2 px-3 py-5 md:py-10 inline-flex flex-col justify-center items-center md:px-8"
+      >
+        <div
+          class="live_agent_container relative max-w-[728px] w-full rounded-2xl outline-1 -outline-offset-1 outline-card-border bg-card-1 flex flex-col md:flex-row md:items-center md:gap-10"
+        >
+          <div class="relative w-full h-[236px] sm:max-w-[234px]">
+            <div
+              class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
+            >
+              <video
+                class="h-full object-cover rounded-2xl"
+                src="video.mp4"
+                muted
+                autoplay
+              ></video>
+            </div>
+
+            <div
+              class="w-3 h-3 left-3 bottom-3 absolute bg-rose-600 rounded-full z-20 heartbeat-dot"
+            ></div>
+          </div>
+
+          <div class="content p-6">
+            <p
+              class="text-foreground-medium text-base font-semibold font-['Nexa'] leading-5"
+            >
+              Instatnt Assistance:
+            </p>
+            <p
+              class="text-foreground-high text-xl md:text-2xl font-extrabold font-['Nexa'] leading-7"
+            >
+              Reach Out to Our Live Agent
+            </p>
+            <div class="mt-6 relative">
+              <div
+                class="agent_dropdown_btn cursor-pointer font-nexaheavy font-black text-base rounded-full bg-[#007BFF] text-white flex items-center justify-center gap-2 py-2 w-[200px]"
+              >
+                <span
+                  class="text-center text-base font-extrabold font-['Nexa'] leading-5"
+                  >Contact the Agent</span
+                >
+                <img
+                  class="w-4 h-4"
+                  src="arrow-down-white.svg"
+                  alt="arrown down"
+                />
+              </div>
+
+              <ul
+                id="agentDropdown"
+                class="hidden mt-2 ml-2 font-['Nexa'] absolute agent_dropdown z-50 min-w-[180px] overflow-auto rounded-xl border border-slate-200 bg-white font-roboto shadow-5xl font-normal text-gray-800 focus:outline-none"
+              >
+                <li
+                  class="block w-full cursor-pointer pt-[9px] py-2 border-b border-gray-400"
+                >
+                  <a href="" class="px-2 inline-flex items-center gap-2"
+                    ><img src="message.svg" alt="message image" /><span
+                      >Contact via Chat</span
+                    ></a
+                  >
+                </li>
+                <li
+                  class="block w-full cursor-pointer pt-[9px] pb-2 border-b border-gray-400"
+                >
+                  <a href="" class="px-2 inline-flex items-center gap-2"
+                    ><img src="phone.svg" alt="phone image" /><span
+                      >Contact via Call</span
+                    ></a
+                  >
+                </li>
+                <li class="block w-full cursor-pointer pt-[9px] pb-2">
+                  <a href="" class="px-2 inline-flex items-center gap-2"
+                    ><img src="sms.svg" alt="email image" /><span
+                      >Contact via Email</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="overlay_agent bg-neutral-800 font-['Nexa'] px-6 py-2 border border-slate-500 rounded-b-[20px] rounded-bl-[20px] rounded-tr-[20px] md:rounded-tl-[20px] md:rounded-bl-none"
+          >
+            <p class="text-slate-400 text-sm">Support Agent</p>
+            <p class="text-white text-base sm:text-lg">Do you need any help?</p>
+          </div>
+        </div>
+      </section>
+
+      <!--
+Reach out to Live agent section Ends
+      -->
+
+      <!--
+      FAQ Accordion Section Starts
+      -->
+      <section class="max-w-[807px] mx-auto px-3 md:px-6 pt-4 pb-8 md:py-10">
+        <div
+          class="bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border overflow-hidden"
+        >
+          <!-- Header -->
+          <div
+            class="self-stretch w-full py-5 px-4 inline-flex justify-start items-center gap-2.5 border-b border-border-medium/40"
+          >
+            <img src="message-question.svg" alt="faq icon" />
+            <h2
+              class="flex-1 justify-center text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <!-- FAQ item 1 (open by default) -->
+          <details class="group border-b border-border-medium/40" open>
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3"
+            >
+              <!-- Icon -->
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <!-- chevron (down -> rotates when open) -->
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                What is the first step to start betting on sports?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 2 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                How do odds work in sports betting?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 3 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                What types of bets can I place?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 4 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                How do I manage my bankroll effectively?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 5 (last - no bottom border) -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                Are there any strategies for successful sports betting?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!--
+      FAQ Accordion Section Ends
+      -->
+    </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
