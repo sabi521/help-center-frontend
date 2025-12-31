@@ -177,4 +177,62 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
+
+  /**
+   * Bonus Page Tabs
+   */
+  const links = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("[data-tab-link]")
+  );
+
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-tab-panel]")
+  );
+
+  function setActive(id: string) {
+    // panels
+    panels.forEach((p) => {
+      p.classList.toggle("hidden", p.id !== id);
+    });
+
+    // links
+    links.forEach((a) => {
+      const isActive = a.dataset.tabTarget === id;
+
+      a.classList.toggle("bg-accent", isActive);
+      a.classList.toggle("text-accent-foreground", isActive);
+
+      // keep inactive not-black
+      a.classList.toggle("text-foreground-medium", !isActive);
+
+      // accessibility
+      if (isActive) {
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  // click behavior
+  links.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.dataset.tabTarget;
+      if (!id) return;
+
+      // keep hash navigation, but prevent jump
+      e.preventDefault();
+      history.replaceState(null, "", `#${id}`);
+
+      setActive(id);
+    });
+  });
+
+  // initial state (from hash or default)
+  const initial =
+    (location.hash || "").replace("#", "") || links[0]?.dataset.tabTarget;
+
+  if (initial) {
+    setActive(initial);
+  }
 });

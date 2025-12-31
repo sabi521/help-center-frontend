@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help Center</title>
+    <title>Bonus</title>
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
@@ -158,42 +158,43 @@
         -->
 
       <!--
-        Deposits & Payouts section starts
+        Bonuses, Promotions, and Rewards section starts
         -->
-      <section class="deposit-layout-section mt-2 px-3 md:mt-10">
+      <section class="bonus-prom-reward-section mt-2 px-3 md:mt-10">
         <div
-          class="self-stretch p-5 md:p-10 bg-inv-card-2 rounded-2xl max-w-[1430px] w-full mx-auto"
+          class="p-5 md:p-10 bg-inv-card-2 rounded-2xl max-w-[1430px] w-full mx-auto"
         >
-          <div class="flex justify-center items-start gap-8">
+          <div class="flex flex-col justify-center items-start gap-5 md:gap-8">
             <div
-              class="flex-1 inline-flex flex-col justify-start items-start gap-5 md:gap-8"
+              class="flex justify-between items-center w-full gap-5 md:gap-8"
             >
               <div
-                class="self-stretch justify-start text-inv-foreground-high text-lg md:text-4xl font-extrabold font-['Nexa'] leading-5 md:leading-12"
+                class="text-inv-foreground-high text-lg md:text-4xl font-extrabold font-['Nexa'] leading-5 md:leading-12"
               >
                 Bonuses, Promotions, and Rewards
               </div>
               <div
-                class="self-stretch justify-start text-inv-foreground-medium text-sm md:text-2xl font-normal font-['Roboto'] leading-5 md:leading-9"
+                class="max-h-8 min-h-8 max-w-23 md:max-w-32 w-full px-2 md:px-3 bg-inv-alpha-10 rounded-md flex justify-center items-center gap-2 overflow-hidden"
               >
-                Maximize your play with special bonuses, limited-time offers,
-                and exciting ways to earn more as you go!
+                <div
+                  class="text-center justify-center text-inv-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
+                >
+                  58 Articles
+                </div>
               </div>
             </div>
+
             <div
-              class="max-h-8 min-h-8 px-3 bg-inv-alpha-10 rounded-md flex justify-center items-center gap-2 overflow-hidden"
+              class="self-stretch justify-start text-inv-foreground-medium text-sm md:text-2xl font-normal font-['Roboto'] leading-5 md:leading-9"
             >
-              <div
-                class="text-center justify-center text-inv-foreground-high text-sm md:text-lg font-semibold font-['Nexa'] leading-4 md:leading-5"
-              >
-                58 Articles
-              </div>
+              Maximize your play with special bonuses, limited-time offers, and
+              exciting ways to earn more as you go!
             </div>
           </div>
         </div>
       </section>
       <!-- 
-      Deposits & Payouts section ends 
+      Bonuses, Promotions, and Rewards section ends 
       -->
 
       <!--
@@ -268,42 +269,49 @@
         <!-- Quick Guide Navigation -->
         <header class="navigation-bonus-methods w-full">
           <nav
-            aria-label="Deposit and payout navigation"
-            class="inline-flex items-center gap-2 group"
+            aria-label="Bonus navigation"
+            class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar"
           >
-            <!-- ACTIVE TAB -->
+            <!-- ACTIVE TAB (default) -->
             <a
               href="#bonus-types"
-              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent group-hover:border-transparent transition-all duration-200"
+              data-tab-link
+              data-target="bonus-types"
+              aria-current="page"
+              class="tab-link shrink-0 h-10 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent transition-all duration-200"
             >
               <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+                class="text-sm md:text-lg font-extrabold leading-4 md:leading-5"
               >
-                Bonuses Types
+                Bonus Types
               </span>
             </a>
 
             <!-- INACTIVE TAB -->
             <a
               href="#claim-bonus"
-              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-tab-link
+              data-target="claim-bonus"
+              class="tab-link shrink-0 h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
             >
               <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+                class="text-sm md:text-lg font-extrabold leading-4 md:leading-5"
               >
-                How To Apply a Bonus
+                How to Apply a Bonus
               </span>
             </a>
 
             <!-- INACTIVE TAB -->
             <a
               href="#payouts"
-              class="h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-tab-link
+              data-target="payouts"
+              class="tab-link shrink-0 h-10 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
             >
               <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+                class="text-sm md:text-lg font-extrabold leading-4 md:leading-5"
               >
-                Promotions By Product
+                Promotions by Product
               </span>
             </a>
           </nav>
@@ -361,7 +369,6 @@
                 >
                   <a
                     href="#"
-                    title="Sign-Up Bonus"
                     class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                   >
                     <span class="flex-1 max-h-12">Sign-Up Bonus</span>
@@ -369,7 +376,6 @@
 
                   <a
                     href="#"
-                    title="Re-Up Bonus"
                     class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                   >
                     <span class="flex-1 max-h-12">Re-Up Bonus</span>
@@ -411,7 +417,6 @@
               <div class="self-stretch flex flex-col gap-2.5">
                 <a
                   href="#"
-                  title="Sportsbook Bonus"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Sportsbook Bonus</span>
@@ -419,7 +424,6 @@
 
                 <a
                   href="#"
-                  title="Casino Bonus"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Casino Bonus</span>
@@ -427,7 +431,6 @@
 
                 <a
                   href="#"
-                  title="Crypto Bonus"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Crypto Bonus</span>
@@ -435,7 +438,6 @@
 
                 <a
                   href="#"
-                  title="Deposit Bonus"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Deposit Bonus</span>
@@ -476,7 +478,6 @@
               <div class="self-stretch flex flex-col gap-3">
                 <a
                   href="#"
-                  title="Special Season"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Special Season</span>
@@ -484,7 +485,6 @@
 
                 <a
                   href="#"
-                  title="Loyalty Bonus"
                   class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
                 >
                   <span class="flex-1 max-h-12">Loyalty Bonus</span>
@@ -509,7 +509,6 @@
             <!-- Desktop: Read Full Article -->
             <a
               href="#"
-              title="Read full article: How to Claim a Bonus"
               class="hidden min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium md:inline-flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
             >
               <span
@@ -701,7 +700,6 @@
             <!-- Mobile: Read Full Article -->
             <a
               href="#"
-              title="Read full article: How to Claim a Bonus"
               class="md:hidden min-w-20 max-w-[140px] mx-auto max-h-8 min-h-8 px-3 rounded-full outline outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-1.5 cursor-pointer transition-colors duration-200 ease-out hover:bg-fill-medium/70"
             >
               <span
@@ -727,269 +725,890 @@
 
           <nav class="navigation-links">
             <div
-              class="inline-flex w-full max-w-[433px] items-center gap-1 rounded-full bg-fill-low p-1 outline outline-1 -outline-offset-1 outline-border-low"
+              class="flex w-full items-center gap-1 overflow-x-auto rounded-full bg-fill-low p-1 outline-1 -outline-offset-1 outline-border-low md:w-[433px] md:overflow-visible no-scrollbar"
             >
               <!-- Active -->
               <a
                 href="#sports-promos"
-                title="Sports Promos"
-                aria-current="page"
-                class="flex-1 min-w-16 rounded-full bg-accent px-2.5 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-accent-foreground"
+                data-tab-link
+                data-tab-target="sports-promos"
+                class="shrink-0 rounded-full bg-accent px-4 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-accent-foreground"
               >
                 Sports Promos
               </a>
 
-              <!-- Inactive (hover same background as active) -->
+              <!-- Inactive -->
               <a
                 href="#casino-promos"
-                title="Casino Promos"
-                class="flex-1 min-w-16 rounded-full px-2.5 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-foreground-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                data-tab-link
+                data-tab-target="casino-promos"
+                class="shrink-0 rounded-full px-4 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-foreground-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 Casino Promos
               </a>
 
               <a
                 href="#loyalty-rewards"
-                title="Loyalty Rewards"
-                class="flex-1 min-w-16 rounded-full px-2.5 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-foreground-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                data-tab-link
+                data-tab-target="loyalty-rewards"
+                class="shrink-0 rounded-full px-4 py-2 text-center text-sm font-extrabold font-['Nexa'] leading-4 text-foreground-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 Loyalty Rewards
               </a>
             </div>
           </nav>
+
+          <!-- Sub-section: Sports Promo -->
+          <section id="sports-promos" data-tab-panel class="mt-6">
+            <!-- Grid container -->
+            <div
+              class="deposit-methods-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+            >
+              <!-- Free Play -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Free Play
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch flex flex-col md:flex-row justify-start md:justify-between items-start gap-2.5"
+                >
+                  <div
+                    class="self-stretch w-full md:w-1/2 flex flex-col justify-start items-start gap-2.5"
+                  >
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Where to find available Free Play Bonuses
+                      </span>
+                    </a>
+
+                    <a
+                      href="#"
+                      title="Re-Up Bonus"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Steps to Claim a Bonus</span
+                      >
+                    </a>
+
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Promo Codes and How to Use Them</span
+                      >
+                    </a>
+
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Eligibility Requirements</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Free  Bets -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Free Bets
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-2.5">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">How it works</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Common Reasons bonuses are not approved</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >How to check Aprproval Status</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Time frames for Bonus Approval</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Rollovers -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Rollovers
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-3">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >What is a Rollover and how it calculated?</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">Steps to Claim a Bonus</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Promo Codes and How to Use Them</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Bonus Approval Guide: Exclusive for VIP Customers -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Bonus Approval Guide: Exclusive for VIP Customers
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn how bonus approvals work exclusively for VIP customers
+                    and what steps you need to follow to qualify.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-3">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">How it Works</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">What is Max-Cashout?</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Common Reasons bonuses are not Approved</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sub-section: Casino Promo -->
+          <section id="casino-promos" data-tab-panel class="mt-6 hidden">
+            <!-- Grid container -->
+            <div
+              class="deposit-methods-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+            >
+              <!-- Free Spins -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="free spins icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Free Spins
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-2.5">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Where to find available Free Play Bonuses</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">Steps to Claim a Bonus</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Promo Codes and How to Use Them</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Cashback -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="cashback icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Cashback
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-2.5">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">How it works</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Common Reasons bonuses are not approved</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >How to check Approval Status</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Time frames for Bonus Approval</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Rollovers -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="rollovers icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Rollovers
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-2.5">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >What is a Rollover and how it calculated?</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">Steps to Claim a Bonus</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Promo Codes and How to Use Them</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sub-section: Loyality Rewards -->
+          <section id="loyalty-rewards" data-tab-panel class="mt-6 hidden">
+            <!-- Grid container -->
+            <div
+              class="deposit-methods-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+            >
+              <!-- Free Play -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Free Play
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div
+                  class="self-stretch flex flex-col md:flex-row justify-start md:justify-between items-start gap-2.5"
+                >
+                  <div
+                    class="self-stretch w-full md:w-1/2 flex flex-col justify-start items-start gap-2.5"
+                  >
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Where to find available Free Play Bonuses
+                      </span>
+                    </a>
+
+                    <a
+                      href="#"
+                      title="Re-Up Bonus"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Steps to Claim a Bonus</span
+                      >
+                    </a>
+
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Promo Codes and How to Use Them</span
+                      >
+                    </a>
+
+                    <a
+                      href="#"
+                      class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      <span class="flex-1 max-h-12"
+                        >Eligibility Requirements</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Free  Bets -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Free Bets
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-2.5">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">How it works</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Common Reasons bonuses are not approved</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >How to check Aprproval Status</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Time frames for Bonus Approval</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Rollovers -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Rollovers
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn where to enter promo codes, meet qualifying
+                    requirements, and start enjoying your rewards.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-3">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >What is a Rollover and how it calculated?</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">Steps to Claim a Bonus</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Promo Codes and How to Use Them</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- Bonus Approval Guide: Exclusive for VIP Customers -->
+              <div
+                class="self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-6"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-start items-center gap-3"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="gift-box.svg"
+                      alt="welcome bonus icon"
+                    />
+                    <div
+                      class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    >
+                      Bonus Approval Guide: Exclusive for VIP Customers
+                    </div>
+                  </div>
+
+                  <div
+                    class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    Learn how bonus approvals work exclusively for VIP customers
+                    and what steps you need to follow to qualify.
+                  </div>
+                </div>
+
+                <div class="self-stretch flex flex-col gap-3">
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">How it Works</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Eligibility Requirements</span
+                    >
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12">What is Max-Cashout?</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  >
+                    <span class="flex-1 max-h-12"
+                      >Common Reasons bonuses are not Approved</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </section>
       <!--
     Deposit and payout methods section Ends
     -->
 
-      <!--
-  Everything–Payout Articles Section Starts
--->
-      <section
-        class="everything-payout-articles max-w-[1430px] mx-auto mt-4 md:mt-6 px-3"
-      >
-        <div
-          class="relative z-50 flex justify-between items-center mb-6 md:mb-8"
-        >
+      <!-- Section: Explore More Resources -->
+      <section class="mx-auto mt-3.5 max-w-[1430px] px-3 2xl:px-0 md:mt-8">
+        <header class="hidden md:block">
           <h3
-            class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            class="text-base-foreground-high text-lg font-extrabold leading-5 md:text-2xl md:leading-7"
           >
-            Everything–Payout Articles
+            Explore More Resources
           </h3>
+        </header>
 
-          <div class="w-20 flex justify-between items-center">
-            <img
-              src="left-arrow-light.svg"
-              data-light="/left-arrow-light.svg"
-              data-dark="/left-arrow-dark.svg"
-              alt="left arrow"
-              class="everything-payout-prev h-8 w-8 cursor-pointer"
+        <article
+          class="mt-3 overflow-hidden rounded-2xl bg-card-1 outline outline-1 -outline-offset-1 outline-card-border md:mt-8"
+        >
+          <!-- Responsive image (desktop + mobile) -->
+          <picture>
+            <!-- Desktop -->
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                explore-more-resources-bg.png 1x,
+                explore-more-resources-bg.png 2x
+              "
             />
-
+            <!-- Mobile -->
             <img
-              src="right-arrow-dark.svg"
-              alt="right arrow"
-              class="everything-payout-next h-8 w-8 cursor-pointer"
+              src="explore-more-resources-bg-mob.png"
+              srcset="
+                explore-more-resources-bg-mob.png 1x,
+                explore-more-resources-bg-mob.png 2x
+              "
+              alt="Explore more resources background"
+              class="h-40 w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
+          </picture>
+
+          <div class="flex flex-col gap-6 px-5 py-7">
+            <h4 class="text-2xl font-extrabold leading-7 text-foreground-high">
+              Earning Sportsbook Bonus
+            </h4>
+
+            <p class="text-base font-normal leading-6 text-foreground-medium">
+              Lorem ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet. Tempus
+              tincidunt facilisi volutpat sollicitudin. Nisl hac lorem sapien
+              dictum justo mollis dolor in elementum. Suscipit sed fames
+              ultrices et aliquam in malesuada sapien.
+            </p>
+
+            <a
+              href="#"
+              class="inline-flex max-w-[218px] min-h-10 items-center gap-2 rounded-full px-3.5 outline-1 -outline-offset-1 outline-border-medium transition-colors hover:bg-fill-medium/70"
+              aria-label="Open Sportsbook Bonus resources"
+            >
+              <span
+                class="text-lg font-extrabold leading-5 text-foreground-high"
+              >
+                Sportsbook Bonus
+              </span>
+              <img
+                src="ArrowRight.svg"
+                alt=""
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+            </a>
           </div>
-        </div>
-
-        <div class="swiper-container">
-          <div class="swiper everythingPayoutSwiper">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
-                <a href="#" class="block w-full">
-                  <div
-                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
-                  >
-                    <div
-                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
-                    >
-                      <div
-                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
-                      >
-                        Payout
-                      </div>
-                    </div>
-
-                    <div
-                      class="inline-flex justify-start items-start gap-3 w-full"
-                    >
-                      <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
-                      >
-                        How to Request a Payout
-                      </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
-                        <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p
-                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
-                    >
-                      Learn the steps to request a payout quickly and safely.
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
-                <a href="#" class="block w-full">
-                  <div
-                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
-                  >
-                    <div
-                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
-                    >
-                      <div
-                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
-                      >
-                        Payout
-                      </div>
-                    </div>
-
-                    <div
-                      class="inline-flex justify-start items-start gap-3 w-full"
-                    >
-                      <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
-                      >
-                        Using Bitcoin for Payouts: Everything you need
-                      </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
-                        <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p
-                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
-                    >
-                      How to withdraw using Bitcoin and what to expect.
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
-                <a href="#" class="block w-full">
-                  <div
-                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
-                  >
-                    <div
-                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
-                    >
-                      <div
-                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
-                      >
-                        Crypto Help
-                      </div>
-                    </div>
-
-                    <div
-                      class="inline-flex justify-start items-start gap-3 w-full"
-                    >
-                      <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
-                      >
-                        Deposit Funds or Withdraw Winnings
-                      </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
-                        <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p
-                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
-                    >
-                      Quick guide to deposits and withdrawals using crypto.
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="swiper-slide max-w-[288px] md:max-w-[428px] w-full">
-                <a href="#" class="block w-full">
-                  <div
-                    class="p-5 h-40 w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-start gap-4"
-                  >
-                    <div
-                      class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
-                    >
-                      <div
-                        class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
-                      >
-                        Crypto Help
-                      </div>
-                    </div>
-
-                    <div
-                      class="inline-flex justify-start items-start gap-3 w-full"
-                    >
-                      <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
-                      >
-                        Min and Max Withdrawal Limits
-                      </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
-                        <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p
-                      class="text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-2"
-                    >
-                      Understand minimums, maximums, and processing rules.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- END swiper-wrapper -->
-          </div>
-          <!-- END swiper -->
-        </div>
+        </article>
       </section>
-      <!--
-  Everything–Payout Articles Section Ends
--->
+      <!-- Section: Explore More Resources -->
 
       <!--
 Reach out to Live agent section Starts
