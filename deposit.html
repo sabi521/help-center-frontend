@@ -5,10 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deposit</title>
-    <!-- Link Swiper's CSS -->
+    <link rel="preconnect" href="https://sh.betuscdn.com" crossorigin />
     <link
       rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/roboto.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/nexa.css"
+    />
+    <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
   </head>
   <body>
@@ -42,7 +56,7 @@
               <input
                 type="text"
                 placeholder="Search on this page"
-                class="w-full text-foreground-high text-base font-normal font-['Roboto'] leading-6 outline-none"
+                class="w-full text-foreground-high focus:text-black text-base font-normal font-['Roboto'] leading-6 outline-none"
               />
             </div>
           </div>
@@ -354,7 +368,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -391,7 +405,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -428,7 +442,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -465,7 +479,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -875,7 +889,11 @@
                   aria-label="Call customer support"
                   class="self-stretch min-w-24 max-h-10 min-h-10 px-3.5 bg-primary rounded-full inline-flex justify-center items-center gap-2 cursor-pointer transition-colors duration-200 hover:bg-primary/90"
                 >
-                  <img src="phone.svg" alt="Phone icon" class="w-5 h-5" />
+                  <img
+                    src="phone-white-icon.svg"
+                    alt="Phone icon"
+                    class="w-5 h-5"
+                  />
                   <span
                     class="text-primary-foreground text-lg font-extrabold font-['Nexa'] leading-5"
                   >
@@ -963,7 +981,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -1000,7 +1018,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -1037,7 +1055,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -1074,7 +1092,7 @@
                 </div>
               </div>
               <div
-                class="step-content flex-1 inline-flex flex-col justify-center items-start gap-3"
+                class="step-content flex-1 inline-flex flex-col justify-center items-center gap-3"
               >
                 <div
                   class="step-title self-stretch justify-center text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-2 md:h-14 md:text-2xl md:leading-7"
@@ -1119,11 +1137,9 @@
       <!--
   Everything–Payout Articles Section Starts
 -->
-      <section
-        class="everything-payout-articles max-w-[1430px] mx-auto mt-4 md:mt-6 px-3"
-      >
+      <section class="everything-payout-articles mt-4 md:mt-6 px-3">
         <div
-          class="relative z-50 flex justify-between items-center mb-6 md:mb-8"
+          class="relative z-50 flex max-w-[1430px] mx-auto flex justify-between items-center mb-6 md:mb-8"
         >
           <h3
             class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
@@ -1148,7 +1164,7 @@
           </div>
         </div>
 
-        <div class="swiper-container">
+        <div class="swiper-container pl-[max(0px,(100%-1430px)/2)]">
           <div class="swiper everythingPayoutSwiper">
             <div class="swiper-wrapper">
               <!-- Slide 1 -->
@@ -1358,10 +1374,12 @@ Reach out to Live agent section Starts
               class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
             >
               <video
+                playsinline
+                muted
+                loop
+                autoplay
                 class="h-full object-cover rounded-2xl"
                 src="video.mp4"
-                muted
-                autoplay
               ></video>
             </div>
 
@@ -1401,7 +1419,7 @@ Reach out to Live agent section Starts
                 class="hidden mt-2 ml-2 font-['Nexa'] absolute agent_dropdown z-50 min-w-[180px] overflow-auto rounded-xl border border-slate-200 bg-white font-roboto shadow-5xl font-normal text-gray-800 focus:outline-none"
               >
                 <li
-                  class="block w-full cursor-pointer pt-[9px] py-2 border-b border-gray-400"
+                  class="block w-full cursor-pointer pt-2.25 py-2 border-b border-gray-400"
                 >
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="message.svg" alt="message image" /><span
@@ -1410,15 +1428,15 @@ Reach out to Live agent section Starts
                   >
                 </li>
                 <li
-                  class="block w-full cursor-pointer pt-[9px] pb-2 border-b border-gray-400"
+                  class="block w-full cursor-pointer pt-2.25 pb-2 border-b border-gray-400"
                 >
                   <a href="" class="px-2 inline-flex items-center gap-2"
-                    ><img src="phone.svg" alt="phone image" /><span
+                    ><img src="Phone.svg" alt="phone image" /><span
                       >Contact via Call</span
                     ></a
                   >
                 </li>
-                <li class="block w-full cursor-pointer pt-[9px] pb-2">
+                <li class="block w-full cursor-pointer pt-2.25 pb-2">
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="sms.svg" alt="email image" /><span
                       >Contact via Email</span

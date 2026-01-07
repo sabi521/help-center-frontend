@@ -1,238 +1,223 @@
 import "./style.css";
-
-// Swiper core + styles
 import Swiper from "swiper";
-/* import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination"; */
-
-// Swiper modules
 import { Navigation, Pagination } from "swiper/modules";
 
 /**
- * Dropdown menu for agent
+ * 1. UTILITY: SWIPER INITIALIZER
+ * * @param selector - The CSS selector for the Swiper container.
+ * @param prevBtnClass - Selector for the custom previous navigation button.
+ * @param nextBtnClass - Selector for the custom next navigation button.
+ * @param delay - Delay in ms. Used to stagger initialization to prevent
+ * Long Tasks and "Forced Reflow" in the browser.
  */
-const dropdownBtn = document.querySelector(".agent_dropdown_btn");
-const dropdownMenu = document.getElementById("agentDropdown");
+const initSwiper = (
+  selector: string,
+  prevBtnClass: string,
+  nextBtnClass: string,
+  delay: number
+) => {
+  const el = document.querySelector(selector);
+  if (!el) return;
 
-if (dropdownBtn && dropdownMenu) {
-  dropdownBtn.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
-  });
-}
+  // setTimeout staggers the CPU load. If three Swipers initialize at the
+  // exact same millisecond, the browser may drop frames.
+  setTimeout(() => {
+    new Swiper(el as HTMLElement, {
+      modules: [Navigation, Pagination],
+      slidesPerView: "auto",
+      spaceBetween: 12,
+      observer: true, // Recalculates layout if content changes dynamically
+      observeParents: true, // Recalculates if a parent container changes visibility
+      navigation: {
+        nextEl: nextBtnClass,
+        prevEl: prevBtnClass,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      on: {
+        /**
+         * Dynamic Icon Toggle:
+         * Switches the 'Previous' arrow image source when on the first slide.
+         * Expects data-light and data-dark attributes on the img element.
+         */
+        slideChange(swiper) {
+          const prevBtn = document.querySelector(
+            prevBtnClass
+          ) as HTMLImageElement | null;
+          if (!prevBtn) return;
 
+          prevBtn.src = swiper.isBeginning
+            ? prevBtn.dataset.light || prevBtn.src
+            : prevBtn.dataset.dark || prevBtn.src;
+        },
+      },
+    });
+  }, delay);
+};
+
+/**
+ * 2. MAIN EXECUTION (DOM READY)
+ * Ensures all DOM elements are available before attaching listeners.
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  /**
-   * Trending Help Section Swiper
-   */
-  const swiperEl = document.querySelector(".trendingHelpSwiper");
+  /* --- A. SWIPER INITIALIZATION --- 
+     Staggered delays (0, 50ms, 100ms) optimize the Critical Rendering Path.
+  */
+  initSwiper(
+    ".trendingHelpSwiper",
+    ".custom-prev-button",
+    ".custom-next-button",
+    0
+  );
+  initSwiper(
+    ".aboutCryptoSwiper",
+    ".crypto-prev-button",
+    ".crypto-next-button",
+    50
+  );
+  initSwiper(
+    ".everythingPayoutSwiper",
+    ".everything-payout-prev",
+    ".everything-payout-next",
+    100
+  );
 
-  if (swiperEl) {
-    new Swiper(swiperEl as HTMLElement, {
-      modules: [Navigation, Pagination],
-      slidesPerView: "auto",
-      spaceBetween: 12,
-      navigation: {
-        nextEl: ".custom-next-button",
-        prevEl: ".custom-prev-button",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      on: {
-        slideChange(swiper) {
-          const prevBtn = document.querySelector(
-            ".custom-prev-button"
-          ) as HTMLImageElement | null;
+  /* --- B. SEARCH INPUT CLEAR BUTTONS --- 
+     Handles the 'X' button visibility inside search fields.
+  */
+  const wrappers = document.querySelectorAll<HTMLElement>(".search-input");
+  wrappers.forEach((wrap) => {
+    const input = wrap.querySelector<HTMLInputElement>(".search-input__field");
+    const clearBtn = wrap.querySelector<HTMLButtonElement>(
+      ".search-input__clear"
+    );
 
-          if (!prevBtn) return;
+    if (!input || !clearBtn) return;
 
-          prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light || prevBtn.src
-            : prevBtn.dataset.dark || prevBtn.src;
-        },
-      },
+    const toggleClear = () => {
+      clearBtn.classList.toggle("hidden", input.value.trim().length === 0);
+    };
+
+    input.addEventListener("input", toggleClear);
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      toggleClear();
+      input.focus(); // Returns focus to input after clearing for better UX
+    });
+    toggleClear(); // Initial check in case of browser auto-fill
+  });
+
+  /* --- C. AGENT DROPDOWN --- 
+     Simple toggle for the Agent selection menu.
+  */
+  const dropdownBtn = document.querySelector(".agent_dropdown_btn");
+  const dropdownMenu = document.getElementById("agentDropdown");
+
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("hidden");
     });
   }
 
-  /**
-   * Crypto Swiper
-   */
-  const swiperCrypto = document.querySelector(".aboutCryptoSwiper");
-
-  if (swiperCrypto) {
-    new Swiper(swiperCrypto as HTMLElement, {
-      modules: [Navigation, Pagination],
-      slidesPerView: "auto",
-      spaceBetween: 12,
-      navigation: {
-        nextEl: ".crypto-next-button",
-        prevEl: ".crypto-prev-button",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      on: {
-        slideChange(swiper) {
-          const prevBtn = document.querySelector(
-            ".crypto-prev-button"
-          ) as HTMLImageElement | null;
-
-          if (!prevBtn) return;
-
-          prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light || prevBtn.src
-            : prevBtn.dataset.dark || prevBtn.src;
-        },
-      },
-    });
-  }
-
-  /**
-   * Search input form
-   */
+  /* --- D. MOBILE SEARCH OVERLAY --- 
+     Manages the full-screen search interface on mobile devices.
+  */
   const openBtn = document.getElementById("openMobileSearch");
   const overlay = document.getElementById("mobileSearchOverlay");
   const closeBtn = document.getElementById("closeMobileSearch");
-
-  const input = document.getElementById(
+  const mInput = document.getElementById(
     "mobileSearchInput"
   ) as HTMLInputElement | null;
-
-  const clearBtn = document.getElementById("mobileClearBtn");
+  const mClearBtn = document.getElementById("mobileClearBtn");
   const trashBtn = document.getElementById("trashButton");
   const chipsWrap = document.getElementById("recentChips");
 
-  const open = () => {
+  const openSearch = () => {
     overlay?.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
-    setTimeout(() => input?.focus(), 0);
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+
+    // requestAnimationFrame ensures the focus() happens after the browser
+    // has finished the "unhide" layout pass, preventing a layout jank.
+    requestAnimationFrame(() => mInput?.focus());
   };
 
-  const close = () => {
+  const closeSearch = () => {
     overlay?.classList.add("hidden");
-    document.body.style.overflow = "";
-    if (input) input.value = "";
-    clearBtn?.classList.add("hidden");
+    document.body.style.overflow = ""; // Re-enable background scrolling
+    if (mInput) mInput.value = "";
+    mClearBtn?.classList.add("hidden");
   };
 
-  openBtn?.addEventListener("click", open);
-  closeBtn?.addEventListener("click", close);
+  openBtn?.addEventListener("click", openSearch);
+  closeBtn?.addEventListener("click", closeSearch);
 
+  // Close overlay when clicking outside the search box (on the backdrop)
   overlay?.addEventListener("click", (e) => {
-    if (e.target === overlay) close();
+    if (e.target === overlay) closeSearch();
   });
 
-  input?.addEventListener("input", () => {
-    if (!clearBtn || !input) return;
-    clearBtn.classList.toggle("hidden", input.value.trim().length === 0);
+  mInput?.addEventListener("input", () => {
+    mClearBtn?.classList.toggle("hidden", mInput.value.trim().length === 0);
   });
 
-  clearBtn?.addEventListener("click", () => {
-    if (!input) return;
-    input.value = "";
-    clearBtn.classList.add("hidden");
-    input.focus();
+  mClearBtn?.addEventListener("click", () => {
+    if (!mInput) return;
+    mInput.value = "";
+    mClearBtn.classList.add("hidden");
+    mInput.focus();
   });
 
+  // "Clear Recent Searches" functionality
   trashBtn?.addEventListener("click", (e) => {
     e.preventDefault();
-    chipsWrap?.replaceChildren();
+    chipsWrap?.replaceChildren(); // Removes all child nodes (chips) efficiently
   });
 
-  /**
-   * Everything–Payout Articles Swiper
-   */
-  const swiperEverythingPayout = document.querySelector(
-    ".everythingPayoutSwiper"
-  );
-
-  if (swiperEverythingPayout) {
-    new Swiper(swiperEverythingPayout as HTMLElement, {
-      modules: [Navigation, Pagination],
-      slidesPerView: "auto",
-      spaceBetween: 12,
-      navigation: {
-        nextEl: ".everything-payout-next",
-        prevEl: ".everything-payout-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      on: {
-        slideChange(swiper) {
-          const prevBtn = document.querySelector(
-            ".everything-payout-prev"
-          ) as HTMLImageElement | null;
-
-          if (!prevBtn) return;
-
-          prevBtn.src = swiper.isBeginning
-            ? prevBtn.dataset.light || prevBtn.src
-            : prevBtn.dataset.dark || prevBtn.src;
-        },
-      },
-    });
-  }
-
-  /**
-   * Bonus Page Tabs
-   */
+  /* --- E. TAB SYSTEM --- 
+     Handles tab switching, URL hash updates, and ARIA attributes for accessibility.
+  */
   const links = Array.from(
     document.querySelectorAll<HTMLAnchorElement>("[data-tab-link]")
   );
-
   const panels = Array.from(
     document.querySelectorAll<HTMLElement>("[data-tab-panel]")
   );
 
-  function setActive(id: string) {
-    // panels
-    panels.forEach((p) => {
-      p.classList.toggle("hidden", p.id !== id);
-    });
-
-    // links
+  /**
+   * Switches active tab by ID.
+   * Updates CSS classes and Accessibility (ARIA) states.
+   */
+  function setActiveTab(id: string) {
+    panels.forEach((p) => p.classList.toggle("hidden", p.id !== id));
     links.forEach((a) => {
       const isActive = a.dataset.tabTarget === id;
-
+      // Toggle visual active states
       a.classList.toggle("bg-accent", isActive);
       a.classList.toggle("text-accent-foreground", isActive);
-
-      // keep inactive not-black
       a.classList.toggle("text-foreground-medium", !isActive);
 
-      // accessibility
-      if (isActive) {
-        a.setAttribute("aria-current", "page");
-      } else {
-        a.removeAttribute("aria-current");
-      }
+      // Accessibility update
+      isActive
+        ? a.setAttribute("aria-current", "page")
+        : a.removeAttribute("aria-current");
     });
   }
 
-  // click behavior
   links.forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.dataset.tabTarget;
       if (!id) return;
-
-      // keep hash navigation, but prevent jump
       e.preventDefault();
+      // Update URL hash without jumping the page
       history.replaceState(null, "", `#${id}`);
-
-      setActive(id);
+      setActiveTab(id);
     });
   });
 
-  // initial state (from hash or default)
-  const initial =
+  // Initialize view: Load tab from URL hash (e.g., example.com/#payouts) or default to first tab
+  const initialTab =
     (location.hash || "").replace("#", "") || links[0]?.dataset.tabTarget;
-
-  if (initial) {
-    setActive(initial);
-  }
+  if (initialTab) setActiveTab(initialTab);
 });

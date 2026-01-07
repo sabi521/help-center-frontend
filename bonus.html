@@ -5,10 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bonus</title>
-    <!-- Link Swiper's CSS -->
+    <link rel="preconnect" href="https://sh.betuscdn.com" crossorigin />
     <link
       rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/roboto.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://sh.betuscdn.com/libs/css/fonts/nexa.css"
+    />
+    <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
   </head>
   <body>
@@ -42,7 +56,7 @@
               <input
                 type="text"
                 placeholder="Search on this page"
-                class="w-full text-foreground-high text-base font-normal font-['Roboto'] leading-6 outline-none"
+                class="w-full text-foreground-high focus:text-black text-base font-normal font-['Roboto'] leading-6 outline-none"
               />
             </div>
           </div>
@@ -365,7 +379,7 @@
                 class="self-stretch flex flex-col md:flex-row justify-start md:justify-between items-start gap-2.5"
               >
                 <div
-                  class="self-stretch w-full md:w-1/2 flex flex-col justify-start items-start gap-2.5"
+                  class="self-stretch w-full flex flex-col justify-start items-start gap-2.5"
                 >
                   <a
                     href="#"
@@ -1624,10 +1638,12 @@ Reach out to Live agent section Starts
               class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
             >
               <video
+                playsinline
+                muted
+                loop
+                autoplay
                 class="h-full object-cover rounded-2xl"
                 src="video.mp4"
-                muted
-                autoplay
               ></video>
             </div>
 
@@ -1667,7 +1683,7 @@ Reach out to Live agent section Starts
                 class="hidden mt-2 ml-2 font-['Nexa'] absolute agent_dropdown z-50 min-w-[180px] overflow-auto rounded-xl border border-slate-200 bg-white font-roboto shadow-5xl font-normal text-gray-800 focus:outline-none"
               >
                 <li
-                  class="block w-full cursor-pointer pt-[9px] py-2 border-b border-gray-400"
+                  class="block w-full cursor-pointer pt-2.25 py-2 border-b border-gray-400"
                 >
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="message.svg" alt="message image" /><span
@@ -1676,15 +1692,15 @@ Reach out to Live agent section Starts
                   >
                 </li>
                 <li
-                  class="block w-full cursor-pointer pt-[9px] pb-2 border-b border-gray-400"
+                  class="block w-full cursor-pointer pt-2.25 pb-2 border-b border-gray-400"
                 >
                   <a href="" class="px-2 inline-flex items-center gap-2"
-                    ><img src="phone.svg" alt="phone image" /><span
+                    ><img src="Phone.svg" alt="phone image" /><span
                       >Contact via Call</span
                     ></a
                   >
                 </li>
-                <li class="block w-full cursor-pointer pt-[9px] pb-2">
+                <li class="block w-full cursor-pointer pt-2.25 pb-2">
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="sms.svg" alt="email image" /><span
                       >Contact via Email</span

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help Center</title>
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-  </head>
+ <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center</title>
+  <link rel="preconnect" href="https://sh.betuscdn.com" crossorigin>
+  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css">
+  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/roboto.css">
+  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/nexa.css">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
+</head>
   <body>
     <main class="bg-background-1">
       <section
         class="header-banner relative w-full bg-inv-card-solid text-white text-center px-3 py-8 md:py-21"
       >
         <div class="header-banner-content">
-          <div class="max-w-[720px] mx-auto">
+          <div class="max-w-180 mx-auto">
             <div>
               <h1
                 class="text-center justify-center text-inv-foreground-low text-xs font-bold font-['Roboto'] leading-4 md:text-sm md:leading-5 mb-2"
@@ -31,21 +31,32 @@
                 Hi, how can we help?
               </p>
 
-              <div class="relative w-full mx-auto mb-8">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2">
-                  <img
-                    src="search-normal.svg"
-                    alt="Search Icon"
-                    class="w-5 h-5"
-                  />
+              <div class="relative w-full mx-auto mb-8 search-input flex items-center max-w-182.5">
+                <!-- Left icon -->
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <img src="search-normal.svg" alt="Search Icon" class="w-5 h-5" />
                 </span>
 
                 <input
                   type="text"
                   placeholder="Search BetUS Help Center"
-                  class="w-full h-12 pl-12 justify-start text-inv-foreground-low text-base font-normal font-['Roboto'] focus:outline-none focus:ring-0 focus:border-transparent leading-6 rounded-[100px] bg-background-2"
+                  class="search-input__field w-full h-12 pl-12 pr-12 rounded-[100px] bg-background-2
+                        text-inv-foreground-low text-base font-normal font-['Roboto'] leading-6
+                        focus:text-black focus:outline-none focus:ring-0 focus:border-transparent"
                 />
+
+                <!-- Clear button -->
+                <button
+                  type="button"
+                  class="search-input__clear absolute right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer hidden"
+                  aria-label="Clear search"
+                >
+                  <img src="input-clear-icon.svg" alt="Clear search" class="w-7 h-7" />
+                </button>
+
               </div>
+
+
 
               <div
                 class="text-left text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4 mb-3"
@@ -108,44 +119,138 @@ Mobile Social Icons Ends
         <!--
 Desktop Social Icons Starts
 -->
-        <div
-          class="header-contact-icons-desktop absolute right-0 top-1/2 -translate-y-1/2 hidden md:block"
+    
+<div class="header-contact-icons-desktop absolute right-0 top-1/2 hidden -translate-y-1/2 md:block">
+  <div class="flex flex-col items-end gap-2.5">
+
+    <!-- CALL -->
+    <a
+    href="tel:+18885123456"
+    class="group inline-flex h-14 shrink-0 items-center overflow-hidden
+          rounded-tl-[200px] rounded-bl-[200px] bg-primary
+          transition-all duration-300 ease-out
+          hover:bg-white hover:w-32 hover:pr-4
+          hover:[animation:slide-in-out_0.5s_ease-out]"
+    >
+      <!-- Icon -->
+      <span class="flex h-14 w-14 items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="stroke-white transition-colors duration-300 group-hover:stroke-primary"
         >
-          <div class="icons space-y-2.5">
-            <a
-              href="#"
-              class="block w-14 px-4 py-2.5 bg-primary rounded-tl-[200px] rounded-bl-[200px]"
-            >
-              <img
-                src="contactIcons/call-desktop.svg"
-                alt="phone icon"
-                class="w-full"
-              />
-            </a>
+          <path
+            d="M22.0004 16.92V19.92C22.0016 20.1985 21.9445 20.4741 21.8329 20.7293C21.7214 20.9845 21.5577 21.2136 21.3525 21.4018C21.1473 21.5901 20.905 21.7335 20.6412 21.8227C20.3773 21.9119 20.0978 21.945 19.8204 21.92C16.7433 21.5856 13.7874 20.5341 11.1904 18.85C8.77425 17.3146 6.72576 15.2661 5.19042 12.85C3.5004 10.2412 2.44866 7.27097 2.12042 4.17997C2.09543 3.90344 2.1283 3.62474 2.21692 3.3616C2.30555 3.09846 2.44799 2.85666 2.63519 2.6516C2.82238 2.44653 3.05023 2.28268 3.30421 2.1705C3.5582 2.05831 3.83276 2.00024 4.11042 1.99997H7.11042C7.59573 1.9952 8.06621 2.16705 8.43418 2.48351C8.80215 2.79996 9.0425 3.23942 9.11042 3.71997C9.23704 4.68004 9.47187 5.6227 9.81042 6.52997C9.94497 6.8879 9.97408 7.27689 9.89433 7.65086C9.81457 8.02482 9.62928 8.36809 9.36042 8.63998L8.09042 9.90997C9.51398 12.4135 11.5869 14.4864 14.0904 15.91L15.3604 14.64C15.6323 14.3711 15.9756 14.1858 16.3495 14.1061C16.7235 14.0263 17.1125 14.0554 17.4704 14.19C18.3777 14.5285 19.3204 14.7634 20.2804 14.89C20.7662 14.9585 21.2098 15.2032 21.527 15.5775C21.8441 15.9518 22.0126 16.4296 22.0004 16.92Z"
+            stroke-width="1.33"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
 
-            <a
-              href="#"
-              class="block w-14 px-4 py-2.5 bg-primary rounded-tl-[200px] rounded-bl-[200px]"
-            >
-              <img
-                src="contactIcons/message-desk.svg"
-                alt="chat icon"
-                class="w-full"
-              />
-            </a>
+      <!-- Text -->
+      <span
+        class="whitespace-nowrap text-primary font-extrabold font-['Nexa']
+              opacity-0 max-w-0 overflow-hidden
+              transition-all duration-300 ease-out
+              group-hover:opacity-100 group-hover:max-w-28"
+      >
+        Call Us
+      </span>
+    </a>
 
-            <a
-              href="#"
-              class="block w-14 px-4 py-2.5 bg-primary rounded-tl-[200px] rounded-bl-[200px]"
-            >
-              <img
-                src="contactIcons/mail-desk.svg"
-                alt="message icon"
-                class="w-full"
-              />
-            </a>
-          </div>
-        </div>
+
+
+    <!-- CHAT -->
+    <a
+      href="#"
+      class="group inline-flex h-14 shrink-0 items-center overflow-hidden
+            rounded-tl-[200px] rounded-bl-[200px] bg-primary
+            transition-all duration-300 ease-out
+            hover:bg-white hover:w-36 hover:pr-5
+            hover:[animation:slide-in-out_0.5s_ease-out]"
+    >
+      <!-- Icon -->
+      <span class="flex h-14 w-14 items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="stroke-white transition-colors duration-300 group-hover:stroke-primary"
+        >
+          <path
+            d="M7.9 20C9.80858 20.9791 12.0041 21.2443 14.0909 20.7478C16.1777 20.2514 18.0186 19.0259 19.2818 17.2922C20.545 15.5586 21.1474 13.4308 20.9806 11.2922C20.8137 9.15366 19.8886 7.14502 18.3718 5.62824C16.855 4.11146 14.8464 3.1863 12.7078 3.01946C10.5693 2.85263 8.44147 3.45509 6.70782 4.71829C4.97417 5.98149 3.74869 7.82236 3.25222 9.90916C2.75575 11.996 3.02094 14.1915 4 16.1L2 22L7.9 20Z"
+            stroke-width="1.33"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+
+      <!-- Text -->
+      <span
+        class="whitespace-nowrap text-primary font-extrabold font-['Nexa']
+              opacity-0 max-w-0 overflow-hidden
+              transition-all duration-300 ease-out
+              group-hover:opacity-100 group-hover:max-w-[120px]"
+      >
+        Chat&nbsp;Us
+      </span>
+    </a>
+
+
+
+  <!-- EMAIL -->
+    <a
+      href="mailto:info@example.com"
+      class="group inline-flex h-14 shrink-0 items-center overflow-hidden
+            rounded-tl-[200px] rounded-bl-[200px] bg-primary
+            transition-all duration-300 ease-out
+            hover:bg-white hover:w-36 hover:pr-5
+            hover:[animation:slide-in-out_0.5s_ease-out]"
+    >
+      <!-- Icon -->
+      <span class="flex h-14 w-14 items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="stroke-white transition-colors duration-300 group-hover:stroke-primary"
+        >
+          <path
+            d="M22 7L13.03 12.7C12.7213 12.8934 12.3643 12.996 12 12.996C11.6357 12.996 11.2787 12.8934 10.97 12.7L2 7M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z"
+            stroke-width="1.33"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+
+      <!-- Text -->
+      <span
+        class="whitespace-nowrap text-primary font-extrabold font-['Nexa']
+              opacity-0 max-w-0 overflow-hidden
+              transition-all duration-300 ease-out
+              group-hover:opacity-100 group-hover:max-w-[120px]"
+      >
+        Email&nbsp;Us
+      </span>
+    </a>
+
+
+
+  </div>
+</div>
+
+
+
       </section>
       <!--
 Desktop Social Icons Ends
@@ -154,7 +259,7 @@ Desktop Social Icons Ends
       <!--
 Bonuses, Promotions and Rewards Section Starts
 -->
-      <section class="relative w-full max-w-[1430px] mx-auto mt-16 md:rounded-2xl 
+      <section class="relative w-full max-w-357.5 mx-auto mt-2 md:mt-16 md:rounded-2xl 
          bg-inv-card-3 text-inv-foreground-high overflow-hidden 
          px-6 py-8 md:px-14 md:py-12"
 >
@@ -162,13 +267,14 @@ Bonuses, Promotions and Rewards Section Starts
           <img
             src="bonus-bg-image.png"
             alt="deposit hero"
+            class="w-full h-auto"
           />
 
           <!-- ANGLED VECTOR FIXED TO IMAGE LEFT SIDE -->
           <img
             src="vector-on-bg.svg"
             alt=""
-            class="hidden md:block absolute top-0 h-full w-auto -left-[7px] z-20" 
+            class="hidden md:block absolute top-0 h-full w-auto -left-1.75 z-20" 
           />
       </div>
  
@@ -176,29 +282,32 @@ Bonuses, Promotions and Rewards Section Starts
         <div
           class="block md:hidden absolute top-0 right-0"
         >
-      <img src="mobile-ellipse.svg" class="w-full" alt="mobile-ellipse"></div>
+          <svg width="145" height="188" viewBox="0 0 145 188" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <ellipse cx="188.053" cy="60.3549" rx="202.969" ry="102.021" transform="rotate(-25.8399 188.053 60.3549)" fill="white" fill-opacity="0.07"/>
+          </svg>
+        </div>
 
         <div class="inner-content relative z-50">
           <div class="top-content">
-            <div class="">
+            <div class="max-w-130.75">
               <div class="title flex items-center justify-between gap-2">
                 <h2
-                  class="text-2xl md:text-3xl font-extrabold font-['Nexa'] leading-9 mb-4"
+                  class="text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-9 mb-4"
                 >
-                  Bonuses, Promotions and Rewards
+                  Bonuses, Promotions <br>and Rewards
                 </h2>
                 <a href="#" class="w-12 h-12 block md:hidden"
                   ><img class="block" src="ArrowUpRight.svg" alt="arrow"
                 /></a>
               </div>
               <p
-                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 max-w-[523px] line-clamp-2 md:leading-8"
+                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 line-clamp-2 md:leading-8"
               >
                 Maximize your play with special bonuses, limited-time offers, and exciting ways to earn more as you go!
               </p>
               <a
                 href="#"
-                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4"
+                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4 hover:bg-inv-transparent-hover"
                 >Go to Articles</a
               >
             </div>
@@ -213,12 +322,12 @@ Bonuses, Promotions and Rewards Section Starts
         >
           <div class="slider-blocks flex gap-3 scrollbar-hide">
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How to Claim a Bonus
                   </h3>
@@ -239,12 +348,12 @@ Bonuses, Promotions and Rewards Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How Rollover Works
                   </h3>
@@ -265,12 +374,12 @@ Bonuses, Promotions and Rewards Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     Understanding Crypto Bonuses
                   </h3>
@@ -291,12 +400,12 @@ Bonuses, Promotions and Rewards Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     Where to Find Available Free Play Bonuses
                   </h3>
@@ -327,34 +436,39 @@ Bonuses, Promotions and Rewards Section Ends
 Deposit & Payouts Section Starts
 -->
       <section
-        class="relative w-full max-w-[1430px] mx-auto mt-16 md:rounded-2xl bg-inv-card-2 text-inv-foreground-high overflow-hidden px-6 py-8 md:px-14 md:py-12"
+        class="relative w-full max-w-357.5 mx-auto mt-2 md:mt-16 md:rounded-2xl bg-inv-card-2 text-inv-foreground-high overflow-hidden px-6 py-8 md:px-14 md:py-12"
       >
 
       <div class="hidden md:block absolute right-0 top-0 h-full w-auto object-cover pointer-events-none z-10">
           <img
             src="deposit-bonus-bg.png"
             alt="deposit hero"
+            class="w-full h-auto"
           />
 
           <!-- ANGLED VECTOR FIXED TO IMAGE LEFT SIDE -->
           <img
             src="vector-on-bg-2.svg"
             alt=""
-            class="hidden md:block absolute top-0 h-full w-auto -left-[7px] z-20" 
+            class="hidden md:block absolute top-0 h-full w-auto -left-1.75 z-20" 
           />
       </div>
         <!-- Mobile-only decorative shape -->
         <div
           class="block md:hidden absolute top-0 right-0"
         >
-      <img src="mobile-ellipse.svg" class="w-full" alt="mobile-ellipse"></div>
+          <svg width="145" height="188" viewBox="0 0 145 188" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <ellipse cx="188.053" cy="60.3549" rx="202.969" ry="102.021" transform="rotate(-25.8399 188.053 60.3549)" fill="white" fill-opacity="0.07"/>
+          </svg>
+        </div>
+
 
         <div class="inner-content relative z-50">
           <div class="top-content">
-            <div class="">
+            <div class="max-w-130.75">
               <div class="title flex items-center justify-between gap-2">
                 <h2
-                  class="text-2xl md:text-3xl font-extrabold font-['Nexa'] leading-9 mb-4"
+                  class="text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-9 mb-4"
                 >
                   Deposit & Payouts
                 </h2>
@@ -363,13 +477,13 @@ Deposit & Payouts Section Starts
                 /></a>
               </div>
               <p
-                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 max-w-[523px] line-clamp-2 md:leading-8"
+                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 line-clamp-2 md:leading-8"
               >
                 Maximize your play with special bonuses, limited-time offers, and exciting ways to earn more as you go!
               </p>
               <a
                 href="#"
-                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4"
+                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4 hover:bg-inv-transparent-hover"
                 >Go to Articles</a
               >
             </div>
@@ -384,12 +498,12 @@ Deposit & Payouts Section Starts
         >
           <div class="slider-blocks flex gap-3 scrollbar-hide">
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     Deposit using Bitcoin
                   </h3>
@@ -410,12 +524,12 @@ Deposit & Payouts Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How to deposit using Credit Cards
                   </h3>
@@ -436,12 +550,12 @@ Deposit & Payouts Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     4 steps to Deposit
                   </h3>
@@ -462,12 +576,12 @@ Deposit & Payouts Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How to Request a Payout
                   </h3>
@@ -498,20 +612,21 @@ Deposit & Payouts Section Ends
 Managing Your Account Section Starts
 -->
       <section
-        class="relative w-full max-w-[1430px] mx-auto mt-16 md:rounded-2xl bg-inv-card-1 text-inv-foreground-high overflow-hidden px-6 py-8 md:px-14 md:py-12"
+        class="relative w-full max-w-357.5 mx-auto mt-2 md:mt-16 md:rounded-2xl bg-inv-card-1 text-inv-foreground-high overflow-hidden px-6 py-8 md:px-14 md:py-12"
       >
 
       <div class="hidden md:block absolute right-0 top-0 h-full w-auto object-cover pointer-events-none z-10">
           <img
             src="managing-account-bg.png"
             alt="managing acccount hero"
+            class="w-full h-auto"
           />
 
           <!-- ANGLED VECTOR FIXED TO IMAGE LEFT SIDE -->
           <img
             src="vector-on-bg-3.svg"
             alt=""
-            class="hidden md:block absolute top-0 h-full w-auto -left-[7px] z-20" 
+            class="hidden md:block absolute top-0 h-full w-auto -left-1.75 z-20" 
           />
       </div>
 
@@ -519,14 +634,17 @@ Managing Your Account Section Starts
         <div
           class="block md:hidden absolute top-0 right-0"
         >
-      <img src="mobile-ellipse.svg" class="w-full" alt="mobile-ellipse"></div>
+          <svg width="145" height="188" viewBox="0 0 145 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="188.053" cy="60.3549" rx="202.969" ry="102.021" transform="rotate(-25.8399 188.053 60.3549)" fill="white" fill-opacity="0.07"/>
+          </svg>
+        </div>
 
         <div class="inner-content relative z-50">
           <div class="top-content">
-            <div class="">
+            <div class="max-w-130.75">
               <div class="title flex items-center justify-between gap-3">
                 <h2
-                  class="text-2xl md:text-3xl font-extrabold font-['Nexa'] leading-9 mb-4"
+                  class="text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-9 mb-4"
                 >
                   Managing Your Account
                 </h2>
@@ -535,14 +653,14 @@ Managing Your Account Section Starts
                 /></a>
               </div>
               <p
-                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 max-w-[523px] line-clamp-2 md:leading-8"
+                class="text-inv-foreground-low text-base font-normal font-['Roboto'] leading-7 max-w-130.75 line-clamp-2 md:leading-8"
               >
                 Maximize your play with special bonuses, limited-time offers,
                 and exciting ways to earn more as you go!
               </p>
               <a
                 href="#"
-                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4"
+                class="hidden md:inline-block p-2 px-3.5 rounded-full outline -outline-offset-1 outline-inv-border-medium text-center text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 mt-4 hover:bg-inv-transparent-hover"
                 >Go to Articles</a
               >
             </div>
@@ -557,12 +675,12 @@ Managing Your Account Section Starts
         >
           <div class="slider-blocks flex gap-3 scrollbar-hide">
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How to Sign Up: Guide for New Users
                   </h3>
@@ -583,12 +701,12 @@ Managing Your Account Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     Upload Personal Documents
                   </h3>
@@ -609,12 +727,12 @@ Managing Your Account Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     How Referral Program Works
                   </h3>
@@ -635,12 +753,12 @@ Managing Your Account Section Starts
             </div>
 
             <div
-              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 md:p-6 lg:p-8 max-w-[260px] md:max-w-[320px] shrink-0"
+              class="slider-item bg-inv-alpha-overlay rounded-xl p-5 max-w-65 md:max-w-[320px] shrink-0"
             >
               <div class="space-y-3 flex flex-col justify-center h-full">
                 <div class="flex justify-between">
                   <h3
-                    class="text-inv-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                    class="text-inv-foreground-high text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
                   >
                     KYC: What you Need to Know
                   </h3>
@@ -673,7 +791,7 @@ Trending Help Articles Slider Section Starts
 
       <section class="trending-help-articles px-3 py-8 md:py-10">
         <div
-          class="relative z-50 flex max-w-[1430px] mx-auto justify-between items-center mb-6 md:mb-8"
+          class="relative z-50 flex max-w-357.5 mx-auto justify-between items-center mb-6 md:mb-8"
         >
           <h3
             class="text-foreground-high text-2xl font-extrabold font-['Nexa'] leading-7"
@@ -684,8 +802,8 @@ Trending Help Articles Slider Section Starts
           <div class="w-20 flex justify-between items-center">
             <img
               src="left-arrow-light.svg"
-              data-light="/left-arrow-light.svg"
-              data-dark="/left-arrow-dark.svg"
+              data-light="left-arrow-light.svg"
+              data-dark="left-arrow-dark.svg"
               alt="left arrow"
               class="custom-prev-button h-8 w-8 cursor-pointer"
             />
@@ -726,7 +844,7 @@ Trending Help Articles Slider Section Starts
                         class="self-stretch flex flex-col justify-start items-start gap-6"
                       >
                         <div
-                          class="self-stretch inline-flex justify-start items-start gap-3"
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
                         >
                           <div
                             class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
@@ -749,7 +867,7 @@ Trending Help Articles Slider Section Starts
                         >
                           Feb 25, 2023 • 4 minutes read
                         </div>
-                      </div>
+                      </div> 
                     </div>
                   </div>
                 </div>
@@ -760,7 +878,7 @@ Trending Help Articles Slider Section Starts
                     class="w-full h-64 pb-6 bg-card-1 rounded-xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-4 overflow-hidden"
                   >
                     <div
-                      class="self-stretch flex-1 relative bg-gradient-to-l from-orange-400 to-red-500 overflow-hidden"
+                      class="w-full h-24 relative bg-gradient-to-l from-orange-400 to-red-500 overflow-hidden"
                     >
                       <img class="w-full absolute top-1/2 left-1/2 -translate-1/2" src="pattern.svg" alt="white pattern">
                     </div>
@@ -780,7 +898,7 @@ Trending Help Articles Slider Section Starts
                         class="self-stretch flex flex-col justify-start items-start gap-6"
                       >
                         <div
-                          class="self-stretch inline-flex justify-start items-start gap-3"
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
                         >
                           <div
                             class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
@@ -833,7 +951,7 @@ Trending Help Articles Slider Section Starts
                         class="self-stretch flex flex-col justify-start items-start gap-6"
                       >
                         <div
-                          class="self-stretch inline-flex justify-start items-start gap-3"
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
                         >
                           <div
                             class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
@@ -866,7 +984,7 @@ Trending Help Articles Slider Section Starts
                     class="w-full h-64 pb-6 bg-card-1 rounded-xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-4 overflow-hidden"
                   >
                     <div
-                      class="self-stretch flex-1 relative bg-gradient-to-l from-fuchsia-800 to-indigo-800 overflow-hidden"
+                      class="w-full h-24 relative bg-gradient-to-l from-fuchsia-800 to-indigo-800 overflow-hidden"
                     >
                       <img class="w-full absolute top-1/2 left-1/2 -translate-1/2" src="pattern.svg" alt="white pattern">
                     </div>
@@ -886,7 +1004,60 @@ Trending Help Articles Slider Section Starts
                         class="self-stretch flex flex-col justify-start items-start gap-6"
                       >
                         <div
-                          class="self-stretch inline-flex justify-start items-start gap-3"
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
+                        >
+                          <div
+                            class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Understanding the Home Page and Main Navigation
+                          </div>
+                          <div
+                            class="inline-flex flex-col justify-center items-center"
+                          >
+                            <img
+                              src="right-arrow-black.svg"
+                              alt="right arrow"
+                              class="w-5 h-5"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="self-stretch justify-center text-foreground-medium text-base font-normal font-['Roboto'] leading-6 line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 minutes read
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide">
+                  <div
+                    class="w-full h-64 pb-6 bg-card-1 rounded-xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-start items-center gap-4 overflow-hidden"
+                  >
+                    <div
+                      class="w-full h-24 relative bg-gradient-to-l from-slate-500 to-indigo-500 overflow-hidden"
+                    >
+                      <img class="w-full absolute top-1/2 left-1/2 -translate-1/2" src="pattern.svg" alt="white pattern">
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <div
+                          class="text-center justify-center text-[#FEFFFF] text-sm font-semibold font-['Nexa'] leading-4"
+                        >
+                          Deposit
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch flex flex-col justify-start items-start gap-6"
+                      >
+                        <div
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
                         >
                           <div
                             class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
@@ -939,7 +1110,7 @@ Trending Help Articles Slider Section Starts
                         class="self-stretch flex flex-col justify-start items-start gap-6"
                       >
                         <div
-                          class="self-stretch inline-flex justify-start items-start gap-3"
+                          class="self-stretch h-10 line-clamp-2 inline-flex justify-start items-start gap-3 "
                         >
                           <div
                             class="flex-1 max-h-10 justify-center text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
@@ -982,18 +1153,21 @@ Reach out to Live agent section Starts
         class="live_agent_section mt-0 md:mt-12 w-full bg-inv-card-2 px-3 py-5 md:py-10 inline-flex flex-col justify-center items-center md:px-8"
       >
         <div
-          class="live_agent_container relative max-w-[728px] w-full rounded-2xl outline-1 -outline-offset-1 outline-card-border bg-card-1 flex flex-col md:flex-row md:items-center md:gap-10"
+          class="live_agent_container relative max-w-182 w-full rounded-2xl outline-1 -outline-offset-1 outline-card-border bg-card-1 flex flex-col md:flex-row md:items-center md:gap-10"
         >
-          <div class="relative w-full h-[236px] sm:max-w-[234px]">
+          <div class="relative w-full h-59 sm:max-w-58.5">
             <div
               class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
             >
               <video
+                playsinline
+                muted
+                loop
+                autoplay
                 class="h-full object-cover rounded-2xl"
                 src="video.mp4"
-                muted
-                autoplay
-              ></video>
+              >
+            </video>
             </div>
 
             <div
@@ -1025,20 +1199,20 @@ Reach out to Live agent section Starts
 
               <ul
                 id="agentDropdown"
-                class="hidden mt-2 ml-2 font-['Nexa'] absolute agent_dropdown z-50 min-w-[180px] overflow-auto rounded-xl border border-slate-200 bg-white font-roboto shadow-5xl font-normal text-gray-800 focus:outline-none"
+                class="hidden mt-2 ml-2 font-['Nexa'] absolute agent_dropdown z-50 min-w-45 overflow-auto rounded-xl border border-slate-200 bg-white font-roboto shadow-5xl font-normal text-gray-800 focus:outline-none"
               >
-                <li class="block w-full cursor-pointer pt-[9px] py-2 border-b border-gray-400">
+                <li class="block w-full cursor-pointer pt-2.25 py-2 border-b border-gray-400">
                   
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="message.svg" alt="message image"><span>Contact via Chat</span></a
                   >
                 </li>
-                <li class="block w-full cursor-pointer pt-[9px] pb-2 border-b border-gray-400">
+                <li class="block w-full cursor-pointer pt-2.25 pb-2 border-b border-gray-400">
                   <a href="" class="px-2 inline-flex items-center gap-2"
-                    ><img src="phone.svg" alt="phone image" /><span>Contact via Call</span></a
+                    ><img src="Phone.svg" alt="phone image" /><span>Contact via Call</span></a
                   >
                 </li>
-                <li class="block w-full cursor-pointer pt-[9px] pb-2">
+                <li class="block w-full cursor-pointer pt-2.25 pb-2">
                   <a href="" class="px-2 inline-flex items-center gap-2"
                     ><img src="sms.svg" alt="email image"><span>Contact via Email</span></a
                   >
@@ -1062,7 +1236,7 @@ Reach out to Live agent section Ends
       <!--
   Explore more resources Starts
       -->
-      <section class="explore-more-resources max-w-[1430px] mx-auto mt-16 px-3">
+      <section class="explore-more-resources max-w-357.5 mx-auto mt-16 px-3">
         <div class="container">
           <div class="title">
             <h2
@@ -1075,11 +1249,12 @@ Reach out to Live agent section Ends
           <div
             class="explore-blocks flex flex-col md:flex-row gap-6 md:gap-3 mt-6 md:mt-8"
           >
-            <div class="crypto-block max-w-[709px] w-full">
+            <div class="crypto-block max-w-177.25 w-full">
               <div
                 class="w-full pb-6 bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-center items-start gap-6 overflow-hidden"
               >
-                <img class="w-full h-40 object-cover" src="crypto-image.png" />
+                <img class="hidden md:block w-full h-40 object-cover" src="crypto-image.svg" alt="Crypto Image"/>
+                <img class="block md:hidden w-full h-42 object-cover" src="crypto-image-mob.svg" alt="Crypto Image Mobile"/>
                 <div
                   class="px-6 flex flex-col justify-center items-start gap-5"
                 >
@@ -1095,7 +1270,7 @@ Reach out to Live agent section Ends
                     work—quick and easy.
                   </p>
                   <div
-                    class="min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-2"
+                    class="min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-2 hover:bg-black/5"
                   >
                     <a href="" class="flex justify-center items-center gap-2">
                       <div
@@ -1115,13 +1290,19 @@ Reach out to Live agent section Ends
                 </div>
               </div>
             </div>
-            <div class="troubleshooting-block max-w-[709px] w-full">
+            <div class="troubleshooting-block max-w-177.25 w-full">
               <div
                 class="w-full pb-6 bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border inline-flex flex-col justify-center items-start gap-6 overflow-hidden"
               >
                 <img
-                  class="w-full h-40 object-cover"
-                  src="source-troubleshooting.png"
+                  class="hidden md:block w-full h-40 object-cover"
+                  src="source-troubleshooting.svg"
+                  alt="troubleshooting image"
+                />
+                <img
+                  class="block md:hidden w-full h-42 object-cover"
+                  src="source-troubleshooting-mob.svg"
+                  alt="troubleshooting image mobile"
                 />
                 <div
                   class="px-6 flex flex-col justify-center items-start gap-5"
@@ -1138,7 +1319,7 @@ Reach out to Live agent section Ends
                     available on the web.
                   </p>
                   <div
-                    class="min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-2"
+                    class="min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium inline-flex justify-center items-center gap-2 hover:bg-black/5"
                   >
                     <a href="" class="flex justify-center items-center gap-2">
                       <div
@@ -1170,7 +1351,7 @@ Reach out to Live agent section Ends
       All About Crypto Section Starts
     -->
       <section
-        class="all-about-crypto max-w-[1430px] mx-auto mt-8 md:mt-10 px-3 py-8 md:py-10"
+        class="all-about-crypto max-w-357.5 mx-auto mt-8 md:mt-10 px-3 py-8 md:py-10"
       >
         <div
           class="relative z-50 flex justify-between items-center mb-6 md:mb-8"
@@ -1184,8 +1365,8 @@ Reach out to Live agent section Ends
           <div class="w-20 flex justify-between items-center">
              <img
               src="left-arrow-light.svg"
-              data-light="/left-arrow-light.svg"
-              data-dark="/left-arrow-dark.svg"
+              data-light="left-arrow-light.svg"
+              data-dark="left-arrow-dark.svg"
               alt="left arrow"
               class="crypto-prev-button h-8 w-8 cursor-pointer"
             />
@@ -1214,21 +1395,14 @@ Reach out to Live agent section Ends
                         Crypto Help
                       </div>
                     </div>
-                    <div class="inline-flex justify-start items-start gap-3">
-                      <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
-                      >
+                    <div class="flex w-full justify-between items-start gap-3">
+                      <h3 class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2">
                         Crypto 101
                       </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
+                      
+                      <div class="flex flex-col justify-center items-center shrink-0">
                         <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
+                          <img src="ArrowRight.svg" alt="right arrow" />
                         </div>
                       </div>
                     </div>
@@ -1255,21 +1429,15 @@ Reach out to Live agent section Ends
                         Crypto Help
                       </div>
                     </div>
-                    <div class="inline-flex justify-start items-start gap-3">
+                    <div class="flex w-full justify-between items-start gap-3">
                       <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                        class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
                       >
                         How to deposit using crypto
                       </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
+                      <div class="flex flex-col justify-center items-center shrink-0">
                         <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
+                          <img src="ArrowRight.svg" alt="right arrow" />
                         </div>
                       </div>
                     </div>
@@ -1295,21 +1463,15 @@ Reach out to Live agent section Ends
                         Crypto Help
                       </div>
                     </div>
-                    <div class="inline-flex justify-start items-start gap-3">
+                    <div class="flex w-full justify-between items-start gap-3">
                       <h3
-                        class="flex-1 justify-start text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                        class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
                       >
                         How to setup crypto wallets
                       </h3>
-                      <div
-                        class="inline-flex flex-col justify-center items-center"
-                      >
+                      <div class="flex flex-col justify-center items-center shrink-0">
                         <div class="w-5 h-5 relative">
-                          <div
-                            class="w-5 h-5 left-0 top-0 absolute overflow-hidden"
-                          >
-                            <img src="ArrowRight.svg" alt="right arrow" />
-                          </div>
+                          <img src="ArrowRight.svg" alt="right arrow" />
                         </div>
                       </div>
                     </div>
@@ -1334,7 +1496,7 @@ Reach out to Live agent section Ends
     -->
 
       <section class="technical-terms-section mt-8 md:mt-10">
-        <div class="w-full max-w-[1430px] mx-auto px-3 pb-10 md:pb-16">
+        <div class="w-full max-w-357.5 mx-auto px-3 pb-10 md:pb-16">
           <div class="technical-container flex flex-col w-full md:flex-row gap-3">
             <!-- Technical section -->
             <div
@@ -1346,7 +1508,7 @@ Reach out to Live agent section Ends
                 <h3
                   class="text-foreground-high text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-10"
                 >
-                  Technical Issues &amp; Troubleshooting
+                  Technical Issues <br /> &amp; Troubleshooting
                 </h3>
                 <a href="#" class="w-12 h-12 cursor-pointer block xl:hidden">
                   <img class="block" src="ArrowUpRightBlack.svg" alt="arrow" />
@@ -1360,7 +1522,7 @@ Reach out to Live agent section Ends
               </p>
 
               <a
-                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium hidden md:inline-flex justify-center items-center gap-2 cursor-pointer"
+                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium hidden md:inline-flex justify-center items-center gap-2 cursor-pointer hover:bg-black/5"
               >
                 Go to Articles
               </a>
@@ -1434,7 +1596,7 @@ Reach out to Live agent section Ends
               </p>
 
               <a
-                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium hidden md:inline-flex justify-center items-center gap-2 cursor-pointer"
+                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 min-w-24 max-h-10 min-h-10 px-3.5 rounded-full outline-1 -outline-offset-1 outline-border-medium hidden md:inline-flex justify-center items-center gap-2 cursor-pointer hover:bg-black/5"
               >
                 Go to Articles
               </a>
