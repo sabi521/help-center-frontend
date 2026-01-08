@@ -127,7 +127,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const openBtn = document.getElementById("openMobileSearch");
   const overlay = document.getElementById("mobileSearchOverlay");
   const closeBtn = document.getElementById("closeMobileSearch");
-  const mInput = document.getElementById("mobileSearchInput");
+
+  // FIX: Cast as HTMLInputElement so TypeScript knows '.value' exists
+  const mInput = document.getElementById(
+    "mobileSearchInput"
+  ) as HTMLInputElement | null;
+
   const mClearBtn = document.getElementById("mobileClearBtn");
   const trashBtn = document.getElementById("trashButton");
   const chipsWrap = document.getElementById("recentChips");
@@ -135,12 +140,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Helper to toggle Recent Searches and Clear button
   const toggleRecentSearches = () => {
+    // FIX: Added optional chaining and null check for mInput
+    if (!mInput) return;
+
     const hasValue = mInput.value.trim().length > 0;
 
-    // Toggle Clear (X) button
     mClearBtn?.classList.toggle("hidden", !hasValue);
 
-    // Toggle Recent Searches section (hidden to block)
     if (hasValue) {
       firstSearch?.classList.remove("hidden");
       firstSearch?.classList.add("block");
@@ -160,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeSearch = () => {
     overlay?.classList.add("hidden");
     document.body.style.overflow = "";
+    // FIX: Safe check before assignment
     if (mInput) mInput.value = "";
     mClearBtn?.classList.add("hidden");
   };
@@ -167,11 +174,10 @@ document.addEventListener("DOMContentLoaded", () => {
   openBtn?.addEventListener("click", openSearch);
   closeBtn?.addEventListener("click", closeSearch);
 
-  overlay?.addEventListener("click", (e) => {
+  overlay?.addEventListener("click", (e: MouseEvent) => {
     if (e.target === overlay) closeSearch();
   });
 
-  // Update visibility as user types
   mInput?.addEventListener("input", toggleRecentSearches);
 
   mClearBtn?.addEventListener("click", () => {
@@ -181,15 +187,16 @@ document.addEventListener("DOMContentLoaded", () => {
     mInput.focus();
   });
 
-  // Clear all chips
-  trashBtn?.addEventListener("click", (e) => {
+  trashBtn?.addEventListener("click", (e: Event) => {
     e.preventDefault();
     chipsWrap?.replaceChildren();
   });
 
   // Individual Chip Close
-  chipsWrap?.addEventListener("click", (e) => {
-    const target = e.target;
+  chipsWrap?.addEventListener("click", (e: MouseEvent) => {
+    const target = e.target as HTMLElement | null;
+    if (!target) return;
+
     const closeIcon = target.closest(".chip-close");
     if (closeIcon) {
       e.preventDefault();

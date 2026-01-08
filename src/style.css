@@ -140,3 +140,11 @@ Hide scrollbar under search bar
     transform: translateX(0);
   }
 }
+
+/* Prevents Safari from showing the default arrow on <details> */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}
