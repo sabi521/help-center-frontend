@@ -5,11 +5,6 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Help Center</title>
-  <link rel="preconnect" href="https://sh.betuscdn.com" crossorigin>
-  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css">
-  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/roboto.css">
-  <link rel="stylesheet" href="https://sh.betuscdn.com/libs/css/fonts/nexa.css">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
 </head>
   <body>
     <main class="bg-background-1">
@@ -265,7 +260,7 @@ Bonuses, Promotions and Rewards Section Starts
 >
       <div class="hidden md:block absolute right-0 top-0 h-full w-auto object-cover pointer-events-none z-10">
           <img
-            src="bonus-bg-image.png"
+            src="bonus-bg-image.webp"
             alt="deposit hero"
             class="w-full h-auto"
           />
@@ -441,7 +436,7 @@ Deposit & Payouts Section Starts
 
       <div class="hidden md:block absolute right-0 top-0 h-full w-auto object-cover pointer-events-none z-10">
           <img
-            src="deposit-bonus-bg.png"
+            src="deposit-bonus-bg.webp"
             alt="deposit hero"
             class="w-full h-auto"
           />
@@ -617,7 +612,7 @@ Managing Your Account Section Starts
 
       <div class="hidden md:block absolute right-0 top-0 h-full w-auto object-cover pointer-events-none z-10">
           <img
-            src="managing-account-bg.png"
+            src="managing-account-bg.webp"
             alt="managing acccount hero"
             class="w-full h-auto"
           />
@@ -1156,18 +1151,19 @@ Reach out to Live agent section Starts
           class="live_agent_container relative max-w-182 w-full rounded-2xl outline-1 -outline-offset-1 outline-card-border bg-card-1 flex flex-col md:flex-row md:items-center md:gap-10"
         >
           <div class="relative w-full h-59 sm:max-w-58.5">
-            <div
-              class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
-            >
-              <video
+            <div class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center">
+              <video 
+                preload="none" 
+                poster="video-placeholder.jpg" 
+                autoplay 
+                muted 
+                loop 
                 playsinline
-                muted
-                loop
-                autoplay
-                class="h-full object-cover rounded-2xl"
-                src="video.mp4"
+                class="w-full h-full object-cover rounded-2xl"
               >
-            </video>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             <div
@@ -1351,7 +1347,7 @@ Reach out to Live agent section Ends
       All About Crypto Section Starts
     -->
       <section
-        class="all-about-crypto max-w-357.5 mx-auto mt-8 md:mt-10 px-3 py-8 md:py-10"
+        class="all-about-crypto max-w-357.5 mx-auto mt-8 md:mt-10 px-3 md:py-10"
       >
         <div
           class="relative z-50 flex justify-between items-center mb-6 md:mb-8"
@@ -1565,7 +1561,7 @@ Reach out to Live agent section Ends
               <div class="hidden xl:flex w-1/2 absolute bottom-0 right-0">
                 <img
                   class="block w-full"
-                  src="technical-block.svg"
+                  src="technical-block.png"
                   alt="technical block"
                 />
               </div>
@@ -1639,7 +1635,7 @@ Reach out to Live agent section Ends
                 <div class="hidden xl:flex w-1/2 absolute bottom-0 right-0">
                   <img
                     class="block w-full"
-                    src="terms-block.svg"
+                    src="terms-block.png"
                     alt="terms image"
                   />
                 </div>
@@ -1655,6 +1651,7 @@ Reach out to Live agent section Ends
       <!--
     Technical & terms sections starts
     --></main>
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="src/main.ts"></script>

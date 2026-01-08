@@ -1,24 +1,13 @@
 @import "tailwindcss";
 @import "./theme.css";
-/* Inside your <style> tag in the <head> */
-@font-face {
-  font-family: "Roboto";
-  src: url("/new/fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: "Nexa";
-  src: url("/new/fonts/NexaRegular.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 .chip {
-  @apply px-2 py-1 rounded-lg border border-inv-border-medium text-inv-foreground-high text-sm font-semibold leading-4 transition-colors duration-200 hover:bg-inv-alpha-10;
-  font-family: "Nexa", sans-serif;
+  @apply px-2 py-1 rounded-lg
+         border border-inv-border-medium
+         text-inv-foreground-high
+         text-sm font-semibold font-['Nexa'] leading-4
+         transition-colors duration-200
+         hover:bg-inv-alpha-10;
 }
 
 /* Hide scrollbar cross-browser */
