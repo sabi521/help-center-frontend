@@ -110,14 +110,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* --- C. AGENT DROPDOWN --- 
-     Simple toggle for the Agent selection menu.
-  */
-  const dropdownBtn = document.querySelector(".agent_dropdown_btn");
+   Simple toggle for the Agent selection menu with click-outside logic.
+*/
+  const dropdownBtn = document.querySelector(
+    ".agent_dropdown_btn"
+  ) as HTMLElement | null;
   const dropdownMenu = document.getElementById("agentDropdown");
 
   if (dropdownBtn && dropdownMenu) {
-    dropdownBtn.addEventListener("click", () => {
+    // Toggle menu on button click
+    dropdownBtn.addEventListener("click", (e: MouseEvent) => {
+      e.stopPropagation(); // Prevents the document listener from immediately closing it
       dropdownMenu.classList.toggle("hidden");
+    });
+
+    // Hide menu when clicking anywhere else on the screen
+    document.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      // If the click is not on the menu and not on the button, hide the menu
+      if (!dropdownMenu.contains(target) && !dropdownBtn.contains(target)) {
+        dropdownMenu.classList.add("hidden");
+      }
     });
   }
 
