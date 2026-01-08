@@ -55,7 +55,7 @@
 
         <!-- Mobile overlay  -->
         <div id="mobileSearchOverlay" class="fixed inset-0 z-999 hidden">
-          <div class="bg-[#061E33] px-4 pb-5 pt-3">
+          <div class="bg-[#061E33] px-4 py-3">
             <div class="flex items-center gap-3">
               <div
                 class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4"
@@ -89,60 +89,142 @@
               </button>
             </div>
 
-            <div class="mt-4 flex items-center justify-between">
-              <p
-                class="text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
-              >
-                Your Recent Searches:
-              </p>
-
-              <button
-                type="button"
-                id="trashButton"
-                class="flex items-center gap-2"
-              >
-                <img src="trash.svg" alt="" class="h-4 w-4" />
-                <span
-                  class="text-inv-link text-xs font-semibold font-['Nexa'] leading-4"
-                  >Clear All</span
+            <div id="firstSearch" class="hidden">
+              <div class="mt-4 flex items-center justify-between">
+                <p
+                  class="text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
                 >
-              </button>
+                  Your Recent Searches:
+                </p>
+
+                <button
+                  type="button"
+                  id="trashButton"
+                  class="flex items-center gap-2"
+                >
+                  <img src="trash.svg" alt="" class="h-4 w-4" />
+                  <span
+                    class="text-inv-link text-xs font-semibold font-['Nexa'] leading-4"
+                    >Clear All</span
+                  >
+                </button>
+              </div>
+
+              <div
+                id="recentChips"
+                class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+              >
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span>Deposit bonus</span>
+                  <img
+                    class="chip-close"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span>Bonus</span>
+                  <img
+                    class="chip-close"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span>Crypto Bonus</span>
+                  <img
+                    class="chip-close"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span>Deposit bonus</span>
+                  <img
+                    class="chip-close"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+              </div>
             </div>
+          </div>
 
-            <div
-              id="recentChips"
-              class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+          <div
+            id="topArticlesSection"
+            class="max-w-md py-5 px-3 bg-gray-50 mx-auto"
+          >
+            <h2
+              class="text-foreground-high text-xl font-extrabold font-['Nexa'] mb-4"
             >
+              Top articles
+            </h2>
+
+            <div class="flex flex-col">
               <a
                 href="#"
-                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="flex items-center gap-4 p-5 bg-white rounded-xl border border-card-border hover:shadow-md transition-shadow"
               >
-                <span>Deposit bonus</span>
-                <img src="chip-close-icon.svg" alt="chip close" />
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-card-3 rounded-full shrink-0"
+                >
+                  <img src="file-text-icon.svg" alt="file" class="w-5 h-5" />
+                </div>
+                <div
+                  class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  How to Request a Crypto Payout
+                </div>
+                <img src="ArrowRight.svg" alt="arrow" class="w-5 h-5" />
               </a>
 
               <a
                 href="#"
-                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="flex items-center gap-4 p-5 bg-white rounded-xl border border-card-border hover:shadow-md transition-shadow"
               >
-                <span>Bonus</span>
-                <img src="chip-close-icon.svg" alt="chip close" />
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-card-3 rounded-full shrink-0"
+                >
+                  <img src="file-text-icon.svg" alt="file" class="w-5 h-5" />
+                </div>
+                <div
+                  class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  How to Claim Deposit Bonus
+                </div>
+                <img src="ArrowRight.svg" alt="arrow" class="w-5 h-5" />
               </a>
 
               <a
                 href="#"
-                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                class="flex items-center gap-4 p-5 bg-white rounded-xl border border-card-border hover:shadow-md transition-shadow"
               >
-                <span>Crypto Bonus</span>
-                <img src="chip-close-icon.svg" alt="chip close" />
-              </a>
-
-              <a
-                href="#"
-                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
-              >
-                <span>Deposit bonus</span>
-                <img src="chip-close-icon.svg" alt="chip close" />
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-card-3 rounded-full shrink-0"
+                >
+                  <img src="file-text-icon.svg" alt="file" class="w-5 h-5" />
+                </div>
+                <div
+                  class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4"
+                >
+                  How Rollover Works
+                </div>
+                <img src="ArrowRight.svg" alt="arrow" class="w-5 h-5" />
               </a>
             </div>
           </div>

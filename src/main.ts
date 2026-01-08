@@ -122,30 +122,44 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* --- D. MOBILE SEARCH OVERLAY --- 
-     Manages the full-screen search interface on mobile devices.
-  */
+    Manages the full-screen search interface on mobile devices.
+*/
   const openBtn = document.getElementById("openMobileSearch");
   const overlay = document.getElementById("mobileSearchOverlay");
   const closeBtn = document.getElementById("closeMobileSearch");
-  const mInput = document.getElementById(
-    "mobileSearchInput"
-  ) as HTMLInputElement | null;
+  const mInput = document.getElementById("mobileSearchInput");
   const mClearBtn = document.getElementById("mobileClearBtn");
   const trashBtn = document.getElementById("trashButton");
   const chipsWrap = document.getElementById("recentChips");
+  const firstSearch = document.getElementById("firstSearch");
+
+  // Helper to toggle Recent Searches and Clear button
+  const toggleRecentSearches = () => {
+    const hasValue = mInput.value.trim().length > 0;
+
+    // Toggle Clear (X) button
+    mClearBtn?.classList.toggle("hidden", !hasValue);
+
+    // Toggle Recent Searches section (hidden to block)
+    if (hasValue) {
+      firstSearch?.classList.remove("hidden");
+      firstSearch?.classList.add("block");
+    } else {
+      firstSearch?.classList.add("hidden");
+      firstSearch?.classList.remove("block");
+    }
+  };
 
   const openSearch = () => {
     overlay?.classList.remove("hidden");
-    document.body.style.overflow = "hidden"; // Prevent background scrolling
-
-    // requestAnimationFrame ensures the focus() happens after the browser
-    // has finished the "unhide" layout pass, preventing a layout jank.
+    document.body.style.overflow = "hidden";
+    toggleRecentSearches();
     requestAnimationFrame(() => mInput?.focus());
   };
 
   const closeSearch = () => {
     overlay?.classList.add("hidden");
-    document.body.style.overflow = ""; // Re-enable background scrolling
+    document.body.style.overflow = "";
     if (mInput) mInput.value = "";
     mClearBtn?.classList.add("hidden");
   };
@@ -153,26 +167,35 @@ document.addEventListener("DOMContentLoaded", () => {
   openBtn?.addEventListener("click", openSearch);
   closeBtn?.addEventListener("click", closeSearch);
 
-  // Close overlay when clicking outside the search box (on the backdrop)
   overlay?.addEventListener("click", (e) => {
     if (e.target === overlay) closeSearch();
   });
 
-  mInput?.addEventListener("input", () => {
-    mClearBtn?.classList.toggle("hidden", mInput.value.trim().length === 0);
-  });
+  // Update visibility as user types
+  mInput?.addEventListener("input", toggleRecentSearches);
 
   mClearBtn?.addEventListener("click", () => {
     if (!mInput) return;
     mInput.value = "";
-    mClearBtn.classList.add("hidden");
+    toggleRecentSearches();
     mInput.focus();
   });
 
-  // "Clear Recent Searches" functionality
+  // Clear all chips
   trashBtn?.addEventListener("click", (e) => {
     e.preventDefault();
-    chipsWrap?.replaceChildren(); // Removes all child nodes (chips) efficiently
+    chipsWrap?.replaceChildren();
+  });
+
+  // Individual Chip Close
+  chipsWrap?.addEventListener("click", (e) => {
+    const target = e.target;
+    const closeIcon = target.closest(".chip-close");
+    if (closeIcon) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeIcon.closest(".chip")?.remove();
+    }
   });
 
   /* --- E. TAB SYSTEM --- 
