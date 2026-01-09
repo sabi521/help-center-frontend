@@ -69,20 +69,31 @@ document.addEventListener("DOMContentLoaded", () => {
     ".trendingHelpSwiper",
     ".custom-prev-button",
     ".custom-next-button",
-    0
+    20
   );
   initSwiper(
     ".aboutCryptoSwiper",
     ".crypto-prev-button",
     ".crypto-next-button",
-    50
+    20
   );
   initSwiper(
     ".everythingPayoutSwiper",
     ".everything-payout-prev",
     ".everything-payout-next",
-    100
+    20
   );
+
+  // Slider 4: Locker Room Search Results
+  initSwiper(
+    ".lockerRoomSearchResultsSwiper",
+    ".locker-search-results-prev",
+    ".locker-search-results-next",
+    20
+  );
+
+  // Slider 5: Wise Guy SearchSection
+  initSwiper(".wiseGuySwiper", ".wise-guy-prev", ".wise-guy-next", 20);
 
   /* --- B. SEARCH INPUT CLEAR BUTTONS --- 
      Handles the 'X' button visibility inside search fields.

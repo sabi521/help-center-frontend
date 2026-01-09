@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deposit</title>
+  </head>
+  <body>
+    <main class="bg-background-1 border-b-7 border-primary">
+      <!--
+        Breadcrumbs
+        -->
+      <section class="breadcrumb bg-inv-card-solid">
+        <div
+          class="max-w-[1430px] mx-auto px-6 py-4 flex items-center justify-between gap-4"
+        >
+          <p class="inline-flex gap-1 items-center">
+            <a
+              href="/"
+              class="text-inv-link text-base font-['Roboto'] leading-6 line-clamp-1"
+              >Help Center</a
+            >
+            <img src="breadcrumb-icon.svg" alt="breadcrumb icon" />
+            <span
+              class="text-inv-foreground-high text-base font-normal font-['Roboto'] leading-6 line-clamp-1"
+              >Search Results</span
+            >
+          </p>
+
+          <!-- Mobile search icon button -->
+          <button
+            type="button"
+            id="openMobileSearch"
+            class="md:hidden h-10 w-10 grid place-items-center rounded-full"
+            aria-label="Open search"
+          >
+            <img src="search-icon-circle.svg" alt="" class="h-8 w-8" />
+          </button>
+        </div>
+
+        <!-- Mobile overlay  -->
+        <div
+          id="mobileSearchOverlay"
+          class="fixed md:relative inset-0 z-999 hidden md:block"
+        >
+          <div class="bg-[#061E33] md:bg-background-1 px-4 py-3">
+            <div class="flex items-center gap-3 max-w-170 mx-auto">
+              <div
+                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white md:rounded-[100px] md:outline-1 md:outline-focus px-4"
+              >
+                <img src="search-normal.svg" alt="" class="h-5 w-5" />
+
+                <input
+                  id="mobileSearchInput"
+                  type="text"
+                  placeholder="Search"
+                  class="w-full bg-transparent text-base outline-none"
+                />
+
+                <!-- Clear (X) -->
+                <button
+                  type="button"
+                  id="mobileClearBtn"
+                  class="hidden cursor-pointer"
+                  aria-label="Clear search"
+                >
+                  <img src="search-close.svg" alt="" class="h-8 w-8" />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                id="closeMobileSearch"
+                class="text-inv-foreground-high md:text-foreground-high text-xs font-semibold font-['Nexa'] leading-4 cursor-pointer"
+              >
+                Cancel
+              </button>
+            </div>
+
+            <div id="firstSearch" class="hidden max-w-170 mx-auto">
+              <div class="mt-4 flex items-center justify-between">
+                <p
+                  class="text-inv-foreground-medium md:text-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
+                >
+                  Your Recent Searches:
+                </p>
+
+                <button
+                  type="button"
+                  id="trashButton"
+                  class="flex items-center gap-2 cursor-pointer"
+                >
+                  <img
+                    src="trash-blue-icon.svg"
+                    alt=""
+                    class="h-4 w-4 hidden md:block"
+                  />
+                  <img src="trash.svg" alt="" class="h-4 w-4 md:hidden" />
+                  <span
+                    class="text-inv-link md:text-link text-xs font-semibold font-['Nexa'] leading-4"
+                    >Clear All</span
+                  >
+                </button>
+              </div>
+
+              <div
+                id="recentChips"
+                class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+              >
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high md:text-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span class="md:text-foreground-high">Deposit bonus</span>
+                  <img
+                    class="chip-close md:hidden"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                  <img
+                    class="chip-close hidden md:block"
+                    src="chip-close-dark-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high md:text-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span class="md:text-foreground-high">Bonus</span>
+                  <img
+                    class="chip-close md:hidden"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                  <img
+                    class="chip-close hidden md:block"
+                    src="chip-close-dark-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span class="md:text-foreground-high">Crypto Bonus</span>
+                  <img
+                    class="chip-close md:hidden"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                  <img
+                    class="chip-close hidden md:block"
+                    src="chip-close-dark-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+                >
+                  <span class="md:text-foreground-high">Deposit bonus</span>
+                  <img
+                    class="chip-close md:hidden"
+                    src="chip-close-icon.svg"
+                    alt="chip close"
+                  />
+                  <img
+                    class="chip-close hidden md:block"
+                    src="chip-close-dark-icon.svg"
+                    alt="chip close"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+        Search Bar on top ends
+        -->
+
+      <!--
+         Search Results section starts
+         -->
+      <section class="search-result-section px-3 md:px-0">
+        <div class="max-w-170 mx-auto flex flex-col gap-2 mb-6 mt-8">
+          <span
+            class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5"
+          >
+            12 Results
+          </span>
+
+          <h1
+            class="text-foreground-high text-2xl font-extrabold font-['Nexa'] leading-7"
+          >
+            Results for <span class="text-primary">“Bonus”</span>
+          </h1>
+        </div>
+        <div
+          class="max-w-170 mx-auto flex flex-col divide-y divide-border-low px-3 md:px-0"
+        >
+          <a
+            href="/article-link-1"
+            class="group py-6 flex flex-col gap-3 transition-colors hover:bg-slate-50/50 px-4 -mx-4"
+          >
+            <span
+              class="inline-flex w-fit px-2 py-0.5 bg-gray text-gray-foreground text-xs font-semibold font-['Nexa'] rounded-md"
+            >
+              Bonuses
+            </span>
+            <h3
+              class="text-primary-text text-base md:text-lg font-extrabold font-['Nexa'] leading-5 truncate group-hover:text-blue-600 transition-colors"
+            >
+              Sign-up Bonus on BetUS
+            </h3>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-relaxed line-clamp-2"
+            >
+              Lorem ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet.Lorem
+              ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet.
+            </p>
+          </a>
+
+          <a
+            href="/article-link-2"
+            class="group py-6 flex flex-col gap-3 transition-colors hover:bg-slate-50/50 px-4 -mx-4"
+          >
+            <span
+              class="inline-flex w-fit px-2 py-0.5 bg-gray text-gray-foreground text-xs font-semibold font-['Nexa'] rounded-md"
+            >
+              Bonuses
+            </span>
+            <h3
+              class="text-primary-text text-base md:text-lg font-extrabold font-['Nexa'] leading-5 truncate group-hover:text-blue-600 transition-colors"
+            >
+              Crypto Bonus Guide and Best Practices
+            </h3>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-relaxed line-clamp-2"
+            >
+              Lorem ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet.
+            </p>
+          </a>
+
+          <a
+            href="/article-link-3"
+            class="group py-6 flex flex-col gap-3 transition-colors hover:bg-slate-50/50 px-4 -mx-4"
+          >
+            <span
+              class="inline-flex w-fit px-2 py-0.5 bg-gray text-gray-foreground text-xs font-semibold font-['Nexa'] rounded-md"
+            >
+              Bonuses
+            </span>
+            <h3
+              class="text-primary-text text-base md:text-lg font-extrabold font-['Nexa'] leading-5 truncate group-hover:text-blue-600 transition-colors"
+            >
+              Winning Tips with double Bonus Poker Strategy
+            </h3>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-relaxed line-clamp-2"
+            >
+              Lorem ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet.
+            </p>
+          </a>
+
+          <a
+            href="/article-link-3"
+            class="group py-6 flex flex-col gap-3 transition-colors hover:bg-slate-50/50 px-4 -mx-4"
+          >
+            <span
+              class="inline-flex w-fit px-2 py-0.5 bg-gray text-gray-foreground text-xs font-semibold font-['Nexa'] rounded-md"
+            >
+              Bonuses
+            </span>
+            <h3
+              class="text-primary-text text-base md:text-lg font-extrabold font-['Nexa'] leading-5 truncate group-hover:text-blue-600 transition-colors"
+            >
+              Winning Tips with double Bonus Poker Strategy
+            </h3>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-relaxed line-clamp-2"
+            >
+              Lorem ipsum dolor sit amet consectetur. Tincidunt tellus dignissim
+              faucibus enim leo. Facilisis dictum quis interdum at amet.
+            </p>
+          </a>
+          <div class="hidden md:flex justify-center mt-10">
+            <button
+              type="button"
+              class="min-w-32 h-11 px-6 rounded-full border border-border-medium text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 transition-colors duration-200 hover:bg-fill-medium/60 cursor-pointer"
+            >
+              Load More
+            </button>
+          </div>
+        </div>
+      </section>
+      <!--
+         Search Results section ends
+         -->
+
+      <!--
+         Shortcuts section starts
+         -->
+      <section
+        class="shortcuts-section max-w-170 mx-auto px-3 md:px-0 mt-4 md:mt-16"
+      >
+        <div class="w-full flex flex-col gap-4">
+          <h2
+            class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+          >
+            Shortcuts
+          </h2>
+
+          <div
+            class="bg-card-1 rounded-2xl border border-card-border overflow-hidden flex flex-col divide-y divide-card-border"
+          >
+            <a
+              href="/bonuses"
+              class="group flex items-center justify-between px-5 py-4 transition-all duration-200 hover:bg-black/[0.05] active:bg-black/[0.1]"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-lg bg-inv-card-3 shrink-0"
+                >
+                  <img src="gift-bg-black.svg" alt="gift" class="w-6 h-6" />
+                </div>
+                <span
+                  class="text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-1"
+                >
+                  Bonuses
+                </span>
+              </div>
+              <img src="ArrowUpRight-dark.svg" alt="arrow" class="w-5 h-5" />
+            </a>
+
+            <a
+              href="/payouts"
+              class="group flex items-center justify-between px-5 py-4 transition-all duration-200 hover:bg-black/[0.05] active:bg-black/[0.1]"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-lg bg-inv-card-2 shrink-0"
+                >
+                  <img
+                    src="circle-dollar-bg-black.svg"
+                    alt="dollar"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <span
+                  class="text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-1"
+                >
+                  Deposit & Payout
+                </span>
+              </div>
+              <img src="ArrowUpRight-dark.svg" alt="arrow" class="w-5 h-5" />
+            </a>
+
+            <a
+              href="/how-to-bet"
+              class="group flex items-center justify-between px-5 py-4 transition-all duration-200 hover:bg-black/[0.05] active:bg-black/[0.1]"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-lg bg-inv-card-1 shrink-0"
+                >
+                  <img src="book-bg-black.svg" alt="book" class="w-6 h-6" />
+                </div>
+                <span
+                  class="text-foreground-high text-sm font-extrabold font-['Nexa'] leading-4 line-clamp-1"
+                >
+                  How to Bet
+                </span>
+              </div>
+              <img src="ArrowUpRight-dark.svg" alt="arrow" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        Locker Room Search Section Starts
+        -->
+      <section class="locker-room-search-results mt-4 md:mt-16 px-3">
+        <div
+          class="relative z-50 flex max-w-[1430px] mx-auto flex justify-between items-center mb-6 md:mb-8"
+        >
+          <div>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 mb-1"
+            >
+              12 Results
+            </p>
+            <h3
+              class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Locker Room
+            </h3>
+          </div>
+
+          <div class="w-20 flex justify-between items-center">
+            <img
+              src="left-arrow-light.svg"
+              data-light="left-arrow-light.svg"
+              data-dark="left-arrow-dark.svg"
+              alt="left arrow"
+              class="locker-search-results-prev h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src="right-arrow-dark.svg"
+              data-light="right-arrow-light.svg"
+              data-dark="right-arrow-dark.svg"
+              alt="right arrow"
+              class="locker-search-results-next h-8 w-8 cursor-pointer"
+            />
+          </div>
+        </div>
+
+        <div class="swiper-container pl-[max(0px,(100%-1430px)/2)]">
+          <div class="swiper lockerRoomSearchResultsSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">NBA</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+
+                      <span class="text-link hover:underline">Picks</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Understanding Crypto Understanding Crypto
+                      </span>
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Understanding Crypto Bonuses
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Tincidunt tellus
+                      dignissim faucibus enim leo. Facilisis dictum quis
+                      interdum at amet.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">NFL</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Analysis</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Fantasy Football...</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Weekly Player Rankings
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Stay updated with the latest player performances and
+                      injuries. Learn how to adjust your lineup to maximize
+                      points.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">MLB</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Predictions</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Understanding Batting...</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Pitching Matchups to Watch
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Explore the nuances of player statistics. Analyze how
+                      batting averages can impact game outcomes and focus on
+                      critical pitching matchups.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">NHL</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Stats</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Power Play...</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Goaltender Performance
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Unpack the intricacies of power plays and how teams
+                      capitalize on them. Assess goaltender stats to predict
+                      potential game changers.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">MLS</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Highlights</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Offensive Tactics...</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Defensive Strategies
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Analyze the latest trends in offensive formations and how
+                      they exploit defensive weaknesses through recent match
+                      highlights.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- END swiper-wrapper -->
+          </div>
+          <!-- END swiper -->
+        </div>
+      </section>
+      <!--
+  Locker Room Search Section Ends
+-->
+
+      <!--
+        Wise Guy Search Section Starts
+        -->
+      <section class="wise-guy-search-results mt-4 md:mt-16 px-3">
+        <div
+          class="relative z-50 flex max-w-[1430px] mx-auto justify-between items-center mb-6 md:mb-8"
+        >
+          <div>
+            <p
+              class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 mb-1"
+            >
+              12 Results
+            </p>
+            <h3
+              class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Wise Guy
+            </h3>
+          </div>
+
+          <div class="w-20 flex justify-between items-center">
+            <img
+              src="left-arrow-light.svg"
+              data-light="left-arrow-light.svg"
+              data-dark="left-arrow-dark.svg"
+              alt="left arrow"
+              class="wise-guy-prev h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src="right-arrow-dark.svg"
+              data-light="right-arrow-light.svg"
+              data-dark="right-arrow-dark.svg"
+              alt="right arrow"
+              class="wise-guy-next h-8 w-8 cursor-pointer"
+            />
+          </div>
+        </div>
+
+        <div class="swiper-container pl-[max(0px,(100%-1430px)/2)]">
+          <div class="swiper wiseGuySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">NFL</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+
+                      <span class="text-link hover:underline">Bets</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Exploring Live Dealer Games
+                      </span>
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Exploring Live Dealer Games
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Tincidunt tellus
+                      dignissim faucibus enim leo. Facilisis dictum quis
+                      interdum at amet.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">Golf</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Odds</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Navigating Welcome Bonuses</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Navigating Welcome Bonuses
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Stay updated with the latest player performances and
+                      injuries. Learn how to adjust your lineup to maximize
+                      points.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">Tennis</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Matchups</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Understanding High-Roller Incentives</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Understanding High-Roller Incentives
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Explore the nuances of player statistics. Analyze how
+                      batting averages can impact game outcomes and focus on
+                      critical pitching matchups.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">Golf</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Odds</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Navigating Welcome Bonuses</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Navigating Welcome Bonuses
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Unpack the intricacies of power plays and how teams
+                      capitalize on them. Assess goaltender stats to predict
+                      potential game changers.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide max-w-[288px] md:max-w-[422px] w-full">
+                <a href="#" class="block w-full group">
+                  <div
+                    class="p-5 h-auto min-h-[160px] w-full bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col justify-start items-start gap-3 transition-all hover:bg-black/[0.02]"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs font-normal font-['Roboto'] leading-4"
+                    >
+                      <span class="text-link hover:underline">Golf</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-link hover:underline">Odds</span>
+                      <img
+                        src="breadcrumb-icon-slider.svg"
+                        alt="breadcrumb icon"
+                        class="w-3.5 h-3.5"
+                      />
+                      <span class="text-foreground-high truncate max-w-40"
+                        >Navigating Welcome Bonuses</span
+                      >
+                    </div>
+
+                    <div class="w-full">
+                      <h3
+                        class="text-primary-text text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-1 group-hover:text-link transition-colors"
+                      >
+                        Navigating Welcome Bonuses
+                      </h3>
+                    </div>
+
+                    <p
+                      class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 line-clamp-2"
+                    >
+                      Unpack the intricacies of power plays and how teams
+                      capitalize on them. Assess goaltender stats to predict
+                      potential game changers.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- END swiper-wrapper -->
+          </div>
+          <!-- END swiper -->
+        </div>
+      </section>
+      <!--
+  Wise guy Search Section Ends
+-->
+
+      <!--
+  Found what you need section starts
+-->
+
+      <section class="feedback-section mt-4 md:mt-16 px-3">
+        <div
+          class="max-w-170 mx-auto w-full px-6 md:px-12 py-6 bg-card-1 rounded-2xl outline -outline-offset-1 outline-card-border flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <h3
+            class="text-foreground-high text-xl md:text-2xl font-extrabold font-['Nexa'] leading-7"
+          >
+            Found what you need?
+          </h3>
+
+          <div
+            class="flex items-center rounded-xl outline outline-1 -outline-offset-1 outline-border-low overflow-hidden"
+          >
+            <button
+              class="group w-24 h-11 flex justify-center items-center gap-2 border-r border-border-low bg-transparent hover:bg-black/[0.03] transition-all active:scale-95"
+            >
+              <img
+                src="thumbs-up.svg"
+                alt="Yes"
+                class="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+              <span
+                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >Yes</span
+              >
+            </button>
+
+            <button
+              class="group w-24 h-11 flex justify-center items-center gap-2 bg-transparent hover:bg-black/[0.03] transition-all active:scale-95"
+            >
+              <img
+                src="thumbs-down.svg"
+                alt="No"
+                class="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+              <span
+                class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                >No</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--
+  Found what you need section ends
+-->
+    </main>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
