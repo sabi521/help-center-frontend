@@ -262,68 +262,56 @@
         class="managing-account-method max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
       >
         <!-- Quick Guide Navigation -->
-        <header class="navigation-managing-account w-full block md:hidden">
+        <header
+          class="navigation-managing-account w-full block md:hidden border-b border-border-low"
+        >
           <nav
-            class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar"
+            class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar px-4"
           >
-            <!-- ACTIVE TAB -->
             <a
               href="#opening-account"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent group-hover:border-transparent transition-all duration-200"
+              data-underline-nav="opening-account"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
-              <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              <span class="text-sm font-extrabold font-['Nexa']"
+                >Opening Account</span
               >
-                Opening Account
-              </span>
             </a>
-
-            <!-- INACTIVE TAB -->
             <a
               href="#help-guides"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-underline-nav="help-guides"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
-              <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              <span class="text-sm font-extrabold font-['Nexa']"
+                >Quick Help - Guides</span
               >
-                Quick Help - Guides
-              </span>
             </a>
-
-            <!-- INACTIVE TAB -->
             <a
               href="#security"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-underline-nav="security"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
-              <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              <span class="text-sm font-extrabold font-['Nexa']"
+                >Access & Security</span
               >
-                Access & Security
-              </span>
             </a>
-
-            <!-- INACTIVE TAB -->
             <a
               href="#transactions"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-underline-nav="transactions"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
-              <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              <span class="text-sm font-extrabold font-['Nexa']"
+                >Transactions</span
               >
-                Transactions
-              </span>
             </a>
-
-            <!-- INACTIVE TAB -->
             <a
               href="#referrals"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
+              data-underline-nav="referrals"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
-              <span
-                class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
+              <span class="text-sm font-extrabold font-['Nexa']"
+                >Referrals</span
               >
-                Referrals
-              </span>
             </a>
           </nav>
         </header>

@@ -275,4 +275,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const initialTab =
     (location.hash || "").replace("#", "") || links[0]?.dataset.tabTarget;
   if (initialTab) setActiveTab(initialTab);
+
+  /* --- MOBILE SCROLL-TO-SECTION NAV (Isolated) --- */
+  const underlineLinks = document.querySelectorAll<HTMLAnchorElement>(
+    "[data-underline-nav]"
+  );
+
+  function updateUnderlineOnly(targetId: string) {
+    underlineLinks.forEach((link) => {
+      const isMatch = link.getAttribute("data-underline-nav") === targetId;
+
+      if (isMatch) {
+        // Apply Blue Underline
+        link.classList.add("border-primary", "text-accent");
+        link.classList.remove("border-transparent", "text-foreground-medium");
+        // Scroll the NAV BAR if the item is off-screen
+        link.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      } else {
+        // Remove Underline
+        link.classList.remove("border-primary", "text-accent");
+        link.classList.add("border-transparent", "text-foreground-medium");
+      }
+    });
+  }
+
+  // Attach Click Listeners
+  underlineLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("data-underline-nav");
+      if (targetId) {
+        // Update UI first
+        updateUnderlineOnly(targetId);
+
+        // Let the natural anchor scroll happen, or use JS scroll:
+        const element = document.getElementById(targetId);
+        if (element) {
+          e.preventDefault();
+          const offset = 80; // Adjust for your sticky header height
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+
+          // Update URL without jump
+          history.replaceState(null, "", `#${targetId}`);
+        }
+      }
+    });
+  });
+
+  // Initialize on load
+  const initialHash = location.hash.replace("#", "");
+  if (
+    initialHash &&
+    document.querySelector(`[data-underline-nav="${initialHash}"]`)
+  ) {
+    updateUnderlineOnly(initialHash);
+  } else if (underlineLinks.length > 0) {
+    updateUnderlineOnly(underlineLinks[0].getAttribute("data-underline-nav")!);
+  }
 });
