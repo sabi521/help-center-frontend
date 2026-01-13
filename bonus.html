@@ -1613,13 +1613,16 @@ Reach out to Live agent section Starts
               class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
             >
               <video
-                playsinline
+                id="agentVideo"
+                preload="none"
+                poster="video-placeholder.webp"
                 muted
                 loop
-                autoplay
-                class="h-full object-cover rounded-2xl"
-                src="video.mp4"
-              ></video>
+                playsinline
+                class="w-full h-full object-cover rounded-2xl"
+              >
+                <source data-src="video.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div
@@ -1940,14 +1943,6 @@ Reach out to Live agent section Ends
       FAQ Accordion Section Ends
       -->
     </main>
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>

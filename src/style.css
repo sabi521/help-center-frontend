@@ -1,6 +1,71 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+/* Swiper CSS */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/* =========================
+   ROBOTO
+========================= */
+
+/* Roboto 400 */
+@font-face {
+  font-family: "Roboto";
+  src: url("/new/fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto 600 */
+@font-face {
+  font-family: "Roboto";
+  src: url("/new/fonts/Roboto-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto 700 */
+@font-face {
+  font-family: "Roboto";
+  src: url("/new/fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   NEXA
+========================= */
+@font-face {
+  font-family: "Nexa";
+  src: url("/new/fonts/Nexa-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Nexa Heavy */
+@font-face {
+  font-family: "Nexa";
+  src: url("/new/fonts/NexaHeavy.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Nexa Black (optional) */
+@font-face {
+  font-family: "Nexa";
+  src: url("/new/fonts/NexaBlack.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 .chip {
   @apply px-2 py-1 rounded-lg
          border border-inv-border-medium

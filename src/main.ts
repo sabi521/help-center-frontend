@@ -343,4 +343,41 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (underlineLinks.length > 0) {
     updateUnderlineOnly(underlineLinks[0].getAttribute("data-underline-nav")!);
   }
+
+  // --- F. LAZY LOAD AUTOPLAY VIDEO ---
+  const video = document.getElementById(
+    "agentVideo"
+  ) as HTMLVideoElement | null;
+
+  if (video) {
+    const sources = Array.from(video.querySelectorAll("source"));
+
+    const loadAndAutoplay = async () => {
+      // only load once
+      if (sources.some((s) => s.src)) return;
+
+      sources.forEach((s) => {
+        const dataSrc = s.getAttribute("data-src");
+        if (dataSrc) s.src = dataSrc;
+      });
+
+      video.load();
+
+      try {
+        await video.play();
+      } catch {}
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          loadAndAutoplay();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "250px" }
+    );
+
+    io.observe(video);
+  }
 });

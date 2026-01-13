@@ -9,16 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   base: "/new/",
-  plugins: [
-    tailwindcss(),
-    // 2. Add the font URLs here.
-    // The plugin will download these so they aren't "external" anymore.
-    webfontDownload([
-      "https://sh.betuscdn.com/libs/css/fonts/kommissar-condensed.css",
-      "https://sh.betuscdn.com/libs/css/fonts/roboto.css",
-      "https://sh.betuscdn.com/libs/css/fonts/nexa.css",
-    ]),
-  ],
+  plugins: [tailwindcss()],
   build: {
     assetsInlineLimit: 15360,
     cssCodeSplit: true,
