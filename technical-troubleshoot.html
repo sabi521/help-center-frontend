@@ -196,365 +196,544 @@
     Managing account steps section starts
     -->
       <section
-        class="managing-account-method max-w-[1430px] mx-auto px-3 2xl:px-0 mt-3.5 md:mt-8"
+        class="managing-account-method max-w-[1430px] mx-auto px-3 2xl:px-0"
       >
-        <!-- Quick Guide Navigation -->
-        <header class="navigation-managing-account w-full block md:hidden">
+        <!--Quick Navigation Guide-->
+        <header
+          class="navigation-managing-account w-full block mt-3.5 md:hidden"
+        >
           <nav
-            class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar px-4"
+            class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar"
           >
             <a
-              href="#opening-account"
-              data-underline-nav="opening-account"
-              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
+              href="#troubleshooting"
+              data-underline-nav="troubleshooting"
+              aria-current="page"
+              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-primary text-accent transition-all duration-200"
             >
               <span class="text-sm font-extrabold font-['Nexa']"
-                >Opening Account</span
+                >Common Troubleshooting</span
               >
             </a>
+
             <a
-              href="#help-guides"
-              data-underline-nav="help-guides"
+              href="#platform-guides"
+              data-underline-nav="platform-guides"
               class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
               <span class="text-sm font-extrabold font-['Nexa']"
-                >Quick Help - Guides</span
+                >Platform Guides</span
               >
             </a>
+
             <a
-              href="#security"
-              data-underline-nav="security"
+              href="#sports-issues"
+              data-underline-nav="sports-issues"
               class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
               <span class="text-sm font-extrabold font-['Nexa']"
-                >Access & Security</span
+                >Sports Issues</span
               >
             </a>
+
             <a
-              href="#transactions"
-              data-underline-nav="transactions"
+              href="#casino-issues"
+              data-underline-nav="casino-issues"
               class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
             >
               <span class="text-sm font-extrabold font-['Nexa']"
-                >Transactions</span
-              >
-            </a>
-            <a
-              href="#referrals"
-              data-underline-nav="referrals"
-              class="h-10 shrink-0 px-2 flex items-center border-b-4 border-transparent text-foreground-medium transition-all duration-200"
-            >
-              <span class="text-sm font-extrabold font-['Nexa']"
-                >Referrals</span
+                >Casino Issues</span
               >
             </a>
           </nav>
         </header>
 
-        <!-- Grid container -->
-        <div
-          class="deposit-methods-container grid grid-cols-1 md:grid-cols-6 gap-3 mt-5"
+        <!--
+Common Troubleshooting Slider Section Starts
+-->
+        <section class="featured-help-articles py-4 md:py-6">
+          <div
+            class="relative z-50 flex max-w-357.5 mx-auto justify-between items-center mb-3.5 md:mb-4"
+          >
+            <h3
+              class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Common Troubleshooting
+            </h3>
+
+            <div class="w-20 flex justify-between items-center">
+              <img
+                src="left-arrow-light.svg"
+                data-light="left-arrow-light.svg"
+                data-dark="left-arrow-dark.svg"
+                alt="left arrow"
+                class="featured-prev-button h-8 w-8 cursor-pointer"
+              />
+
+              <img
+                src="right-arrow-dark.svg"
+                alt="right arrow"
+                class="featured-next-button h-8 w-8 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <p
+            class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5 mb-3.5 md:mb-8"
+          >
+            Explore solutions to common sportsbook and casino issues—designed to
+            get you
+          </p>
+
+          <div class="swiper-container pl-[max(0px,(100%-1430px)/2)]">
+            <div class="swiper featuredHelpSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Manage Account</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Upload Personal Documents
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-2.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Deposits</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Rejected Bet - What to do
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Trending</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Deposit Not Showing Up? Steps to Resolve the Issue
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-2.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Exploratory</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Blocked Credit Card? Steps to Fix and Continue
+                            Betting
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-[#208FFF] rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Guideline</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            New BTC Lightning Deposit
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--
+Common Troubleshooting Slider Section Ends
+-->
+
+        <section
+          class="troubleshoot-guides-section max-w-[1430px] mx-auto mt-0"
         >
-          <!-- Opening Account -->
-          <div
-            id="opening-account"
-            class="md:col-span-2 self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6"
-          >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div
-              class="self-stretch flex flex-col justify-start items-start gap-5"
+              id="platform-guides"
+              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6 md:min-h-[270px]"
             >
               <div
-                class="self-stretch inline-flex justify-start items-center gap-3"
+                class="self-stretch flex flex-col justify-start items-start gap-5"
               >
-                <img class="w-8 h-8" src="user-icon.svg" alt="user icon" />
                 <div
-                  class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  class="self-stretch inline-flex justify-start items-center gap-3"
                 >
-                  Opening Account
+                  <div
+                    class="w-8 h-8 p-1 bg-card-3 rounded-md flex justify-center items-center"
+                  >
+                    <img
+                      src="platform-icon.svg"
+                      alt="platform icon"
+                      class="w-8 h-8"
+                    />
+                  </div>
+                  <div
+                    class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Platform Walkthrough - <br />Guides
+                  </div>
+                </div>
+                <div
+                  class="self-stretch text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Sign-Up & get start winning
                 </div>
               </div>
 
               <div
-                class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
-              >
-                Sign-Up & get start winning
-              </div>
-            </div>
-
-            <div
-              class="self-stretch flex flex-col md:flex-row justify-start md:justify-between items-start gap-2.5"
-            >
-              <div
-                class="self-stretch w-full flex flex-col justify-start items-start gap-2.5"
+                class="self-stretch flex flex-col justify-start items-start gap-3"
               >
                 <a
                   href="#"
-                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Understanding the Home Page and Main Navigation</a
                 >
-                  <span class="flex-1 max-h-12"
-                    >How to Sign Up: Guide for New Users</span
-                  >
-                </a>
-
                 <a
                   href="#"
-                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Sportsbook Walkthrough</a
                 >
-                  <span class="flex-1 max-h-12"
-                    >KYC: What you need to know</span
-                  >
-                </a>
-
                 <a
                   href="#"
-                  class="self-stretch inline-flex justify-start items-center gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Casino Walkthrough</a
                 >
-                  <span class="flex-1 max-h-12"
-                    >BetUS Account Verification</span
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Live Betting Walkthrough</a
+                >
+              </div>
+            </div>
+
+            <div
+              id="troubleshooting"
+              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6 md:min-h-[270px]"
+            >
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-5"
+              >
+                <div
+                  class="self-stretch inline-flex justify-start items-center gap-3"
+                >
+                  <div
+                    class="w-8 h-8 p-1 bg-card-3 rounded-md flex justify-center items-center"
                   >
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Help - Guides -->
-          <div
-            id="help-guides"
-            class="md:col-span-2 self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6"
-          >
-            <div
-              class="self-stretch flex flex-col justify-start items-start gap-5"
-            >
-              <div
-                class="self-stretch inline-flex justify-start items-center gap-3"
-              >
-                <img
-                  src="lifeBuoy-icon.svg"
-                  alt="life buoy icon"
-                  class="w-8 h-8"
-                />
+                    <img
+                      src="lifeBuoy-icon.svg"
+                      alt="troubleshooting icon"
+                      class="w-8 h-8"
+                    />
+                  </div>
+                  <div
+                    class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Other Technical Issues
+                  </div>
+                </div>
                 <div
-                  class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  class="self-stretch text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
                 >
-                  Quick Help - Guides
+                  Anything that helps you with operating the website
                 </div>
               </div>
 
               <div
-                class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                class="self-stretch flex flex-col justify-start items-start gap-3"
               >
-                Concise troubleshooting guides to quickly resolve common account
-                issues.
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >How to Clear Cache and Cookies</a
+                >
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >What do to when the Platform is not Loading</a
+                >
               </div>
             </div>
 
-            <div class="self-stretch flex flex-col gap-2.5">
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Recover my Username</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Account Verification</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Upload Personal Documents</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Account Update</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Password, Login Help & 2FA Setup -->
-          <div
-            id="security"
-            class="md:col-span-2 self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6"
-          >
             <div
-              class="self-stretch flex flex-col justify-start items-start gap-5"
+              id="sports-issues"
+              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6 md:min-h-[270px]"
             >
               <div
-                class="self-stretch inline-flex justify-start items-center gap-3"
+                class="self-stretch flex flex-col justify-start items-start gap-5"
               >
-                <img
-                  src="security-icon.svg"
-                  alt="Security icon"
-                  class="w-8 h-8"
-                />
                 <div
-                  class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  class="self-stretch inline-flex justify-start items-center gap-3"
                 >
-                  Password, Login Help <br />& 2FA Setup
+                  <div
+                    class="w-8 h-8 p-1 bg-card-3 rounded-md flex justify-center items-center"
+                  >
+                    <img
+                      src="all-sports-icon.svg"
+                      alt="sports icon"
+                      class="w-8 h-8"
+                    />
+                  </div>
+                  <div
+                    class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Sports
+                  </div>
+                </div>
+                <div
+                  class="self-stretch text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Explore the platform and learn how to use it like a Pro
                 </div>
               </div>
 
               <div
-                class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                class="self-stretch flex flex-col justify-start items-start gap-3"
               >
-                Concise troubleshooting guides to quickly resolve common account
-                issues.
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >What to do When my Bet is Rejected</a
+                >
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Betting - Error Codes</a
+                >
               </div>
             </div>
 
-            <div class="self-stretch flex flex-col gap-3">
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Tips to secure your account</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">How to Reset your Password</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12"
-                  >How to Setup a 2FA Security Level</span
-                >
-              </a>
-            </div>
-          </div>
-
-          <!-- Viewing your Wagers & Transactions -->
-          <div
-            id="transactions"
-            class="md:col-span-3 self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6"
-          >
             <div
-              class="self-stretch flex flex-col justify-start items-start gap-5"
+              id="casino-issues"
+              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6 md:min-h-[270px]"
             >
               <div
-                class="self-stretch inline-flex justify-start items-center gap-3"
+                class="self-stretch flex flex-col justify-start items-start gap-5"
               >
-                <img
-                  src="circleDollarSign-icon.svg"
-                  alt="Circle Dollar Sign icon"
-                  class="w-8 h-8"
-                />
                 <div
-                  class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  class="self-stretch inline-flex justify-start items-center gap-3"
                 >
-                  Viewing your Wagers <br />
-                  & Transactions
+                  <div
+                    class="w-8 h-8 p-1 bg-card-3 rounded-md flex justify-center items-center"
+                  >
+                    <img
+                      src="casino-icon.svg"
+                      alt="casino icon"
+                      class="w-8 h-8"
+                    />
+                  </div>
+                  <div
+                    class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >
+                    Casino
+                  </div>
+                </div>
+                <div
+                  class="self-stretch text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                >
+                  Fix common casino games technical issues
                 </div>
               </div>
 
               <div
-                class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
+                class="self-stretch flex flex-col justify-start items-start gap-3"
               >
-                Learn how to easily view your wager history and track all your
-                transactions in one place.
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >What to do When a Game Crashed</a
+                >
+                <a
+                  href="#"
+                  class="text-link hover:underline text-base font-normal font-['Roboto'] leading-6"
+                  >Games - Error Codes</a
+                >
               </div>
-            </div>
-
-            <div class="self-stretch flex flex-col gap-3">
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12"
-                  >Where to Access your Transactional Data</span
-                >
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12"
-                  >Transaction Types: Deposits, payouts, bets and bonuses</span
-                >
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12"
-                  >Transaction status: Pending, Completed and Failed</span
-                >
-              </a>
             </div>
           </div>
-
-          <!-- Referring Friends -->
-          <div
-            id="referrals"
-            class="md:col-span-3 self-stretch p-6 bg-card-1 rounded-xl md:rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-6"
-          >
-            <div
-              class="self-stretch flex flex-col justify-start items-start gap-5"
-            >
-              <div
-                class="self-stretch inline-flex justify-start items-center gap-3"
-              >
-                <img
-                  src="refer-friend-icon.svg"
-                  alt="refer friend icon"
-                  class="w-8 h-8"
-                />
-                <div
-                  class="flex-1 text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
-                >
-                  Referring Friends
-                </div>
-              </div>
-
-              <div
-                class="self-stretch max-h-16 text-foreground-medium text-base font-normal font-['Roboto'] leading-6"
-              >
-                Learn how the referral program works, including terms, rewards,
-                and more.
-              </div>
-            </div>
-
-            <div class="self-stretch flex flex-col gap-3">
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">How Referral Program Works</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12">Steps to Refer a Friend</span>
-              </a>
-
-              <a
-                href="#"
-                class="inline-flex gap-1.5 text-link hover:underline decoration-current text-base font-normal font-['Roboto'] leading-6"
-              >
-                <span class="flex-1 max-h-12"
-                  >Terms and Conditions for Referring Friends</span
-                >
-              </a>
-            </div>
-          </div>
-        </div>
+        </section>
       </section>
       <!--
     Managing account steps section Ends

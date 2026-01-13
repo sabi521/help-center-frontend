@@ -22,6 +22,10 @@ export default defineConfig({
         emptySearch: path.resolve(__dirname, "empty-search.html"),
         searchResults: path.resolve(__dirname, "search-results.html"),
         lrWgEmptySearch: path.resolve(__dirname, "lr-wg-empty-search.html"),
+        technicalTroubleshoot: path.resolve(
+          __dirname,
+          "technical-troubleshoot.html"
+        ),
       },
     },
   },

@@ -58,6 +58,62 @@ const initSwiper = (
 };
 
 /**
+ * SECTION: Knowledge Base Feedback Component
+ * Handles sentiment (Yes/No) toggle and dynamic textarea expansion.
+ */
+const initFeedbackSection = () => {
+  const yesBtn = document.getElementById(
+    "feedback-yes"
+  ) as HTMLButtonElement | null;
+  const noBtn = document.getElementById(
+    "feedback-no"
+  ) as HTMLButtonElement | null;
+  const detailsArea = document.getElementById(
+    "feedback-details"
+  ) as HTMLElement | null;
+  const label = document.getElementById("feedback-label") as HTMLElement | null;
+  const cancelBtn = document.getElementById(
+    "feedback-cancel"
+  ) as HTMLButtonElement | null;
+
+  // check: If elements aren't on this page, exit quietly.
+  if (!yesBtn || !noBtn || !detailsArea || !label || !cancelBtn) return;
+
+  const resetFeedback = () => {
+    [yesBtn, noBtn].forEach((btn) => {
+      btn.style.backgroundColor = "transparent";
+      const icon = btn.querySelector(".feedback-icon") as HTMLElement;
+      if (icon) icon.style.filter = "none";
+    });
+    detailsArea.classList.add("hidden");
+  };
+
+  yesBtn.addEventListener("click", () => {
+    resetFeedback();
+    yesBtn.style.backgroundColor = "#F2F9F2";
+    const icon = yesBtn.querySelector(".feedback-icon") as HTMLElement;
+    if (icon)
+      icon.style.filter =
+        "invert(36%) sepia(88%) saturate(414%) hue-rotate(78deg) brightness(95%) contrast(92%)";
+    label.innerText = "What do we do well? (Optional)";
+    detailsArea.classList.remove("hidden");
+  });
+
+  noBtn.addEventListener("click", () => {
+    resetFeedback();
+    noBtn.style.backgroundColor = "#FFF5F5";
+    const icon = noBtn.querySelector(".feedback-icon") as HTMLElement;
+    if (icon)
+      icon.style.filter =
+        "invert(27%) sepia(91%) saturate(2352%) hue-rotate(339deg) brightness(94%) contrast(106%)";
+    label.innerText = "What can we improve? (Optional)";
+    detailsArea.classList.remove("hidden");
+  });
+
+  cancelBtn.addEventListener("click", resetFeedback);
+};
+
+/**
  * 2. MAIN EXECUTION (DOM READY)
  * Ensures all DOM elements are available before attaching listeners.
  */
@@ -94,6 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Slider 5: Wise Guy SearchSection
   initSwiper(".wiseGuySwiper", ".wise-guy-prev", ".wise-guy-next", 20);
+
+  // Slider 6: Featured Help Articles (New Image Slider)
+  initSwiper(
+    ".featuredHelpSwiper",
+    ".featured-prev-button",
+    ".featured-next-button",
+    20
+  );
 
   /* --- B. SEARCH INPUT CLEAR BUTTONS --- 
      Handles the 'X' button visibility inside search fields.
@@ -380,4 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     io.observe(video);
   }
+
+  // --- G. FEEDBACK SECTION ---
+  initFeedbackSection();
 });
