@@ -349,10 +349,11 @@
             aria-label="Deposit and payout navigation"
             class="flex w-full items-center gap-4 overflow-x-auto no-scrollbar"
           >
-            <!-- ACTIVE TAB -->
             <a
               href="#steps"
-              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent group-hover:border-transparent transition-all duration-200"
+              data-underline-nav="steps"
+              aria-current="page"
+              class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-primary text-accent transition-all duration-200"
             >
               <span
                 class="text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5"
@@ -361,9 +362,9 @@
               </span>
             </a>
 
-            <!-- INACTIVE TAB -->
             <a
               href="#methods"
+              data-underline-nav="methods"
               class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
             >
               <span
@@ -373,9 +374,9 @@
               </span>
             </a>
 
-            <!-- INACTIVE TAB -->
             <a
               href="#payouts"
+              data-underline-nav="payouts"
               class="h-10 shrink-0 px-2 md:px-3 flex items-center border-b-4 border-transparent text-foreground-medium hover:border-primary hover:text-accent transition-all duration-200"
             >
               <span
@@ -1437,13 +1438,16 @@ Reach out to Live agent section Starts
               class="agent_video absolute h-full top-0 left-0 z-10 w-full p-1 flex justify-center items-center"
             >
               <video
-                playsinline
+                id="agentVideo"
+                preload="none"
+                poster="video-placeholder.webp"
                 muted
                 loop
-                autoplay
-                class="h-full object-cover rounded-2xl"
-                src="video.mp4"
-              ></video>
+                playsinline
+                class="w-full h-full object-cover rounded-2xl"
+              >
+                <source data-src="video.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div
@@ -1764,14 +1768,6 @@ Reach out to Live agent section Ends
       FAQ Accordion Section Ends
       -->
     </main>
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
