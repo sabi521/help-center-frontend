@@ -61,6 +61,7 @@ const initSwiper = (
  * SECTION: Knowledge Base Feedback Component
  * Handles sentiment (Yes/No) toggle and dynamic textarea expansion.
  */
+
 const initFeedbackSection = () => {
   const yesBtn = document.getElementById(
     "feedback-yes"
@@ -76,36 +77,53 @@ const initFeedbackSection = () => {
     "feedback-cancel"
   ) as HTMLButtonElement | null;
 
-  // check: If elements aren't on this page, exit quietly.
   if (!yesBtn || !noBtn || !detailsArea || !label || !cancelBtn) return;
 
   const resetFeedback = () => {
     [yesBtn, noBtn].forEach((btn) => {
+      // Reset Button Background to transparent
       btn.style.backgroundColor = "transparent";
-      const icon = btn.querySelector(".feedback-icon") as HTMLElement;
-      if (icon) icon.style.filter = "none";
+
+      // Reset SVG Paths to outline only (No Fill)
+      const paths = btn.querySelectorAll("path");
+      paths.forEach((path) => {
+        path.setAttribute("stroke", "#282E38");
+        path.setAttribute("fill", "none");
+      });
     });
     detailsArea.classList.add("hidden");
   };
 
   yesBtn.addEventListener("click", () => {
     resetFeedback();
-    yesBtn.style.backgroundColor = "#F2F9F2";
-    const icon = yesBtn.querySelector(".feedback-icon") as HTMLElement;
-    if (icon)
-      icon.style.filter =
-        "invert(36%) sepia(88%) saturate(414%) hue-rotate(78deg) brightness(95%) contrast(92%)";
+
+    // 1. Set light green background
+    yesBtn.style.backgroundColor = "#F6FFF0";
+
+    // 2. Fill the Thumb Icon with solid green
+    const paths = yesBtn.querySelectorAll("path");
+    paths.forEach((path) => {
+      path.setAttribute("stroke", "#328800");
+      path.setAttribute("fill", "#328800");
+    });
+
     label.innerText = "What do we do well? (Optional)";
     detailsArea.classList.remove("hidden");
   });
 
   noBtn.addEventListener("click", () => {
     resetFeedback();
-    noBtn.style.backgroundColor = "#FFF5F5";
-    const icon = noBtn.querySelector(".feedback-icon") as HTMLElement;
-    if (icon)
-      icon.style.filter =
-        "invert(27%) sepia(91%) saturate(2352%) hue-rotate(339deg) brightness(94%) contrast(106%)";
+
+    // 1. Set light red background
+    noBtn.style.backgroundColor = "#FCE9E9";
+
+    // 2. Fill the Thumb Icon with solid red
+    const paths = noBtn.querySelectorAll("path");
+    paths.forEach((path) => {
+      path.setAttribute("stroke", "#EC0100");
+      path.setAttribute("fill", "#EC0100");
+    });
+
     label.innerText = "What can we improve? (Optional)";
     detailsArea.classList.remove("hidden");
   });

@@ -47,15 +47,19 @@
           <div class="bg-[#061E33] md:bg-background-1 px-4 py-3">
             <div class="flex items-center gap-3 max-w-170 mx-auto">
               <div
-                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white md:rounded-[100px] md:outline-1 md:outline-focus px-4"
+                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4 outline transition-all md:rounded-[100px] has-[:focus]:outline-2 md:has-[:focus]:outline-1 has-[:focus]:outline-focus"
               >
-                <img src="search-normal.svg" alt="" class="h-5 w-5" />
+                <img
+                  src="search-normal.svg"
+                  alt=""
+                  class="h-3.5 w-3.5 md:h-5 md:w-5"
+                />
 
                 <input
                   id="mobileSearchInput"
                   type="text"
                   placeholder="Search"
-                  class="w-full bg-transparent text-base outline-none"
+                  class="w-full bg-transparent text-sm outline-none font-['Roboto'] font-normal leading-4 text-foreground-high"
                 />
 
                 <!-- Clear (X) -->
@@ -65,14 +69,18 @@
                   class="hidden cursor-pointer"
                   aria-label="Clear search"
                 >
-                  <img src="search-close.svg" alt="" class="h-8 w-8" />
+                  <img
+                    src="search-close.svg"
+                    alt=""
+                    class="h-5 w-5 md:h-8 md:w-8"
+                  />
                 </button>
               </div>
 
               <button
                 type="button"
                 id="closeMobileSearch"
-                class="text-inv-foreground-high md:text-foreground-high text-xs font-semibold font-['Nexa'] leading-4 cursor-pointer"
+                class="text-inv-foreground-high md:text-foreground-high text-xs font-semibold font-['Roboto'] leading-4 cursor-pointer"
               >
                 Cancel
               </button>
@@ -89,16 +97,11 @@
                 <button
                   type="button"
                   id="trashButton"
-                  class="flex items-center gap-2 cursor-pointer"
+                  class="min-w-16 max-h-6 min-h-6 px-2.5 bg-fill-medium rounded-full inline-flex justify-center items-center gap-1 cursor-pointer"
                 >
-                  <img
-                    src="trash-blue-icon.svg"
-                    alt=""
-                    class="h-4 w-4 hidden md:block"
-                  />
-                  <img src="trash.svg" alt="" class="h-4 w-4 md:hidden" />
+                  <img src="trash-black.svg" alt="" class="h-4 w-4" />
                   <span
-                    class="text-inv-link md:text-link text-xs font-semibold font-['Nexa'] leading-4"
+                    class="text-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
                     >Clear All</span
                   >
                 </button>

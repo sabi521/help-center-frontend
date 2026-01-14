@@ -60,13 +60,17 @@
               <div
                 class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4"
               >
-                <img src="search-normal.svg" alt="" class="h-5 w-5" />
+                <img
+                  src="search-normal.svg"
+                  alt=""
+                  class="h-3.5 w-3.5 md:h-5 md:w-5"
+                />
 
                 <input
                   id="mobileSearchInput"
                   type="text"
                   placeholder="Search"
-                  class="w-full bg-transparent text-base outline-none"
+                  class="w-full bg-transparent text-sm outline-none font-['Roboto'] font-normal leading-4 text-foreground-high"
                 />
 
                 <!-- Clear (X) -->
@@ -76,14 +80,18 @@
                   class="hidden"
                   aria-label="Clear search"
                 >
-                  <img src="search-close.svg" alt="" class="h-8 w-8" />
+                  <img
+                    src="search-close.svg"
+                    alt=""
+                    class="h-5 w-5 md:h-8 md:w-8"
+                  />
                 </button>
               </div>
 
               <button
                 type="button"
                 id="closeMobileSearch"
-                class="text-inv-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
+                class="text-inv-foreground-high text-xs font-semibold font-['Roboto'] leading-4"
               >
                 Cancel
               </button>
@@ -99,11 +107,11 @@
               <button
                 type="button"
                 id="trashButton"
-                class="flex items-center gap-2"
+                class="min-w-16 max-h-6 min-h-6 px-2.5 bg-fill-medium rounded-full inline-flex justify-center items-center gap-1"
               >
-                <img src="trash.svg" alt="" class="h-4 w-4" />
+                <img src="trash-black.svg" alt="" class="h-4 w-4" />
                 <span
-                  class="text-inv-link text-xs font-semibold font-['Nexa'] leading-4"
+                  class="text-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
                   >Clear All</span
                 >
               </button>
