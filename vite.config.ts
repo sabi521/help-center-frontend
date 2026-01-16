@@ -26,6 +26,7 @@ export default defineConfig({
           __dirname,
           "technical-troubleshoot.html"
         ),
+        termsConditions: path.resolve(__dirname, "terms-conditions.html"),
       },
     },
   },
