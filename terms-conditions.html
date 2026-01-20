@@ -277,7 +277,7 @@
           >
             <a
               href=""
-              class="flex-1 p-5 md:p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex justify-start items-center gap-4 overflow-hidden"
+              class="group flex-1 p-5 md:p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex justify-start items-center gap-4 overflow-hidden transition-all"
             >
               <div class="w-10 h-10">
                 <img
@@ -298,11 +298,23 @@
                     Terms Of Service
                   </h3>
                   <div class="w-5 h-5">
-                    <img
-                      src="ArrowRight.svg"
-                      alt="right arrow"
-                      class="w-5 h-5"
-                    />
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.16602 9.99996H15.8327M15.8327 9.99996L9.99935
+                      4.16663M15.8327 9.99996L9.99935 15.8333"
+                        stroke="#282E38"
+                        stroke-width="1.33"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-(--color-link) transition-colors duration-300"
+                      />
+                    </svg>
                   </div>
                 </div>
                 <p
@@ -319,7 +331,7 @@
 
             <a
               href=""
-              class="flex-1 p-5 md:p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex justify-start items-center gap-4 overflow-hidden"
+              class="group flex-1 p-5 md:p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex justify-start items-center gap-4 overflow-hidden"
             >
               <div class="w-10 h-10">
                 <img
@@ -340,11 +352,23 @@
                     Privacy Policy
                   </h3>
                   <div class="w-5 h-5">
-                    <img
-                      src="ArrowRight.svg"
-                      alt="right arrow"
-                      class="w-5 h-5"
-                    />
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.16602 9.99996H15.8327M15.8327 9.99996L9.99935
+                      4.16663M15.8327 9.99996L9.99935 15.8333"
+                        stroke="#282E38"
+                        stroke-width="1.33"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-(--color-link) transition-colors duration-300"
+                      />
+                    </svg>
                   </div>
                 </div>
                 <p
@@ -364,11 +388,11 @@
         <!--Betting Rules Section Starts-->
 
         <section class="betting-rules-all-section max-w-[1430px] mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
             <!-- BetUS Online Betting Rules-->
             <div
               id="online-betting-rules"
-              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-95"
+              class="self-start p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-155"
             >
               <div
                 class="self-stretch flex flex-col justify-start items-start gap-5 border-b border-border-low pb-3.5 md:pb-6"
@@ -398,7 +422,7 @@
                   certain bets and events.
                 </div>
               </div>
-              <div class="w-full flex flex-col">
+              <div class="w-full flex flex-col data-accordion">
                 <div class="border-b border-border-low mb-2">
                   <details class="group" open>
                     <summary
@@ -563,7 +587,9 @@
                 </div>
               </div>
 
-              <div class="w-fit bg-primary rounded-full mx-auto md:mx-0">
+              <div
+                class="w-fit bg-primary/95 rounded-full mx-auto md:mx-0 transition-opacity hover:bg-primary"
+              >
                 <a
                   href=""
                   class="block text-center justify-start text-primary-foreground text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5 py-2.5 px-3 md:px-3.5"
@@ -574,7 +600,7 @@
 
             <div
               id="sportsbook-betting-rules"
-              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-95"
+              class="self-start p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-155"
             >
               <div
                 class="self-stretch flex flex-col justify-start items-start gap-5 border-b border-border-low pb-3.5 md:pb-6"
@@ -820,7 +846,9 @@
                 </div>
               </div>
 
-              <div class="w-fit bg-primary rounded-full mx-auto md:mx-0">
+              <div
+                class="w-fit bg-primary/95 rounded-full mx-auto md:mx-0 transition-opacity hover:bg-primary"
+              >
                 <a
                   href=""
                   class="block text-center justify-start text-primary-foreground text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5 py-2.5 px-3 md:px-3.5"
@@ -832,7 +860,7 @@
             <!--Free Contest Rules-->
             <div
               id="free-contest-rules"
-              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-95"
+              class="self-start p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-99"
             >
               <div
                 class="self-stretch flex flex-col justify-start items-start gap-5 pb-3.5 md:pb-6"
@@ -892,7 +920,9 @@
                 </div>
               </div>
 
-              <div class="w-fit bg-primary rounded-full mx-auto md:mx-0">
+              <div
+                class="w-fit bg-primary/95 rounded-full mx-auto md:mx-0 transition-opacity hover:bg-primary"
+              >
                 <a
                   href=""
                   class="block text-center justify-start text-primary-foreground text-sm md:text-lg font-extrabold font-['Nexa'] leading-4 md:leading-5 py-2.5 px-3 md:px-3.5"
@@ -904,7 +934,7 @@
             <!--Game Contribution to Rollover -->
             <div
               id="rollover-contributions"
-              class="self-stretch p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-95"
+              class="self-start p-6 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border flex flex-col gap-2 md:min-h-99"
             >
               <div
                 class="self-stretch flex flex-col justify-start items-start gap-5 pb-3.5 md:pb-6"
