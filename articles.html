@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles</title>
+  </head>
+  <body>
+    <main class="bg-background-1 border-b-7 border-primary">
+      <!--
+        Search Bar on top starts
+        -->
+      <section class="breadcrumb bg-inv-card-solid">
+        <div
+          class="max-w-[1430px] mx-auto px-6 py-4 flex items-center justify-between gap-4"
+        >
+          <p class="inline-flex gap-1 items-center">
+            <a
+              href="/"
+              class="text-inv-link text-base font-['Roboto'] leading-6 line-clamp-1"
+              >Help Center</a
+            >
+            <img src="breadcrumb-icon.svg" alt="breadcrumb icon" />
+            <span
+              class="text-inv-foreground-high text-base font-normal font-['Roboto'] leading-6 line-clamp-1"
+              >Breadcrumb</span
+            >
+          </p>
+
+          <!-- Desktop search pill -->
+          <div class="hidden md:flex items-center">
+            <div
+              class="flex h-10 w-[460px] items-center gap-2 rounded-full bg-white px-4 outline-1 outline-border-medium"
+            >
+              <img src="search-icon-desktop.svg" alt="" class="h-5 w-5" />
+              <input
+                type="text"
+                placeholder="Search on this page"
+                class="w-full text-foreground-high focus:text-black text-base font-normal font-['Roboto'] leading-6 outline-none"
+              />
+            </div>
+          </div>
+
+          <!-- Mobile search icon button -->
+          <button
+            type="button"
+            id="openMobileSearch"
+            class="md:hidden h-10 w-10 grid place-items-center rounded-full"
+            aria-label="Open search"
+          >
+            <img src="search-icon-circle.svg" alt="" class="h-8 w-8" />
+          </button>
+        </div>
+
+        <!-- Mobile overlay -->
+        <div id="mobileSearchOverlay" class="fixed inset-0 z-999 hidden">
+          <div class="bg-inv-card-solid px-4 pb-5 pt-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-11 flex-1 items-center gap-2 rounded-full bg-white px-4"
+              >
+                <img
+                  src="search-normal.svg"
+                  alt=""
+                  class="h-3.5 w-3.5 md:h-5 md:w-5"
+                />
+
+                <input
+                  id="mobileSearchInput"
+                  type="text"
+                  placeholder="Search"
+                  class="w-full bg-transparent text-sm outline-none font-['Roboto'] font-normal leading-4 text-foreground-high"
+                />
+
+                <!-- Clear (X) -->
+                <button
+                  type="button"
+                  id="mobileClearBtn"
+                  class="hidden"
+                  aria-label="Clear search"
+                >
+                  <img
+                    src="search-close.svg"
+                    alt=""
+                    class="h-5 w-5 md:h-8 md:w-8"
+                  />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                id="closeMobileSearch"
+                class="text-inv-foreground-high text-xs font-semibold font-['Roboto'] leading-4"
+              >
+                Cancel
+              </button>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p
+                class="text-inv-foreground-medium text-sm font-semibold font-['Nexa'] leading-4"
+              >
+                Your Recent Searches:
+              </p>
+
+              <button
+                type="button"
+                id="trashButton"
+                class="min-w-16 max-h-6 min-h-6 px-2.5 bg-fill-medium rounded-full inline-flex justify-center items-center gap-1"
+              >
+                <img src="trash-black.svg" alt="" class="h-4 w-4" />
+                <span
+                  class="text-foreground-high text-xs font-semibold font-['Nexa'] leading-4"
+                  >Clear All</span
+                >
+              </button>
+            </div>
+
+            <div
+              id="recentChips"
+              class="flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar"
+            >
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Crypto Bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+
+              <a
+                href="#"
+                class="chip mt-4 shrink-0 text-inv-foreground-high text-sm font-semibold font-['Nexa'] leading-4 flex items-center gap-1"
+              >
+                <span>Deposit bonus</span>
+                <img src="chip-close-icon.svg" alt="chip close" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+        Search Bar on top ends
+        -->
+
+      <!--
+        Main body part starts-->
+
+      <section class="max-w-[1430px] w-full mx-auto px-3 md:px-0 pt-4 md:pt-8">
+        <div class="article-cotent-container">
+          <div class="flex justify-end gap-20">
+            <div
+              class="article_container max-w-177.5 w-full mr-auto xl:mr-0 ml-auto"
+            >
+              <h1
+                class="text-foreground-high text-3xl md:text-[40px] font-extrabold font-['Nexa'] leading-10 md:leading-12"
+              >
+                How to Sign Up: Guide for New Users
+              </h1>
+
+              <div
+                class="flex flex-wrap gap-1 text-foreground-high text-sm md:text-xl font-normal font-['Roboto'] leading-5 md:leading-8 mt-3.5 md:mt-4"
+              >
+                <span>By <span class="font-medium">BetUS Blog</span>,</span>
+                <time datetime="2023-02-25">Feb 25, 2023</time>
+                <span class="mx-1 opacity-40">•</span>
+                <span>4 minutes read</span>
+              </div>
+
+              <div class="featured-image-container mt-3.5 mb-4 md:my-12">
+                <img class="block md:hidden h-52 relative rounded-xl" src="feature-image-mob.jpg" alt="feature-image" />
+                <img class="hidden md:block h-96 relative rounded-xl" src="feature-image-desktop.jpg" alt="feature-image" />
+              </div>
+
+              <div class="max-w-91.5 w-full mb-8 block md:hidden">
+                <nav
+                  aria-label="Table of contents"
+                  class="bg-card-1 rounded-lg border border-card-border overflow-hidden w-full"
+                >
+                  <details class="group">
+                    <summary
+                      class="flex items-center justify-between px-5 py-4 cursor-pointer list-none md:cursor-default md:pointer-events-none"
+                    >
+                      <h2
+                        class="text-foreground-high text-base font-extrabold font-heading leading-5 tracking-tight"
+                      >
+                        How to Sign Up: Guide for New Users
+                      </h2>
+
+                      <svg
+                        class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 md:hidden text-foreground-high"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </summary>
+
+                    <ul class="flex flex-col pb-4">
+                      <li class="px-5 py-2.5 bg-primary/5">
+                        <a
+                          href="#"
+                          class="text-foreground-high text-base font-bold font-['Nexa'] leading-6"
+                        >
+                          What Is Point Spread Betting?
+                        </a>
+                      </li>
+
+                      <li class="px-5 py-2.5">
+                        <a
+                          href="#"
+                          class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Nexa'] leading-6 transition-colors"
+                        >
+                          What Is Point Spread Betting?
+                        </a>
+                      </li>
+
+                      <li class="px-5 py-2.5">
+                        <a
+                          href="#"
+                          class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Nexa'] leading-6 transition-colors"
+                        >
+                          What Is Point Spread Betting?
+                        </a>
+                      </li>
+
+                      <li class="px-5 py-2.5">
+                        <a
+                          href="#"
+                          class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Nexa'] leading-6 transition-colors"
+                        >
+                          What Is Point Spread Betting?
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </nav>
+              </div>
+
+              <!--Page content starts here-->
+
+          <div class="flex flex-col gap-6">
+            <p
+              class="text-foreground-high font-['Roboto'] text-base leading-7 md:text-xl md:leading-8"
+            >
+              Good news: Filing taxes as a self-employed person is not very
+              complicated. All that's required is to calculate your
+              self-employed business, professional, or commission income on
+              <a
+                href="#"
+                class="underline decoration-primary hover:text-primary transition-colors"
+                >Form T2125 — Statement of Business or Professional
+                Activities</a
+              >
+              and include that income on your T1 General.
+            </p>
+
+            <p
+              class="text-foreground-high font-['Roboto'] text-base leading-7 md:text-xl md:leading-8"
+            >
+              What’s more, you can reduce the amount of business income that
+              you’ve earned, because the Canada Revenue Agency allows the
+              self-employed the opportunity to deduct any relevant business
+              expenses from that income.
+            </p>
+
+            <h2 class=" text-foreground-high text-2xl md:text-3xl font-extrabold font-['Nexa'] leading-7 md:leading-10">
+              Business income vs. employment income
+            </h2>
+
+            <div class="self-stretch flex items-center bg-card-2 border-l-4 border-informative overflow-hidden transition-all duration-300 p-3 gap-2 md:px-8 md:py-4 md:gap-3">
+              <div class="flex-1 font-heading font-semibold">
+                  <p class="text-foreground-high text-sm leading-4 md:text-2xl md:leading-7">
+                      <span class="text-primary-text">Note:</span> 
+                      Before you begin You must have an active account.
+                  </p>
+              </div>
+            </div>
+          
+            <div class="flex flex-col gap-6">
+              <div class="steps_container">
+              <div class="steps_header flex gap-4">
+                <div class="w-12 h-12 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5">
+                    <div class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6">01</div>
+                </div>
+
+                <div class="step_video_container">
+                  <h4 class="text-foreground-high text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-10 py-2">Step 1</h4>
+                  <div class="video_container mt-5">
+                    <video
+                      id="agentVideo"
+                      preload="none"
+                      poster="video-thumbnail-desk.jpg"
+                      muted
+                      loop
+                      playsinline
+                      class="w-full h-full object-cover rounded-xl"
+                    >
+                      <source data-src="vide.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="steps_container">
+                <div class="steps_header flex gap-4">
+                  <div class="w-12 h-12 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5">
+                      <div class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6">02</div>
+                  </div>
+
+                  <div class="step_video_container">
+                    <h4 class="text-foreground-high text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-10 py-2">Step 2</h4>
+                    <div class="video_container mt-5">
+                      <video
+                        id="agentVideo"
+                        preload="none"
+                        poster="video-thumbnail-desk.jpg"
+                        muted
+                        loop
+                        playsinline
+                        class="w-full h-full object-cover rounded-xl"
+                      >
+                        <source data-src="vide.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="steps_container">
+                <div class="steps_header flex gap-4">
+                  <div class="w-12 h-12 p-5 bg-fill-medium rounded-[200px] inline-flex flex-col justify-center items-center gap-2.5">
+                      <div class="text-center justify-center text-primary-text text-xl font-bold font-['Nexa'] leading-6">03</div>
+                  </div>
+
+                  <div class="step_video_container">
+                    <h4 class="text-foreground-high text-2xl md:text-4xl font-extrabold font-['Nexa'] leading-7 md:leading-10 py-2">Step 3</h4>
+                    <div class="video_container mt-5">
+                      <video
+                        id="agentVideo"
+                        preload="none"
+                        poster="video-thumbnail-desk.jpg"
+                        muted
+                        loop
+                        playsinline
+                        class="w-full h-full object-cover rounded-xl"
+                      >
+                        <source data-src="vide.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               <p
+                  class="text-foreground-high font-['Roboto'] text-base leading-7 md:text-xl md:leading-8"
+                >
+                  At its core, cryptocurrency is typically decentralized digital money designed to be used over the internet. 
+                  Bitcoin, which launched in 2008, was the first cryptocurrency, and it remains by far the biggest, most influential, 
+                  and best-known. In the decade since, 
+                  <span class=" underline">Bitcoin</span>
+                  <span class=""> and other cryptocurrencies like </span>
+                  <span class=" underline">Ethereum</span>
+                  <span class=""> have grown as digital alternatives to money issued by governments.<br/></span>
+                  <span class="">The most popular cryptocurrencies, by market capitalization, are Bitcoin, Ethereum, 
+                  </span><span class=" underline">Tether</span>
+                  <span class=""> and </span>
+                  <span class=" underline">Solana</span>
+                  <span class="">. Other well-known cryptocurrencies include </span>
+                  <span class=" underline">Tezos</span>
+                  <span class="">, </span>
+                  <span class=" underline">EOS</span>
+                  <span class="">, and </span>
+                  <span class=" underline">ZCash</span>
+                  <span class="">. Some are similar to Bitcoin. Others are based on 
+                    different technologies, or have new features that allow them to do more than transfer value.<br/>Crypto makes it possible to transfer 
+                    value online without the need for a middleman like a bank or payment processor, allowing value to transfer globally, </span>
+                    <span class=" underline">near</span>
+                    <span class="">-instantly, 24/7, for low fees.
+                    <br/>Cryptocurrencies are usually not issued or controlled by any government or other central authority. 
+                    They’re managed by peer-to-peer networks of computers running free, open-source software. Generally, anyone who wants
+                    to participate is able to.<br/>If a bank or government isn’t involved, how is crypto secure? It’s secure because all transactions 
+                    are vetted by a technology called a blockchain.<br/>A cryptocurrency blockchain is similar to a bank’s balance sheet or ledger. 
+                    Each currency has its own blockchain, which is an ongoing, constantly re-verified record of every single transaction ever made using 
+                    that currency.<br/>Unlike a bank’s ledger, a crypto blockchain is distributed across participants of the digital currency’s entire
+                      network<br/>No company, country, or third party is in control of it; and anyone can participate. A blockchain is a breakthrough technology
+                      only recently made possible through decades of computer science and mathematical innovations.</span>
+                </p>
+
+                <ul class="flex flex-col list-outside ml-5 text-foreground-high font-['Roboto'] text-base leading-7 md:text-xl md:leading-8">
+        
+                  <li class="list-disc marker:text-foreground-high">
+                      The most popular cryptocurrencies, by market capitalization, are <strong>Bitcoin, Ethereum, Tether and Solana</strong>. Other well-known cryptocurrencies include Tezos, EOS, and ZCash.
+                  </li>
+
+                  <li class="list-disc marker:text-foreground-high">
+                      Crypto makes it possible to transfer value online without the need for a middleman like a bank or payment processor, allowing value to transfer globally, near-instantly, 24/7, for low fees.
+                  </li>
+
+                  <li class="list-disc marker:text-foreground-high">
+                      Cryptocurrencies are usually not issued or controlled by any government or other central authority. They’re managed by peer-to-peer networks of computers running free, open-source software.
+                  </li>
+                  
+              </ul>
+          </div>
+    
+          
+          </div>
+
+          <!--
+  Found what you need section starts
+-->
+
+      <section class="feedback-section mt-4 mb-10 md:mt-16 px-3">
+        <div
+          class="max-w-170 mx-auto w-full p-6 md:px-12 bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border"
+        >
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <h3
+              class="text-foreground-high text-xl md:text-2xl font-extrabold font-['Nexa'] leading-7"
+            >
+              Was it helpful?
+            </h3>
+
+            <div
+              class="flex items-center rounded-xl outline-1 -outline-offset-1 outline-border-low overflow-hidden"
+            >
+              <button
+                id="feedback-yes"
+                class="group w-24 h-11 cursor-pointer flex justify-center items-center gap-2 border-r border-border-low bg-transparent transition-all active:scale-95"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                    fill-opacity="0.01"
+                  />
+                  <path
+                    d="M6.23242 15.292L8.81575 17.292C9.14909 17.6254 9.89909 17.792 10.3991 17.792H13.5658C14.5658 17.792 15.6491 17.042 15.8991 16.042L17.8991 9.95871C18.3158 8.79205 17.5658 7.79205 16.3158 7.79205H12.9824C12.4824 7.79205 12.0658 7.37538 12.1491 6.79205L12.5658 4.12538C12.7324 3.37538 12.2324 2.54205 11.4824 2.29205C10.8158 2.04205 9.98242 2.37538 9.64909 2.87538L6.23242 7.95871"
+                    stroke="#282E38"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1.98242 15.292V7.12533C1.98242 5.95866 2.48242 5.54199 3.64909 5.54199H4.48242C5.64909 5.54199 6.14909 5.95866 6.14909 7.12533V15.292C6.14909 16.4587 5.64909 16.8753 4.48242 16.8753H3.64909C2.48242 16.8753 1.98242 16.4587 1.98242 15.292Z"
+                    stroke="#282E38"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <span
+                  class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >Yes</span
+                >
+              </button>
+
+              <button
+                id="feedback-no"
+                class="group w-24 h-11 cursor-pointer flex justify-center items-center gap-2 bg-transparent transition-all active:scale-95"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                    fill-opacity="0.01"
+                  />
+                  <path
+                    d="M13.7668 4.70801L11.1834 2.70801C10.8501 2.37467 10.1001 2.20801 9.6001 2.20801H6.43344C5.43344 2.20801 4.3501 2.95801 4.1001 3.95801L2.1001 10.0413C1.68344 11.208 2.43344 12.208 3.68344 12.208H7.01677C7.51677 12.208 7.93344 12.6247 7.8501 13.208L7.43344 15.8747C7.26677 16.6247 7.76677 17.458 8.51677 17.708C9.18344 17.958 10.0168 17.6247 10.3501 17.1247L13.7668 12.0413"
+                    stroke="#282E38"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M18.0163 4.70833V12.875C18.0163 14.0417 17.5163 14.4583 16.3496 14.4583H15.5163C14.3496 14.4583 13.8496 14.0417 13.8496 12.875V4.70833C13.8496 3.54167 14.3496 3.125 15.5163 3.125H16.3496C17.5163 3.125 18.0163 3.54167 18.0163 4.70833Z"
+                    stroke="#282E38"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <span
+                  class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5"
+                  >No</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div id="feedback-details" class="hidden mt-8 transition-all">
+            <label
+              id="feedback-label"
+              class="block text-foreground-medium text-sm font-['Roboto'] mb-2"
+            >
+              What can we improve? (Optional)
+            </label>
+            <textarea
+              class="w-full h-20 p-4 bg-transparent rounded-xl outline-1 outline-border-low text-foreground-high focus:outline-2 focus:outline-[#208FFF] transition-all resize-none"
+              placeholder="Tell us more..."
+            ></textarea>
+
+            <div class="flex justify-end items-center gap-6 mt-4">
+              <button
+                id="feedback-cancel"
+                class="px-8 py-3 cursor-pointer text-foreground-high text-lg font-extrabold font-['Nexa'] rounded-full hover:bg-gray-200 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                class="px-8 py-3 cursor-pointer bg-primary text-white text-lg font-extrabold font-['Nexa'] rounded-full hover:bg-[#1a76d1] transition-colors shadow-lg shadow-blue-500/20"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--
+  Found what you need section ends
+-->
+            </div>
+
+            <div class="hidden xl:block max-w-70 w-full">
+              <nav
+                aria-label="Table of contents"
+                class="w-full bg-card-1 rounded-lg border border-card-border overflow-hidden outline-1 -outline-offset-1 outline-card-border"
+              >
+                <div class="flex items-center justify-between px-5 py-6">
+                  <h2
+                    class="text-foreground-high text-base font-bold font-['Roboto'] leading-5 md:leading-6"
+                  >
+                    Business income vs. employment income
+                  </h2>
+                </div>
+                <ul class="flex flex-col pb-6">
+                  <li
+                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Self-employment income reported on Form T4A
+                    </a>
+                  </li>
+                  <li
+                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Calculating gross and net self-employment income using
+                      Form T2125
+                    </a>
+                  </li>
+                  <li
+                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      How much to set aside for taxes
+                    </a>
+                  </li>
+                  <li
+                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Contributing to the Canadian Pension Plan (CPP)
+                    </a>
+                  </li>
+                  <li
+                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                    >
+                      Self-employment deductions
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <section class="flex flex-col gap-3 mt-8">
+                <h3 class="text-foreground-medium text-sm font-normal font-['Roboto'] leading-5">
+                  Share this article:
+                </h3>
+
+                <div class="flex items-center gap-4">
+                  <a href="#" aria-label="Share on Facebook" class="w-10 h-10 rounded-full flex justify-center items-center transition-colors duration-200 hover:bg-(--color-tone-gray)">
+                    <img src="facebook-icon.svg" class="w-full" alt="">
+                  </a>
+
+                  <a href="#" aria-label="Share on Instagram" class="w-10 h-10 rounded-full flex justify-center items-center transition-colors duration-200 hover:bg-(--color-tone-gray)">
+                    <img src="x-icon.svg" class="w-full" alt="">
+                  </a>
+
+                  <button 
+                    type="button" 
+                    data-copy-link
+                    aria-label="Copy Link" 
+                    class="w-10 h-10 cursor-pointer rounded-full flex justify-center items-center transition-all duration-200 hover:bg-(--color-tone-gray) active:scale-95"
+                  >
+                      <img src="copy-link-icon.svg" class="w-full" alt="Copy link icon">
+                  </button>
+                </div>
+              </section>
+            </div>
+          </header>
+
+          
+        </div>
+      </section>
+
+       <!--
+Discover More  Slider Section Starts
+-->
+        <section class="discover-more-articles px-3 md:px-0 py-4 md:py-6">
+          <div
+            class="relative z-50 flex max-w-357.5 mx-auto justify-between items-center mb-3.5 md:mb-8"
+          >
+            <h3
+              class="text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Discover More 
+            </h3>
+
+            <div class="w-20 flex justify-between items-center">
+              <img
+                src="left-arrow-light.svg"
+                data-light="left-arrow-light.svg"
+                data-dark="left-arrow-dark.svg"
+                alt="left arrow"
+                class="articles-prev-button h-8 w-8 cursor-pointer"
+              />
+
+              <img
+                src="right-arrow-dark.svg"
+                alt="right arrow"
+                class="articles-next-button h-8 w-8 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <div class="swiper-container pl-[max(0px,(100%-1430px)/2)]">
+            <div class="swiper articlesSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Deposit & Payout</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Deposit Funds or Withdraw Winnings
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Crypto</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            New BTC Lightning Deposit
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Troubleshooting</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            How to Navigate to BetUS 
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Troubleshooting</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Rejected Bet - What to do
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Deposit & Payout</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            Deposit Not Showing Up? Steps to Resolve the Issue
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a
+                    href="#"
+                    class="block w-full h-92 md:h-105 pb-6 bg-card-1 rounded-2xl outline-card-border flex flex-col justify-start items-center gap-4 overflow-hidden hover:opacity-95 transition-opacity"
+                  >
+                    <div class="w-full h-53.5 md:h-66 overflow-hidden">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="player-1.webp"
+                        alt="player image"
+                      />
+                    </div>
+                    <div
+                      class="self-stretch flex-1 px-5 flex flex-col justify-center items-start gap-4"
+                    >
+                      <div
+                        class="max-h-6 min-h-6 px-2 bg-(--color-tone-blue) rounded-md inline-flex justify-center items-center gap-1.5 overflow-hidden"
+                      >
+                        <span
+                          class="text-white text-sm font-semibold font-['Nexa']"
+                          >Guideline</span
+                        >
+                      </div>
+                      <div class="self-stretch flex flex-col gap-4">
+                        <div class="flex justify-between items-start gap-3">
+                          <h4
+                            class="text-foreground-high text-lg font-extrabold font-['Nexa'] leading-5 line-clamp-2"
+                          >
+                            New BTC Lightning Deposit
+                          </h4>
+                          <img
+                            src="right-arrow-black.svg"
+                            alt="arrow"
+                            class="w-5 h-5 mt-1"
+                          />
+                        </div>
+                        <p
+                          class="text-foreground-medium text-base font-['Roboto'] line-clamp-1"
+                        >
+                          Feb 25, 2023 • 4 min read
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--
+Discover More  Slider Section Ends
+-->
+
+
+<!--
+      FAQ Accordion Section Starts
+      -->
+      <section class="max-w-[708px] mx-auto px-3 md:px-0 pt-4 pb-8 md:py-10">
+        <div
+          class="bg-card-1 rounded-2xl outline-1 -outline-offset-1 outline-card-border overflow-hidden"
+        >
+          <!-- Header -->
+          <div
+            class="self-stretch w-full py-5 px-4 inline-flex justify-start items-center gap-2.5 border-b border-border-medium/40"
+          >
+            <img src="message-question.svg" alt="faq icon" />
+            <h2
+              class="flex-1 justify-center text-foreground-high text-lg md:text-2xl font-extrabold font-['Nexa'] leading-5 md:leading-7"
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <!-- FAQ item 1 (open by default) -->
+          <details class="group border-b border-border-medium/40" open>
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3"
+            >
+              <!-- Icon -->
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <!-- chevron (down -> rotates when open) -->
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                What is the first step to start betting on sports?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 2 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                How do odds work in sports betting?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 3 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                What types of bets can I place?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 4 -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                How do I manage my bankroll effectively?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ item 5 (last - no bottom border) -->
+          <details class="group border-b border-border-medium/40">
+            <summary
+              class="cursor-pointer list-none px-4 py-3 flex items-center gap-3 hover:bg-fill-medium/30"
+            >
+              <span
+                class="shrink-0 w-5 h-5 inline-flex items-center justify-center text-foreground-high"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span
+                class="flex-1 text-foreground-high text-sm font-extrabold font-['Nexa'] leading-5 py-2 md:text-lg md:font-semibold"
+              >
+                Are there any strategies for successful sports betting?
+              </span>
+            </summary>
+
+            <div class="px-4 pb-6 pl-12 md:pr-4">
+              <p
+                class="text-foreground-high text-sm font-normal font-['Roboto'] leading-5"
+              >
+                Lorem ipsum dolor sit amet consectetur. Tristique facilisis in
+                nulla amet non magna fringilla proin urna. Turpis consectetur
+                turpis elementum et vestibulum imperdiet arcu in massa. Et
+                rhoncus eget vitae vestibulum in ut. Accumsan vulputate viverra.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!--
+      FAQ Accordion Section Ends
+      -->
+    </main>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

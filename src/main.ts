@@ -177,6 +177,14 @@ document.addEventListener("DOMContentLoaded", () => {
     20
   );
 
+  // Slider 7: Articles Page Slider
+  initSwiper(
+    ".articlesSwiper",
+    ".articles-prev-button",
+    ".articles-next-button",
+    20
+  );
+
   /* --- B. SEARCH INPUT CLEAR BUTTONS --- 
      Handles the 'X' button visibility inside search fields.
   */
@@ -465,4 +473,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- G. FEEDBACK SECTION ---
   initFeedbackSection();
+
+  /**
+   *H. Global Copy to Clipboard Handler
+   * Usage: Add [data-copy-link] to any button
+   */
+  const handleCopyLink = async (event: MouseEvent): Promise<void> => {
+    const button = (event.target as HTMLElement).closest("[data-copy-link]");
+
+    if (!button) return;
+
+    try {
+      // Get the current page URL
+      const url = window.location.href;
+
+      await navigator.clipboard.writeText(url);
+
+      // Visual Feedback (Optional)
+      const originalHTML = button.innerHTML;
+      button.innerHTML = "Copied!";
+      button.classList.add("text-black");
+      button.classList.add("text-sm");
+
+      setTimeout(() => {
+        button.innerHTML = originalHTML;
+        button.classList.remove("text-black");
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+
+  // Listen for clicks on the entire document
+  document.addEventListener("click", handleCopyLink);
 });

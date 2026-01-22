@@ -27,6 +27,8 @@ export default defineConfig({
           "technical-troubleshoot.html"
         ),
         termsConditions: path.resolve(__dirname, "terms-conditions.html"),
+        articles: path.resolve(__dirname, "articles.html"),
+        trendingArticles: path.resolve(__dirname, "trending-articles.html"),
       },
     },
   },

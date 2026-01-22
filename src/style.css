@@ -166,7 +166,8 @@
 }
 
 /* Slider widths for Featured Help Articles */
-.featuredHelpSwiper .swiper-slide {
+.featuredHelpSwiper .swiper-slide,
+.articlesSwiper .swiper-slide {
   width: 348px !important;
 }
 
@@ -179,7 +180,8 @@
     width: 288px !important;
   }
 
-  .featuredHelpSwiper .swiper-slide {
+  .featuredHelpSwiper .swiper-slide,
+  .articlesSwiper .swiper-slide {
     width: 283px !important;
   }
 }
