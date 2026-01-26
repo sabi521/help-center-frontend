@@ -161,20 +161,34 @@
         -->
 
         <!--Hero Banner-->
-        <section class="hero-banner relative w-full flex items-center bg-[url('hero-image-trending-articles.webp')] bg-no-repeat bg-cover bg-center">
-            <div class="relative z-10 max-w-[708px] mx-auto px-3 md:px-0 w-full py-10 md:py-36 ">
-                <h1 class="w-full justify-start text-primary-foreground text-4xl md:text-[64px] font-light font-['Nexa'] leading-12 md:leading-[76.80px]">
-                    Using bitcoin for payouts: everything you need to know
-                </h1>
+        <section class="relative w-full overflow-hidden">
+          <!-- HERO IMAGE -->
+          <div
+            class="relative w-full h-[286px] md:h-[560px] bg-gradient-to-l from-slate-500 to-indigo-500 overflow-hidden"
+          >
+            <!-- Pattern overlay -->
+            <img
+              src="hero-bg-pattern.svg"
+              alt="pattern"
+              class="absolute -top-20 -right-54 md:top-0 md:right-0 h-full w-full md:w-[35%] object-cover pointer-events-none"
+            />
 
-                <div class="flex flex-wrap gap-1 text-primary-foreground text-sm md:text-xl font-normal font-['Roboto'] leading-5 md:leading-8 mt-2.5 md:mt-4">
-                    <span>By <span class="font-medium">BetUS Blog</span>,</span>
-                    <time datetime="2023-02-25">Feb 25, 2023</time>
-                    <span class="mx-1 opacity-40">•</span>
-                    <span>4 minutes read</span>
-                </div>
-            </div>    
+            <!-- Text Content -->
+            <div class="relative z-10 max-w-91.5 md:max-w-177 mx-auto px-3 md:px-0 h-full flex flex-col justify-center">
+              <h1 class="text-primary-foreground text-4xl md:text-[64px] font-light font-['Nexa'] leading-12 md:leading-[76.80px]">
+                Using bitcoin for payouts: everything you need to know
+              </h1>
+
+              <div class="flex flex-wrap gap-1 text-primary-foreground text-sm md:text-xl font-normal font-['Roboto'] leading-5 md:leading-8 mt-2.5 md:mt-4">
+                <span>By <span class="font-medium">BetUS Blog</span>,</span>
+                <time datetime="2023-02-25">Feb 25, 2023</time>
+                <span class="mx-1 opacity-40">•</span>
+                <span>4 minutes read</span>
+              </div>
+            </div>
+          </div>
         </section>
+
         <!--Hero Banner Ends-->
 
       <!--
@@ -558,61 +572,66 @@
                 aria-label="Table of contents"
                 class="w-full bg-card-1 rounded-lg border border-card-border overflow-hidden outline-1 -outline-offset-1 outline-card-border"
               >
-                <div class="flex items-center justify-between px-5 py-6">
-                  <h2
-                    class="text-foreground-high text-base font-bold font-['Roboto'] leading-5 md:leading-6"
-                  >
-                    Business income vs. employment income
-                  </h2>
-                </div>
-                <ul class="flex flex-col pb-6">
+                
+                <ul class="flex flex-col py-6">
                   <li
-                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
                   >
                     <a
                       href="#"
-                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
+                    >
+                       Business income vs. employment income
+                    </a>
+                  </li>
+
+                  <li
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                  >
+                    <a
+                      href="#"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
                     >
                       Self-employment income reported on Form T4A
                     </a>
                   </li>
                   <li
-                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
                   >
                     <a
                       href="#"
-                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
                     >
                       Calculating gross and net self-employment income using
                       Form T2125
                     </a>
                   </li>
                   <li
-                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
                   >
                     <a
                       href="#"
-                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
                     >
                       How much to set aside for taxes
                     </a>
                   </li>
                   <li
-                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
                   >
                     <a
                       href="#"
-                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
                     >
                       Contributing to the Canadian Pension Plan (CPP)
                     </a>
                   </li>
                   <li
-                    class="px-5 py-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
+                    class="px-5 my-3 border-l-[3px] border-transparent hover:border-primary transition-colors"
                   >
                     <a
                       href="#"
-                      class="text-foreground-medium hover:text-foreground-high text-base font-normal font-['Roboto'] leading-6"
+                      class="text-foreground-medium hover:text-foreground-high text-base font-normal hover:font-bold font-['Roboto'] leading-6"
                     >
                       Self-employment deductions
                     </a>
